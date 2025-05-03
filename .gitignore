@@ -17,3 +17,9 @@ dist/
 *.agdahistory
 simulation_trace.txt
 .vscode/
+
+# Large assets and submodules
+agda-stdlib/
+agda-2.7.0.1.tar.gz
+IgulimYosherEngine/
+legacy/

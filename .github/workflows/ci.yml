@@ -2,22 +2,51 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches: [ main, master ]
   pull_request:
-    branches: [main]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Install Agda & StdLib
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - name: Install Agda and HLint
         run: |
           sudo apt-get update
-          sudo apt-get install -y agda agda-stdlib
-      - name: Compile modules
-        run: |
-          agda --library-file .agda-lib -i src -i .agda/defaults -c $(find src -name "*.agda")
-      - name: Run tests
-        run: |
-          agda --library-file .agda-lib -i src -i .agda/defaults TestPattern.agda
+          sudo apt-get install -y agda libghc-hlint-dev hlint
+      - name: Build Agda
+        run: make check
+      - name: Generate HTML
+        run: make html
+      - name: Safe-check Agda
+        run: make safe-check
+      - name: Generate Agda Coverage
+        run: make coverage
+      - name: Setup Haskell toolchain
+        uses: actions/setup-haskell@v1
+        with:
+          ghc-version: '9.6.7'
+          cabal-version: '3.8'
+      - name: Cabal update
+        run: cabal update
+      - name: Build Haskell with Warnings as Errors
+        run: cabal build --enable-tests --ghc-options="-Werror"
+      - name: Run Haskell tests
+        run: cabal test --color=always
+      - name: Generate Haddock docs
+        run: cabal haddock --haddock-for-hackage --haddock-hyperlink-source
+      - name: Generate Haskell Coverage
+        run: stack test --coverage && stack hpc report --hpcdir=.hpc
+      - name: Run HLint with refactoring
+        run: hlint --refactor --refactor-options="--serialise=refactor.json" Main.hs test/MainSpec.hs
+      - name: Run shellcheck
+        run: shellcheck **/*.sh
+      - name: Run CodeQL Analysis
+        uses: github/codeql-action/init@v2
+        with:
+          languages: "haskell, shell"
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v2
