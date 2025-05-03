@@ -1,3 +1,4 @@
+{-# OPTIONS --without-K #-}
 --------------------------------------------------
 -- EinSofState (State Layer)
 --------------------------------------------------
@@ -8,11 +9,13 @@ open import Agda.Builtin.Bool
 open import Agda.Builtin.Unit
 
 -- | מצב דינמי של אין-סוף: האם מלא באור?
-record EinSofState : Set where
-  field
-    einSof        : EinSof
-    isFullOfLight : Bool
+-- Changed from record to data
+data EinSofState : Set where
+  MkEinSofState : (einSof : EinSof) → (isFullOfLight : Bool) → EinSofState
+
+-- Remove the FOREIGN pragma as Haskell doesn't seem to need this type directly via FFI
+-- {-# FOREIGN GHC type AgdaEinSofState #-} 
 
 -- מצב ראשוני: הכל מלא אור
 initialEinSofState : EinSofState
-initialEinSofState = record { einSof = einsOf ; isFullOfLight = true }
+initialEinSofState = MkEinSofState einsOf true

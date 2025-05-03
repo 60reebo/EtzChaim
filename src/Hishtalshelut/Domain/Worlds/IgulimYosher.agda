@@ -1,9 +1,14 @@
 --------------------------------------------------
 -- IgulimYosher (Domain Layer)
 --------------------------------------------------
-module Hishtalshelut.Domain.Worlds.IgulimYosher where
+{-# OPTIONS --without-K #-}
+module Hishtalshelut.Domain.Worlds.IgulimYosher (ℓ : Agda.Primitive.Level) where
 
-open import Data.Nat
+open import Agda.Primitive using (Level ; lsuc ; lzero)
+
+open import Hishtalshelut.Domain.Math.Cardinal using (Cardinal; fromNat; _⊖_; _⊗_)
+import Hishtalshelut.Domain.Math.Cardinal as C
+open import Data.Nat using (ℕ)
 open import Agda.Builtin.String
 open import Agda.Builtin.Bool
 open import Data.List
@@ -11,8 +16,8 @@ open import Data.Bool using (_∧_)
 open import Data.Sum using (_⊎_; inj₁; inj₂)
 open import Hishtalshelut.Domain.Worlds.EinSof using (EinSof; einsOf; CircleEinSof; circleOf; KavEinSof; kavOf)
 open import Agda.Builtin.Nat using (_-_)
-open import Data.Nat using (_*_; _^_)
 open import Data.Maybe using (Maybe; just; nothing)
+open import Hishtalshelut.Domain.Math.Ordinal using (Ordinal; zero; succ; limit; fromNatO)
 
 -- ENUMERATIONS FOR WORLDS
 data World : Set where
@@ -60,7 +65,7 @@ record PartzufId : Set where
 record SefirahId : Set where
   field
     name : String
-    index : ℕ
+    index : ℕ       -- סיווג ספירה (ℕ): מזהה אינדקס סופי
 
 -- | קטגוריית אור/כלי לפי נרנח"י (חמש מדרגות הנפש)
 data LightCategory : Set where
@@ -69,6 +74,24 @@ data LightCategory : Set where
   Neshama : LightCategory
   Chaya   : LightCategory
   Yechida : LightCategory
+  Undifferentiated_LightCategory : LightCategory -- Primordial, undifferentiated light
+
+showLightCategory : LightCategory → String
+showLightCategory Nefesh = "Nefesh"
+showLightCategory Ruach = "Ruach"
+showLightCategory Neshama = "Neshama"
+showLightCategory Chaya = "Chaya"
+showLightCategory Yechida = "Yechida"
+showLightCategory Undifferentiated_LightCategory = "Undifferentiated"
+
+-- | סוג האור: פנימי או מקיף
+data LightKind : Set where
+  Pnimi : LightKind
+  Makif : LightKind
+
+showLightKind : LightKind → String
+showLightKind Pnimi = "Pnimi"
+showLightKind Makif = "Makif"
 
 -- | מצב Kav (קו) המשדר אור
 record KavState : Set where
@@ -80,26 +103,26 @@ record KavState : Set where
 open KavState public
 
 -- | תיאור עיגול
-record CircleDesc : Set where
+record CircleDesc : Set (lsuc ℓ) where
   field
     olam    : OlamId
     partzuf : PartzufId
     sefirah : SefirahId
     isMakif : Bool
     lightCat : LightCategory
-    purity   : ℕ
+    purity   : Cardinal ℓ  -- Cardinal ℓ: טוהר אינסופי/טרנספיניטי
 
 -- | תיאור יושר
-record YosherDesc : Set where
+record YosherDesc : Set (lsuc ℓ) where
   field
     olam    : OlamId
     partzuf : PartzufId
     isPnimi : Bool
     isMakif : Bool
     covers  : List CircleDesc
-    distance : ℕ  -- מרחק בין פנימי למקיף (רלוונטי רק למקיף)
+    distance : ℕ      -- מרחק בין פנימי למקיף (ℕ): ידוע כספירה סופית
     lightCat : LightCategory
-    purity   : ℕ
+    purity   : Cardinal ℓ  -- Cardinal ℓ: טוהר אינסופי/טרנספיניטי
 
 -- | שלוש בחינות עיגולים: ימין/שמאל/אמצע
 data Triad : Set where
@@ -249,9 +272,9 @@ data VesselKind : Set where
   OuterVessel : VesselKind
 
 -- | אור פנימי/מקיף
-data LightKind : Set where
-  Pnimi : LightKind
-  Makif : LightKind
+-- data LightKind : Set where
+--   Pnimi : LightKind
+--   Makif : LightKind
 
 -- | מפרט מלא לעיגול
 record CircleSpec : Set where
@@ -281,32 +304,33 @@ record SefirahUnit : Set where
     yosher : YosherSpec
 
 -- | אור עם קטגוריה ואקטיביות, מבדיל בין Igulim ו-Yosher
-record Light : Set where
+record Light : Set (lsuc ℓ) where
   field
     einsofCtx : CircleEinSof ⊎ KavEinSof
     category  : LightCategory
     active    : Bool
-    intensity : ℕ
-    purity    : ℕ  -- purity: higher = more refined (light), lower = more “vessel”-like
+    intensity : Cardinal ℓ  -- עוצמת האור (Cardinal ℓ): כמות/עוצמה
+    purity    : Cardinal ℓ  -- purity: higher = more refined (light), lower = more "vessel"-like (Cardinal ℓ)
+    ordinalLevel : Ordinal ℓ  -- רמת אורדינל (לספירה/אור) – מאפשר ייצוג עוצמות/רמות טרנספיניטיות
 
 -- | שידור אור מהקו לכל עיגול או יושר
 transmitLight : KavState → (CircleDesc ⊎ YosherDesc) → Light
-transmitLight k (inj₁ c) =
-  record
-    { einsofCtx = inj₁ (circleOf (einsofValue k))
-    ; category  = CircleDesc.lightCat c
-    ; active    = headAttached k ∧ tailAttached k
-    ; intensity = length allSefirot - SefirahId.index (CircleDesc.sefirah c)
-    ; purity    = CircleDesc.purity c
-    }
-transmitLight k (inj₂ y) =
-  record
-    { einsofCtx = inj₂ (kavOf (einsofValue k))
-    ; category  = YosherDesc.lightCat y
-    ; active    = headAttached k ∧ tailAttached k
-    ; intensity = length allSefirot - YosherDesc.distance y
-    ; purity    = YosherDesc.purity y
-    }
+transmitLight k (inj₁ c) = record
+  { einsofCtx     = inj₁ (circleOf (einsofValue k))
+  ; category      = CircleDesc.lightCat c
+  ; active        = headAttached k ∧ tailAttached k
+  ; intensity     = fromNat (length allSefirot) ⊖ fromNat (SefirahId.index (CircleDesc.sefirah c))
+  ; purity        = CircleDesc.purity c
+  ; ordinalLevel  = zero
+  }
+transmitLight k (inj₂ y) = record
+  { einsofCtx     = inj₂ (kavOf (einsofValue k))
+  ; category      = YosherDesc.lightCat y
+  ; active        = headAttached k ∧ tailAttached k
+  ; intensity     = fromNat (length allSefirot) ⊖ fromNat (YosherDesc.distance y)
+  ; purity        = YosherDesc.purity y
+  ; ordinalLevel  = zero
+  }
 
 -- | זרם אור פנימי
 internalStream : CircleDesc → KavState → Light
@@ -317,37 +341,40 @@ externalStream : YosherDesc → KavState → Light
 externalStream y k = transmitLight k (inj₂ y)
 
 -- | פונקציות גאומטריות: רדיוס, היקף, שטח, נפח
-baseRadius : ℕ
-baseRadius = 1
+baseRadius : Cardinal ℓ
+baseRadius = fromNat 1
 
-growthFactor : ℕ
-growthFactor = 2
+growthFactor : Cardinal ℓ
+growthFactor = fromNat 2
 
-radius : ℕ → ℕ
-radius n = baseRadius * (growthFactor ^ n)
+radius : ℕ → Cardinal ℓ
+radius n = baseRadius ⊗ (C._^_ growthFactor (fromNatO n))
 
-circumference : ℕ → ℕ
-circumference n = 2 * radius n
+circumference : ℕ → Cardinal ℓ
+circumference n = fromNat 2 ⊗ radius n
 
-area : ℕ → ℕ
-area n = radius n * radius n
+area : ℕ → Cardinal ℓ
+area n = radius n ⊗ radius n
 
-volume : ℕ → ℕ
-volume n = radius n * area n
+volume : ℕ → Cardinal ℓ
+volume n = radius n ⊗ area n
 
 -- | רשימת כל הספירות לצורך מיפוי לפי index
 allSefirotList : List Sefirah
 allSefirotList = allSefirot
 
 -- | חיפוש ברשימה לפי אינדקס (Maybe)
-listLookup : {A : Set} → ℕ → List A → Maybe A
-listLookup zero    (x ∷ xs)  = just x
-listLookup (suc n) (_ ∷ xs) = listLookup n xs
-listLookup _         []     = nothing
+-- | חיפוש ברשימה לפי אינדקס (Maybe)
+listLookup : ∀ {A : Set} → Ordinal ℓ → List A → Maybe A
+listLookup zero     []       = nothing
+listLookup zero     (x ∷ xs) = just x
+listLookup (succ o) []       = nothing
+listLookup (succ o) (_ ∷ xs) = listLookup o xs
+listLookup (limit _) _       = nothing
 
 -- | המרה מ־SefirahId ל־Sefirah (בסדר מוצפן)
 sefirahById : SefirahId → Sefirah
-sefirahById sf with listLookup (SefirahId.index sf) allSefirotList
+sefirahById sf with listLookup (fromNatO (SefirahId.index sf)) allSefirotList
 ... | just s  = s
 ... | nothing = Keter
 

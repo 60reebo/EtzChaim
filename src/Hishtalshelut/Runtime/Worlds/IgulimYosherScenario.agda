@@ -1,7 +1,6 @@
 --------------------------------------------------
 -- IgulimYosherScenario (Runtime/Scenario Layer)
 --------------------------------------------------
-{-# OPTIONS --guardedness --no-termination-check #-}
 module Hishtalshelut.Runtime.Worlds.IgulimYosherScenario where
 
 open import Hishtalshelut.Engine.Worlds.IgulimYosherEngine using (simulateFullIgulimYosher)

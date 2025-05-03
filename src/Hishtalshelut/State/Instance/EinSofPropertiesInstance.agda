@@ -21,6 +21,6 @@ einSofProps = record
   ; mapInvariant     = λ _ _ → true
   ; location         = tt
   ; direction        = tt
-  ; receiveFromEinSof = λ {Sefira} {Light} _ _ → tt
+  ; receiveFromEinSof = λ _ → tt
   ; description      = "מימוש פורמלי של כל מאפייני אין-סוף: אחידות, חוסר גבול, אי-הבחנה פנימית, כל פעולה מחזירה אותו דבר, אין משמעות למיקום/כיוון, וכל ספירה מקבלת אור באותה מידה."
   }
