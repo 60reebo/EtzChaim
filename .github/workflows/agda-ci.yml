@@ -1,0 +1,16 @@
+name: Agda CI
+on:
+  - push
+  - pull_request
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    container:
+      image: agda/agda:2.7.0.1
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Agda checks
+        run: |
+          make check
+          make html

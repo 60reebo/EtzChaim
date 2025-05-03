@@ -1,0 +1,376 @@
+--------------------------------------------------
+-- IgulimYosher (Domain Layer)
+--------------------------------------------------
+module Hishtalshelut.Domain.Worlds.IgulimYosher where
+
+open import Data.Nat
+open import Agda.Builtin.String
+open import Agda.Builtin.Bool
+open import Data.List
+open import Data.Bool using (_∧_)
+open import Data.Sum using (_⊎_; inj₁; inj₂)
+open import Hishtalshelut.Domain.Worlds.EinSof using (EinSof; einsOf; CircleEinSof; circleOf; KavEinSof; kavOf)
+open import Agda.Builtin.Nat using (_-_)
+open import Data.Nat using (_*_; _^_)
+open import Data.Maybe using (Maybe; just; nothing)
+
+-- ENUMERATIONS FOR WORLDS
+data World : Set where
+  AdamKadmon : World
+  Atzilut     : World
+  Beriah      : World
+  Yetzirah    : World
+  Asiyah      : World
+
+allWorlds : List World
+allWorlds = AdamKadmon ∷ Atzilut ∷ Beriah ∷ Yetzirah ∷ Asiyah ∷ []
+
+worldName : World → String
+worldName AdamKadmon = "א״ק"
+worldName Atzilut     = "אצילות"
+worldName Beriah      = "בריאה"
+worldName Yetzirah    = "יצירה"
+worldName Asiyah      = "עשיה"
+
+worldIndex : World → ℕ
+worldIndex AdamKadmon = 0
+worldIndex Atzilut     = 1
+worldIndex Beriah      = 2
+worldIndex Yetzirah    = 3
+worldIndex Asiyah      = 4
+
+-- | מזהה עולם
+record OlamId : Set where
+  field
+    name : String
+    level : ℕ
+
+-- worldToId moved here after OlamId
+worldToId : World → OlamId
+worldToId w = record { name = worldName w ; level = worldIndex w }
+
+-- | מזהה פרצוף
+record PartzufId : Set where
+  field
+    name : String
+    olam : OlamId
+    level : ℕ
+
+-- | מזהה ספירה
+record SefirahId : Set where
+  field
+    name : String
+    index : ℕ
+
+-- | קטגוריית אור/כלי לפי נרנח"י (חמש מדרגות הנפש)
+data LightCategory : Set where
+  Nefesh  : LightCategory
+  Ruach   : LightCategory
+  Neshama : LightCategory
+  Chaya   : LightCategory
+  Yechida : LightCategory
+
+-- | מצב Kav (קו) המשדר אור
+record KavState : Set where
+  field
+    headAttached : Bool  -- האם ראש הקו מחובר לאין סוף
+    tailAttached : Bool  -- האם זנב הקו מחובר לעיגולים/יושר
+    einsofValue  : EinSof  -- ערך אור אין-סוף המועבר בצינור
+
+open KavState public
+
+-- | תיאור עיגול
+record CircleDesc : Set where
+  field
+    olam    : OlamId
+    partzuf : PartzufId
+    sefirah : SefirahId
+    isMakif : Bool
+    lightCat : LightCategory
+    purity   : ℕ
+
+-- | תיאור יושר
+record YosherDesc : Set where
+  field
+    olam    : OlamId
+    partzuf : PartzufId
+    isPnimi : Bool
+    isMakif : Bool
+    covers  : List CircleDesc
+    distance : ℕ  -- מרחק בין פנימי למקיף (רלוונטי רק למקיף)
+    lightCat : LightCategory
+    purity   : ℕ
+
+-- | שלוש בחינות עיגולים: ימין/שמאל/אמצע
+data Triad : Set where
+  Yamin : Triad
+  Smol  : Triad
+  Emtza : Triad
+
+-- | שש בחינות 'ציור אדם': מעלה/מטה/ימין/שמאל/פנים/אחור
+data Hexad : Set where
+  Maala  : Hexad
+  Matah  : Hexad
+  Yamin′ : Hexad
+  Smol′  : Hexad
+  Panim  : Hexad
+  Achor  : Hexad
+
+-- | שלוש חלקי גוף: ראש/גוף/רגליים
+data DosherP : Set where
+  Head : DosherP
+  Body : DosherP
+  Legs : DosherP
+
+-- ENUMERATIONS FOR PARTZUF
+data Partzuf : Set where
+  ArichAnpin : Partzuf
+  Atik       : Partzuf
+  Abba       : Partzuf
+  Ima        : Partzuf
+  ZeirAnpin  : Partzuf
+  NukvaZeirAnpin : Partzuf
+
+allPartzufs : List Partzuf
+allPartzufs = Atik ∷ ArichAnpin ∷ Abba ∷ Ima ∷ ZeirAnpin ∷ NukvaZeirAnpin ∷ []
+
+partzufName : Partzuf → String
+partzufName ArichAnpin = "אריך אנפין"
+partzufName Atik        = "עתיק"
+partzufName Abba        = "אבא"
+partzufName Ima         = "אמא"
+partzufName ZeirAnpin   = "זעיר אנפין"
+partzufName NukvaZeirAnpin = "נוקבא דזעיר אנפין"
+
+partzufIndex : Partzuf → ℕ
+partzufIndex ArichAnpin = 0
+partzufIndex Atik        = 1
+partzufIndex Abba        = 2
+partzufIndex Ima         = 3
+partzufIndex ZeirAnpin   = 4
+partzufIndex NukvaZeirAnpin = 5
+
+partzufToId : World → Partzuf → PartzufId
+partzufToId w p = record
+  { name = partzufName p
+  ; olam = worldToId w
+  ; level = partzufIndex p
+  }
+
+-- ENUMERATIONS FOR SEFIROH
+data Sefirah : Set where
+  Keter   : Sefirah
+  Chochma : Sefirah
+  Binah   : Sefirah
+  Chesed  : Sefirah
+  Gevurah : Sefirah
+  Tiferet : Sefirah
+  Netzach : Sefirah
+  Hod     : Sefirah
+  Yesod   : Sefirah
+  Malchut : Sefirah
+
+allSefirot : List Sefirah
+allSefirot = Keter ∷ Chochma ∷ Binah ∷ Chesed ∷ Gevurah ∷ Tiferet ∷ Netzach ∷ Hod ∷ Yesod ∷ Malchut ∷ []
+
+sefirahName : Sefirah → String
+sefirahName Keter   = "כתר"
+sefirahName Chochma = "חכמה"
+sefirahName Binah   = "בינה"
+sefirahName Chesed  = "חסד"
+sefirahName Gevurah = "גבורה"
+sefirahName Tiferet = "תפארת"
+sefirahName Netzach = "נצח"
+sefirahName Hod     = "הוד"
+sefirahName Yesod   = "יסוד"
+sefirahName Malchut = "מלכות"
+
+sefirahIndex : Sefirah → ℕ
+sefirahIndex Keter   = 0
+sefirahIndex Chochma = 1
+sefirahIndex Binah   = 2
+sefirahIndex Chesed  = 3
+sefirahIndex Gevurah = 4
+sefirahIndex Tiferet = 5
+sefirahIndex Netzach = 6
+sefirahIndex Hod     = 7
+sefirahIndex Yesod   = 8
+sefirahIndex Malchut = 9
+
+sefirahToId : Sefirah → SefirahId
+sefirahToId s = record { name = sefirahName s ; index = sefirahIndex s }
+
+-- IMPLEMENT MAPPING FUNCTIONS
+sefirahTriad : Sefirah → Triad
+sefirahTriad Keter   = Emtza
+sefirahTriad Chochma = Yamin
+sefirahTriad Binah   = Smol
+sefirahTriad Chesed  = Yamin
+sefirahTriad Gevurah = Smol
+sefirahTriad Tiferet = Emtza
+sefirahTriad Netzach = Yamin
+sefirahTriad Hod     = Smol
+sefirahTriad Yesod   = Emtza
+sefirahTriad Malchut = Emtza
+
+sefirahHexad : Sefirah → Hexad
+sefirahHexad Keter   = Panim
+sefirahHexad Chochma = Yamin′
+sefirahHexad Binah   = Smol′
+sefirahHexad Chesed  = Yamin′
+sefirahHexad Gevurah = Smol′
+sefirahHexad Tiferet = Panim
+sefirahHexad Netzach = Yamin′
+sefirahHexad Hod     = Smol′
+sefirahHexad Yesod   = Matah
+sefirahHexad Malchut = Achor
+
+sefirahDosherP : Sefirah → DosherP
+sefirahDosherP Keter   = Head
+sefirahDosherP Chochma = Head
+sefirahDosherP Binah   = Head
+sefirahDosherP Chesed  = Body
+sefirahDosherP Gevurah = Body
+sefirahDosherP Tiferet = Body
+sefirahDosherP Netzach = Legs
+sefirahDosherP Hod     = Legs
+sefirahDosherP Yesod   = Legs
+sefirahDosherP Malchut = Legs
+
+-- | פנימיות הנשמה (נרנח"י)
+data Narnah : Set where
+  Nepesh   : Narnah
+  Ruach    : Narnah
+  Neshamah : Narnah
+
+-- | כלי פנימי/חיצוני
+data VesselKind : Set where
+  InnerVessel : VesselKind
+  OuterVessel : VesselKind
+
+-- | אור פנימי/מקיף
+data LightKind : Set where
+  Pnimi : LightKind
+  Makif : LightKind
+
+-- | מפרט מלא לעיגול
+record CircleSpec : Set where
+  field
+    seph       : Sefirah
+    narnah     : Narnah
+    vesselInner : VesselKind
+    vesselOuter : VesselKind
+    lightInner  : LightKind
+    lightOuter  : LightKind
+
+-- | מפרט מלא ליושר
+record YosherSpec : Set where
+  field
+    seph         : Sefirah
+    narnah       : Narnah
+    vesselInner  : VesselKind
+    vesselOuter  : VesselKind
+    lightInner   : LightKind
+    lightReturn  : LightKind
+    lightStraight : LightKind
+
+-- | חבילה מתווכת לספירה אחת
+record SefirahUnit : Set where
+  field
+    circle : CircleSpec
+    yosher : YosherSpec
+
+-- | אור עם קטגוריה ואקטיביות, מבדיל בין Igulim ו-Yosher
+record Light : Set where
+  field
+    einsofCtx : CircleEinSof ⊎ KavEinSof
+    category  : LightCategory
+    active    : Bool
+    intensity : ℕ
+    purity    : ℕ  -- purity: higher = more refined (light), lower = more “vessel”-like
+
+-- | שידור אור מהקו לכל עיגול או יושר
+transmitLight : KavState → (CircleDesc ⊎ YosherDesc) → Light
+transmitLight k (inj₁ c) =
+  record
+    { einsofCtx = inj₁ (circleOf (einsofValue k))
+    ; category  = CircleDesc.lightCat c
+    ; active    = headAttached k ∧ tailAttached k
+    ; intensity = length allSefirot - SefirahId.index (CircleDesc.sefirah c)
+    ; purity    = CircleDesc.purity c
+    }
+transmitLight k (inj₂ y) =
+  record
+    { einsofCtx = inj₂ (kavOf (einsofValue k))
+    ; category  = YosherDesc.lightCat y
+    ; active    = headAttached k ∧ tailAttached k
+    ; intensity = length allSefirot - YosherDesc.distance y
+    ; purity    = YosherDesc.purity y
+    }
+
+-- | זרם אור פנימי
+internalStream : CircleDesc → KavState → Light
+internalStream c k = transmitLight k (inj₁ c)
+
+-- | זרם אור חיצוני
+externalStream : YosherDesc → KavState → Light
+externalStream y k = transmitLight k (inj₂ y)
+
+-- | פונקציות גאומטריות: רדיוס, היקף, שטח, נפח
+baseRadius : ℕ
+baseRadius = 1
+
+growthFactor : ℕ
+growthFactor = 2
+
+radius : ℕ → ℕ
+radius n = baseRadius * (growthFactor ^ n)
+
+circumference : ℕ → ℕ
+circumference n = 2 * radius n
+
+area : ℕ → ℕ
+area n = radius n * radius n
+
+volume : ℕ → ℕ
+volume n = radius n * area n
+
+-- | רשימת כל הספירות לצורך מיפוי לפי index
+allSefirotList : List Sefirah
+allSefirotList = allSefirot
+
+-- | חיפוש ברשימה לפי אינדקס (Maybe)
+listLookup : {A : Set} → ℕ → List A → Maybe A
+listLookup zero    (x ∷ xs)  = just x
+listLookup (suc n) (_ ∷ xs) = listLookup n xs
+listLookup _         []     = nothing
+
+-- | המרה מ־SefirahId ל־Sefirah (בסדר מוצפן)
+sefirahById : SefirahId → Sefirah
+sefirahById sf with listLookup (SefirahId.index sf) allSefirotList
+... | just s  = s
+... | nothing = Keter
+
+-- | מיפוי Narnah לכל ספירה
+sefirahNarnah : Sefirah → Narnah
+sefirahNarnah Keter   = Neshamah
+sefirahNarnah Chochma = Neshamah
+sefirahNarnah Binah   = Neshamah
+sefirahNarnah Chesed  = Ruach
+sefirahNarnah Gevurah = Ruach
+sefirahNarnah Tiferet = Ruach
+sefirahNarnah Netzach = Nepesh
+sefirahNarnah Hod     = Nepesh
+sefirahNarnah Yesod   = Nepesh
+sefirahNarnah Malchut = Nepesh
+
+-- | חבילת ספירה מלאה
+sefirahUnit : Sefirah → SefirahUnit
+sefirahUnit s = record
+  { circle = record { seph = s ; narnah = sefirahNarnah s ; vesselInner = InnerVessel ; vesselOuter = OuterVessel ; lightInner = Pnimi ; lightOuter = Makif }
+  ; yosher = record { seph = s ; narnah = sefirahNarnah s ; vesselInner = InnerVessel ; vesselOuter = OuterVessel ; lightInner = Pnimi ; lightReturn = Makif ; lightStraight = Makif }
+  }
+
+-- | המרה מ־SefirahId ל־SefirahUnit
+sefirahUnitById : SefirahId → SefirahUnit
+sefirahUnitById sf = sefirahUnit (sefirahById sf)

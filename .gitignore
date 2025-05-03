@@ -1,0 +1,19 @@
+# Agda build artifacts and generated files
+_build/
+MAlonzo/
+*.agdai
+*.agdac
+*.agdac-ghc*
+temp-*
+
+# GHC/Cabal
+dist/
+*.o
+*.hi
+
+# Editor & Misc
+*~
+*.swp
+*.agdahistory
+simulation_trace.txt
+.vscode/

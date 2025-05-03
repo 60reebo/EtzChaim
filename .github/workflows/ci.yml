@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Agda & StdLib
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y agda agda-stdlib
+      - name: Compile modules
+        run: |
+          agda --library-file .agda-lib -i src -i .agda/defaults -c $(find src -name "*.agda")
+      - name: Run tests
+        run: |
+          agda --library-file .agda-lib -i src -i .agda/defaults TestPattern.agda
