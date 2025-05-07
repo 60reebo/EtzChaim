@@ -5,7 +5,6 @@
 -- preserving functions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Product.Function.Dependent.Propositional where
 

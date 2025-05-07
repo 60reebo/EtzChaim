@@ -4,7 +4,6 @@
 -- Properties of divisibility over semigroups
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra using (Semigroup)
 open import Data.Product.Base using (_,_)

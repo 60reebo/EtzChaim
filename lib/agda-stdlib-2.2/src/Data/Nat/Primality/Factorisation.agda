@@ -4,7 +4,6 @@
 -- Prime factorisation of natural numbers and its properties
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.Primality.Factorisation where
 

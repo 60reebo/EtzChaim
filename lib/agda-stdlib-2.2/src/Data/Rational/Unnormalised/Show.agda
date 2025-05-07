@@ -4,7 +4,6 @@
 -- Showing unnormalised rational numbers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Rational.Unnormalised.Show where
 

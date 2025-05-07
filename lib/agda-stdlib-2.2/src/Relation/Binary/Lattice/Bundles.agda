@@ -7,7 +7,6 @@
 -- The contents of this module should be accessed via
 -- `Relation.Binary.Lattice`.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.Lattice.Bundles where
 

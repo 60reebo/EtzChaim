@@ -4,7 +4,6 @@
 -- Automatic solvers for equations over rationals
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Rational.Solver where
 

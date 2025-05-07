@@ -4,7 +4,6 @@
 -- Results concerning function extensionality for propositional equality
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K --safe #-}
 
 module Axiom.Extensionality.Heterogeneous where
 

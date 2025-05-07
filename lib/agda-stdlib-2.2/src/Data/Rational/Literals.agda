@@ -4,7 +4,6 @@
 -- Rational Literals
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Rational.Literals where
 

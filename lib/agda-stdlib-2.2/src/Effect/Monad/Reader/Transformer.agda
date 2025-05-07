@@ -4,7 +4,6 @@
 -- The reader monad transformer
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 
 module Effect.Monad.Reader.Transformer where

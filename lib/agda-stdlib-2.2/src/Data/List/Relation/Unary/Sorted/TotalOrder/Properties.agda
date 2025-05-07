@@ -4,7 +4,6 @@
 -- Sorted lists
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Relation.Unary.Sorted.TotalOrder.Properties where
 

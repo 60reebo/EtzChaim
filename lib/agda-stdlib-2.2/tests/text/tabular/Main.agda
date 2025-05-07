@@ -1,6 +1,5 @@
 -- This is taken from README.Text.Tabular
 
-{-# OPTIONS --guardedness #-}
 
 module Main where
 

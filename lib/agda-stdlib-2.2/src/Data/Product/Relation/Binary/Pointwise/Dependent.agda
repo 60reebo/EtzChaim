@@ -4,7 +4,6 @@
 -- Pointwise lifting of binary relations to sigma types
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Product.Relation.Binary.Pointwise.Dependent where
 

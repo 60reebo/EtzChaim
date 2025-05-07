@@ -5,7 +5,6 @@
 -- `Data.Product.Categorical.Examples` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Product.Categorical.Examples where
 

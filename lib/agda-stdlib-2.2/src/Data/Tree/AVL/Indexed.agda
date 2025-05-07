@@ -4,7 +4,6 @@
 -- AVL trees where the stored values may depend on their key
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (StrictTotalOrder)
 

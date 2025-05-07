@@ -4,7 +4,6 @@
 -- Subsets of finite sets
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Fin.Subset where
 

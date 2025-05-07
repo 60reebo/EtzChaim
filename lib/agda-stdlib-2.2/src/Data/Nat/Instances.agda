@@ -4,7 +4,6 @@
 -- Instances for natural numbers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.Instances where
 

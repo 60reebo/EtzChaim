@@ -5,7 +5,6 @@
 -- e.g. (List, _++_)
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Effect.Choice where
 

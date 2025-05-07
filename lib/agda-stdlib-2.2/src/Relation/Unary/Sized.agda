@@ -8,7 +8,6 @@
 -- longer compatible with the ordinary combinators defined in
 -- `Relation.Unary`.
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Relation.Unary.Sized  where
 

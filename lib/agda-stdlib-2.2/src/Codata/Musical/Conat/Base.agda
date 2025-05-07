@@ -4,7 +4,6 @@
 -- Coinductive "natural" numbers: base type and operations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --safe --cubical-compatible --guardedness #-}
 
 module Codata.Musical.Conat.Base where
 

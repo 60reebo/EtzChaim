@@ -4,7 +4,6 @@
 -- This module is DEPRECATED. Please use IO.Primitive.Core instead
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible #-}
 
 module IO.Primitive where
 

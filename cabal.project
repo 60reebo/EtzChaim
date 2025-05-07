@@ -1,0 +1,4 @@
+packages: .
+
+-- Locked dependencies for reproducible builds.
+-- Run 'cabal freeze' to generate cabal.project.freeze.

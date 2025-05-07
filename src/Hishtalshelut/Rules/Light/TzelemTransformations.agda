@@ -16,10 +16,8 @@ open import Function using (_∘_; id)
 open import Relation.Binary.PropositionalEquality using (_≡_; refl)
 
 -- ייבוא הטיפוסים ופונקציות מהמודולים הקיימים
-open import Hishtalshelut.State.Light.KeliState ℓ using (KeliState; kelim; updateKelim)
-open import Hishtalshelut.State.Worlds.IgulimYosherFullState ℓ using (IgulimYosherFullState; keliState)
+open import Hishtalshelut.State.Worlds.IgulimYosherFullState ℓ using (IgulimYosherFullState; kelimByPartzuf)
 open import Hishtalshelut.Domain.CoreTypes.Keli ℓ using (Keli; mkKeli; content; label; state; substance; capacity; seph; kind; tzelem_letters; updateKeliContent; updateKeliState)
-                                            renaming (KeliState to KeliCondition)
 open import Hishtalshelut.Domain.CoreTypes.Light ℓ using (Light; mkLight; power; structure; category; kind; source; timestamp; tzelem_letter; mergeLight; TzelemLetter; Tzadi; Lamed; Mem)
 open import Hishtalshelut.Domain.Math.Cardinal using (Cardinal; _⊕_; fin; aleph)
 open import Hishtalshelut.Domain.Math.Ordinal using (Ordinal; zero; succ; limit; _+_)
@@ -98,12 +96,11 @@ applyTzelemToKeli keli =
   in 
     updatedKeli
 
--- | עדכון מצב כל הכלים על ידי יישום טרנספורמציות צל"ם
+-- | עדכון מצב כל הכלים על ידי יישום תהליך הצל"ם המלא על כל כלי
 applyTzelemTransformations : IgulimYosherFullState → IgulimYosherFullState
 applyTzelemTransformations state =
-  let
-    ks = keliState state
-    updatedKelim = map applyTzelemToKeli (kelim ks)
-    updatedKeliState = updateKelim updatedKelim ks
-  in
-    record state { keliState = updatedKeliState }
+  record state { kelimByPartzuf =
+      map (λ triple →
+            let (o , p , ks) = triple in
+            (o , p , map applyTzelemToKeli ks))
+          (kelimByPartzuf state) }

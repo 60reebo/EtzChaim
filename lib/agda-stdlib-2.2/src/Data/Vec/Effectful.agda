@@ -4,7 +4,6 @@
 -- An effectful view of Vec
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Effectful where
 

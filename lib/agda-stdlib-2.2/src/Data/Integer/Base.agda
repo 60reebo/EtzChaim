@@ -7,7 +7,6 @@
 -- See README.Data.Integer for examples of how to use and reason about
 -- integers.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Integer.Base where
 

@@ -4,7 +4,6 @@
 -- Properties related to All
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Relation.Unary.All.Properties where
 

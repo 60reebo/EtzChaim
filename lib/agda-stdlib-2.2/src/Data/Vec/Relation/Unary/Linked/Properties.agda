@@ -4,7 +4,6 @@
 -- Properties related to Linked
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Relation.Unary.Linked.Properties where
 

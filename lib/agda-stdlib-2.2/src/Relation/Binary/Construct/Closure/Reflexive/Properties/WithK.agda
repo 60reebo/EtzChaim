@@ -4,7 +4,6 @@
 -- Some properties of reflexive closures which rely on the K rule
 ------------------------------------------------------------------------
 
-{-# OPTIONS --safe --with-K #-}
 
 module Relation.Binary.Construct.Closure.Reflexive.Properties.WithK where
 

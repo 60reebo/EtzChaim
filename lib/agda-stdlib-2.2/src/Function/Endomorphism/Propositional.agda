@@ -4,7 +4,6 @@
 -- This module is DEPRECATED.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function.Endomorphism.Propositional {a} (A : Set a) where
 

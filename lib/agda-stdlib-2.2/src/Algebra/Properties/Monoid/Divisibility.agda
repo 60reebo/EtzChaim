@@ -4,7 +4,6 @@
 -- Properties of divisibility over monoids
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra using (Monoid)
 open import Data.Product.Base using (_,_)

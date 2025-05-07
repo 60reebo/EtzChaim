@@ -4,7 +4,6 @@
 -- The lifting of a non-strict order to incorporate a new infimum
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 -- This module is designed to be used with
 -- Relation.Nullary.Construct.Add.Infimum

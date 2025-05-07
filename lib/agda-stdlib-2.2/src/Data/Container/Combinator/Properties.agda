@@ -4,7 +4,6 @@
 -- Correctness proofs for container combinators
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Container.Combinator.Properties where
 

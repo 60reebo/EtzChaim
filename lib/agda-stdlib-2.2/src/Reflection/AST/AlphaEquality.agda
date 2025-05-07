@@ -4,7 +4,6 @@
 -- Alpha equality over terms
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Reflection.AST.AlphaEquality where
 

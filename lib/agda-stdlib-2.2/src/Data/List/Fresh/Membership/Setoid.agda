@@ -4,7 +4,6 @@
 -- Membership predicate for fresh lists
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Core using (Rel)
 open import Relation.Binary.Bundles using (Setoid)

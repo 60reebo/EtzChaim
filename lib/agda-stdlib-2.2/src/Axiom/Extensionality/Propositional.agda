@@ -4,7 +4,6 @@
 -- Results concerning function extensionality for propositional equality
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Axiom.Extensionality.Propositional where
 

@@ -4,7 +4,6 @@
 -- Bisimilarity for Streams
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Codata.Sized.Stream.Bisimilarity where
 

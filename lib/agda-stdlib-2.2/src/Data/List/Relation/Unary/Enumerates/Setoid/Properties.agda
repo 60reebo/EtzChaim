@@ -4,7 +4,6 @@
 -- Properties of lists which contain every element of a given type
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Data.List.Base
 open import Data.List.Membership.Setoid.Properties as Membership

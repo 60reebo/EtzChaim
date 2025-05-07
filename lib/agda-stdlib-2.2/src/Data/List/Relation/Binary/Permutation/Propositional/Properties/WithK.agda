@@ -4,7 +4,6 @@
 -- Properties of permutation (with K)
 ------------------------------------------------------------------------
 
-{-# OPTIONS --safe --with-K #-}
 
 module Data.List.Relation.Binary.Permutation.Propositional.Properties.WithK where
 

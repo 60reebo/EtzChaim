@@ -96,4 +96,3 @@ attireNaRaNInKeliLayers nefeshLight ruachLight neshamaLight keli =
 surroundChaYAroundKeli : Light → Light → Keli → Keli
 surroundChaYAroundKeli chayaLight yechidaLight keli = 
   updateKeliContent keli chayaLight  -- פשטות לצורך קימפול
-  

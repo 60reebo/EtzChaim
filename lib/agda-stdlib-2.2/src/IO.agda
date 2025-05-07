@@ -4,7 +4,6 @@
 -- IO
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --guardedness #-}
 
 module IO where
 

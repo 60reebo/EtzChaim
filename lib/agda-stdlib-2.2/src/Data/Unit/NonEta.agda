@@ -4,7 +4,6 @@
 -- Some unit types
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Unit.NonEta where
 

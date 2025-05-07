@@ -4,7 +4,6 @@
 -- Properties of membership for AVL sets
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (StrictTotalOrder)
 

@@ -4,7 +4,6 @@
 -- Regular expressions acting on strings, using unsafe features
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K #-}
 
 module Text.Regex.String.Unsafe where
 

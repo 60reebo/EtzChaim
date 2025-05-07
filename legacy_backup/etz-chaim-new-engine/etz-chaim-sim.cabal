@@ -1,0 +1,46 @@
+cabal-version:      3.0
+name:               etz-chaim-sim
+version:            0.1.0.0
+license:            MIT
+author:             EtzChaim Team
+maintainer:         team@etzchaim.org
+build-type:         Simple
+
+common common-opts
+  default-language: Haskell2010
+  default-extensions:
+    OverloadedStrings
+  ghc-options:
+    -Wall -fno-warn-name-shadowing
+  build-depends:
+    base >= 4.14 && < 5,
+    text,
+    containers,
+    time,
+    uuid,
+    stm,
+    aeson,
+    bytestring
+
+library
+  import:           common-opts
+  hs-source-dirs:   src
+  exposed-modules:  
+    Engine.Types.BasicTypes
+    Engine.Types.SimulationState
+    Engine.Types.Scenario
+    Engine.Runner.RunnerState
+    Engine.Runner.BasicRunner
+    Engine.Runner.CliRunner
+    Engine.Scenarios.Library
+    Engine.Templates.NewScenario
+  build-depends:
+    stm,
+    uuid
+
+executable etz-sim
+  import:           common-opts
+  hs-source-dirs:   src
+  main-is:          Main.hs
+  build-depends:
+    etz-chaim-sim 

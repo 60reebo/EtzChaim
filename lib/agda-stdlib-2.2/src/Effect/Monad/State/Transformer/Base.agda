@@ -4,7 +4,6 @@
 -- Basic definition and functions on the state monad transformer
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 
 module Effect.Monad.State.Transformer.Base where

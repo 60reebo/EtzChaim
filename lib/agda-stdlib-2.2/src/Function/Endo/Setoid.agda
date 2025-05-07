@@ -4,7 +4,6 @@
 -- Endomorphisms on a Setoid
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (Setoid)
 

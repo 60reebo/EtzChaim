@@ -4,7 +4,6 @@
 -- Some properties about signs
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Sign.Properties where
 

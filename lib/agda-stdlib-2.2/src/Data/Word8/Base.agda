@@ -4,7 +4,6 @@
 -- Bytes: base type and functions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible #-}
 
 module Data.Word8.Base where
 

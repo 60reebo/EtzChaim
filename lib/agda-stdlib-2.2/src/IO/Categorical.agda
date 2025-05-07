@@ -5,7 +5,6 @@
 -- `IO.Effectful` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --guardedness #-}
 
 module IO.Categorical where
 

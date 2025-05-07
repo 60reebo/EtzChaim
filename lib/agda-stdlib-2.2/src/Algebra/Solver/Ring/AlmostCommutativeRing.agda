@@ -5,7 +5,6 @@
 -- commutative rings), used by the ring solver
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Algebra.Solver.Ring.AlmostCommutativeRing where
 

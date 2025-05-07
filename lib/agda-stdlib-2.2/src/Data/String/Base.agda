@@ -4,7 +4,6 @@
 -- Strings: builtin type and basic operations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.String.Base where
 

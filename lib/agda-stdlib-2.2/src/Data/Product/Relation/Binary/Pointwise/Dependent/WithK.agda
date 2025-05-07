@@ -5,7 +5,6 @@
 -- relations to sigma types and make use of heterogeneous equality
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K --safe #-}
 
 module Data.Product.Relation.Binary.Pointwise.Dependent.WithK where
 

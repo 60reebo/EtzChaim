@@ -4,7 +4,6 @@
 -- The Maybe type
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Maybe where
 

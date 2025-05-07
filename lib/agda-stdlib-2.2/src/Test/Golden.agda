@@ -75,7 +75,6 @@
 --
 -- assuming that the test runner is compiled to an executable named `runtests`.
 
-{-# OPTIONS --cubical-compatible --guardedness #-}
 
 module Test.Golden where
 

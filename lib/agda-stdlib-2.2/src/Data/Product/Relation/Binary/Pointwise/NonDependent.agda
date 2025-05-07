@@ -4,7 +4,6 @@
 -- Pointwise products of binary relations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Product.Relation.Binary.Pointwise.NonDependent where
 

@@ -6,7 +6,6 @@
 
 -- The contents of this module should be accessed via `Algebra`.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Algebra.Core where
 

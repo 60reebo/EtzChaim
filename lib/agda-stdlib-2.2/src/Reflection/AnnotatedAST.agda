@@ -9,7 +9,6 @@
 --       by --cubical-compatible.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --safe --with-K #-}
 
 module Reflection.AnnotatedAST where
 

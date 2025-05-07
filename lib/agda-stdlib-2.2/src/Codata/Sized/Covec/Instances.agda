@@ -4,7 +4,6 @@
 -- Typeclass instances for Covec
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Codata.Sized.Covec.Instances where
 

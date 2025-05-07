@@ -4,7 +4,6 @@
 -- Vectors made up entirely of unique elements (propositional equality)
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Relation.Unary.Unique.Propositional {a} {A : Set a} where
 

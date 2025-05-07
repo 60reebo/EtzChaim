@@ -4,7 +4,6 @@
 -- Fancy display functions for Vec-based tables
 ------------------------------------------------------------------------
 
-{-# OPTIONS --safe --cubical-compatible #-}
 
 module Text.Tabular.Vec where
 

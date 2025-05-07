@@ -5,7 +5,6 @@
 -- relation (aka the equivalence closure).
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.Construct.Closure.Equivalence where
 

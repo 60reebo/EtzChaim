@@ -4,7 +4,6 @@
 -- Properties of lists made up entirely of decidably unique elements
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Definitions using (DecidableEquality)
 

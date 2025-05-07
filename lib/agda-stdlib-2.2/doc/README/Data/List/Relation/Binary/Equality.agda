@@ -4,7 +4,6 @@
 -- Documentation for pointwise equality over `List`s
 ------------------------------------------------------------------------
 
-{-# OPTIONS --allow-unsolved-metas #-}
 
 module README.Data.List.Relation.Binary.Equality where
 

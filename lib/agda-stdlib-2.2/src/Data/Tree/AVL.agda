@@ -11,7 +11,6 @@
 
 -- See README.Data.Tree.AVL for examples of how to use AVL trees.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (StrictTotalOrder)
 

@@ -4,7 +4,6 @@
 -- Printf-style versions of typeError and debugPrint
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Reflection.TCM.Format where
 

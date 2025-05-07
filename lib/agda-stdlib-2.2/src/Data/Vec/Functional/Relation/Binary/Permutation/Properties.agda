@@ -4,7 +4,6 @@
 -- Properties of permutation
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Functional.Relation.Binary.Permutation.Properties where
 

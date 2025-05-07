@@ -4,7 +4,6 @@
 -- Properties of divisibility over commutative magmas
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra using (CommutativeMagma)
 

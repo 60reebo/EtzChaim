@@ -4,7 +4,6 @@
 -- An effectful view of Covec
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Codata.Sized.Covec.Effectful where
 

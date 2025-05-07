@@ -4,7 +4,6 @@
 -- Constant morphisms between binary relations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Function.Base using (const)
 open import Level using (Level)

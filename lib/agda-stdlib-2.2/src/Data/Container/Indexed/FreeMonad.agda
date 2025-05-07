@@ -4,7 +4,6 @@
 -- The free monad construction on indexed containers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Container.Indexed.FreeMonad where
 

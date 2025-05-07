@@ -4,7 +4,6 @@
 -- Homomorphism proofs for constants over polynomials
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Tactic.RingSolver.Core.Polynomial.Parameters
 

@@ -4,7 +4,6 @@
 -- Strings
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.String where
 

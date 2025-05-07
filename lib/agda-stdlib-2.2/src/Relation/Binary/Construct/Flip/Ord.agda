@@ -6,7 +6,6 @@
 -- flips both the relation and the underlying equality.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Core using (Rel; REL; _⇒_)
 open import Relation.Binary.Bundles

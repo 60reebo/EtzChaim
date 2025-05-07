@@ -4,7 +4,6 @@
 -- Typeclass instances for List
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Instances where
 

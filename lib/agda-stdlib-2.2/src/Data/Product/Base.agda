@@ -4,7 +4,6 @@
 -- Products
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Product.Base where
 

@@ -1,4 +1,3 @@
-{-# OPTIONS --erased-cubical --safe --no-sized-types --no-guardedness #-}
 
 module Agda.Builtin.Cubical.Id where
 

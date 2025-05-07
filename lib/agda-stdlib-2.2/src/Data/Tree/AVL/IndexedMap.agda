@@ -4,7 +4,6 @@
 -- Finite maps with indexed keys and values, based on AVL trees
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Data.Product.Base
   using (map₁; map₂; ∃; _×_; Σ-syntax; proj₁; _,_; -,_)

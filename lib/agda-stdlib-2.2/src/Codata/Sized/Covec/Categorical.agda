@@ -5,7 +5,6 @@
 -- `Codata.Sized.Covec.Effectful` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Codata.Sized.Covec.Categorical where
 

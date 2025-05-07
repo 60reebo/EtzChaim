@@ -4,7 +4,6 @@
 -- Algebraic properties of constructions over unary relations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Unary.Algebra where
 

@@ -5,7 +5,6 @@
 -- `Data.Vec.Effectful.Transformer` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Categorical.Transformer where
 

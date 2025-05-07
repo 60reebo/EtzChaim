@@ -7,7 +7,6 @@
 -- is crucial to use smart constructors.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (Preorder)
 

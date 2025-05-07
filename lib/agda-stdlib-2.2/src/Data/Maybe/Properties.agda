@@ -4,7 +4,6 @@
 -- Maybe-related properties
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Maybe.Properties where
 

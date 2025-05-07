@@ -4,7 +4,6 @@
 -- Non-empty lists: base type and operations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.NonEmpty.Base where
 

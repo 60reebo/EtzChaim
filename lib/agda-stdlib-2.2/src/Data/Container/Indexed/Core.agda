@@ -4,7 +4,6 @@
 -- Indexed containers core
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Container.Indexed.Core where
 

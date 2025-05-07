@@ -8,7 +8,6 @@
 -- `Data.Nat.Divisibility` to avoid a dependency cycle with
 -- `Data.Nat.DivMod`.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.Divisibility.Core where
 

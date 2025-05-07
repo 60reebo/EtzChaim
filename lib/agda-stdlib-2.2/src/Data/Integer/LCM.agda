@@ -4,7 +4,6 @@
 -- Least Common Multiple for integers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Integer.LCM where
 

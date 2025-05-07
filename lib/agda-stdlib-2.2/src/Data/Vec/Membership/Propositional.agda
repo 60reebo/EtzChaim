@@ -5,7 +5,6 @@
 -- along with some additional definitions.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Membership.Propositional {a} {A : Set a} where
 

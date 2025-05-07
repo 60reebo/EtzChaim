@@ -4,7 +4,6 @@
 -- Finding the maximum/minimum values in a list
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (TotalOrder; Setoid)
 

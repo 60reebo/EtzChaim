@@ -4,7 +4,6 @@
 -- Example showing how to define an indexed container
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K --safe --guardedness #-}
 
 module README.Data.Container.Indexed.VectorExample where
 

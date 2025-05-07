@@ -4,7 +4,6 @@
 -- Primitive System.Random simple bindings to Haskell functions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible #-}
 
 module System.Random.Primitive where
 

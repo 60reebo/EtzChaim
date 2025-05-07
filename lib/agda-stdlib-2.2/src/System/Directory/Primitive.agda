@@ -4,7 +4,6 @@
 -- Primitive System.Direcotry simple bindings to Haskell functions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --guardedness #-}
 
 module System.Directory.Primitive where
 

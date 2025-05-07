@@ -4,7 +4,6 @@
 -- Bisimilarity for Cowriter
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Codata.Sized.Cowriter.Bisimilarity where
 

@@ -6,7 +6,6 @@
 --
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Fin.Substitution.Example where
 

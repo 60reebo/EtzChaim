@@ -7,7 +7,6 @@
 -- The contents of this module should be accessed via `Algebra`, unless
 -- you want to parameterise it via the equality relation.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Core using (Rel)
 open import Relation.Binary.Bundles using (Setoid)

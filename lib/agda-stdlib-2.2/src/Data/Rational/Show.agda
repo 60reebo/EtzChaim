@@ -4,7 +4,6 @@
 -- Showing rational numbers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Rational.Show where
 

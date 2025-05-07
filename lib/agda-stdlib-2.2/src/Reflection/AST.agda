@@ -4,7 +4,6 @@
 -- The reflected abstract syntax tree
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Reflection.AST where
 

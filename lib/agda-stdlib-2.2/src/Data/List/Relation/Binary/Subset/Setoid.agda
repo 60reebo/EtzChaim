@@ -4,7 +4,6 @@
 -- The extensional sublist relation over setoid equality.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Core using (Rel)
 open import Relation.Binary.Bundles using (Setoid)

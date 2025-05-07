@@ -4,7 +4,6 @@
 -- An equality postulate which evaluates
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K #-}
 
 module Relation.Binary.PropositionalEquality.TrustMe where
 

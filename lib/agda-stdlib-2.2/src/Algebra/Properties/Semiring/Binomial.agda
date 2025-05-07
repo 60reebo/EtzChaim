@@ -6,7 +6,6 @@
 -- Freely adapted from PR #1287 by Maciej Piechotka (@uzytkownik)
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Bundles using (Semiring)
 open import Data.Bool.Base using (true)

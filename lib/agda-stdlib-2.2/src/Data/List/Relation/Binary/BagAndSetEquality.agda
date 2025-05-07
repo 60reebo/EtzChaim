@@ -4,7 +4,6 @@
 -- Bag and set equality
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Relation.Binary.BagAndSetEquality where
 

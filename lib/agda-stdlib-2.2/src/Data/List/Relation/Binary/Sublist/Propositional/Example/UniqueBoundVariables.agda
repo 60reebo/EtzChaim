@@ -6,7 +6,6 @@
 -- (both bound and free ones).
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Relation.Binary.Sublist.Propositional.Example.UniqueBoundVariables (Base : Set) where
 

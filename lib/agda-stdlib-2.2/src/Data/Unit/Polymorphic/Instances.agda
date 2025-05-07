@@ -4,7 +4,6 @@
 -- Instances for the polymorphic unit type
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Unit.Polymorphic.Instances where
 

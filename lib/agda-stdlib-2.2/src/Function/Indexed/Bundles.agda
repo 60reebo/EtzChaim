@@ -4,7 +4,6 @@
 -- Operations on Relations for Indexed sets
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function.Indexed.Bundles where
 

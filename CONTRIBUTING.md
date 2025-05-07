@@ -33,3 +33,11 @@
 
 ## CI
 - GitHub Actions configured at `.github/workflows/ci.yml`
+
+## Review Process
+- כל שינוי בקוד קיים צריך להיות מוגש דרך Pull Request ובתוכו:
+  - PR נפתח מ־branch נפרד, אין לדחוף ישירות ל־`main`.
+  - השינויים ייבדקו ע"י לפחות בעל הרשאות (code owner) ורצוי על ידי מפתח נוסף.
+  - הבדיקה תכלול בדיקת נכונות מחקרית, קונסיסטנטיות מתמטית, תאימות לסגנון הקוד ותיעוד.
+- כדי לממש אכיפה אוטומטית, מוגדר `.github/CODEOWNERS` עם רשימת ה־code owners.
+- לאחר אישור הבקשה, יש למזג באמצעות 'Squash and merge' או 'Merge commit' בהתאם למדיניות המאגר.

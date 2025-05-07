@@ -5,7 +5,6 @@
 -- over both the domain and codomain are assumed to be setoids.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (Setoid)
 

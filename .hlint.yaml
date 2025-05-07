@@ -1,0 +1,11 @@
+# HLint configuration for EtzChaim Haskell code
+# Ignore trivial warnings for MAlonzo-generated code
+ignore:
+  - {name: "Eta reduce"}
+  - {name: "Redundant bracket"}
+
+# Warn on general Haskell files
+warnings: ["warning"]
+
+# Directories to ignore
+ignore-directories: ["MAlonzo"]

@@ -4,7 +4,6 @@
 -- A pointwise lifting of a relation to incorporate a new supremum.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 -- This module is designed to be used with
 -- Relation.Nullary.Construct.Add.Supremum

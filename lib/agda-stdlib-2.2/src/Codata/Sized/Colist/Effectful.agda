@@ -4,7 +4,6 @@
 -- An effectful view of Colist
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Codata.Sized.Colist.Effectful where
 

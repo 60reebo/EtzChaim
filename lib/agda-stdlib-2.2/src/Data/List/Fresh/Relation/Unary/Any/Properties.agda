@@ -4,7 +4,6 @@
 -- Properties of Any predicate transformer for fresh lists
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Fresh.Relation.Unary.Any.Properties where
 

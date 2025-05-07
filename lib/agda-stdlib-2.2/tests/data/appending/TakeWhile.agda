@@ -1,4 +1,3 @@
-{-# OPTIONS --safe --cubical-compatible #-}
 
 module TakeWhile where
 

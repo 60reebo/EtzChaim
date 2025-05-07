@@ -5,7 +5,6 @@
 -- `Data.These.Categorical.Left` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.These.Categorical.Left where
 

@@ -4,7 +4,6 @@
 -- Primitive Bytestrings: IO operations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible #-}
 
 module Data.Bytestring.IO.Primitive where
 

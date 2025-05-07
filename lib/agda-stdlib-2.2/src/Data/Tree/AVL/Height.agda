@@ -5,7 +5,6 @@
 -- invariants in AVL Trees
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Tree.AVL.Height where
 

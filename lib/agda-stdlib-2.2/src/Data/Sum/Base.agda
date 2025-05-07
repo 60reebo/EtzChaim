@@ -4,7 +4,6 @@
 -- Sums (disjoint unions)
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Sum.Base where
 

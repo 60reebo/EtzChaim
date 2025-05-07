@@ -4,7 +4,6 @@
 -- Finite summations over a monoid
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Bundles using (Monoid)
 

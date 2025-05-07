@@ -12,6 +12,7 @@ import Data.Text (Text, unpack, pack)
 import qualified Data.Text.IO as TIO
 import qualified MAlonzo.Code.Hishtalshelut.Engine.Worlds.IgulimYosherEngine as E
 import qualified MAlonzo.Code.Hishtalshelut.Engine.Worlds.EinSofEngine as EF
+import Engine.FFI.AgdaIgulimYosher (getIgulimYosherTrace)
 
 -- | Language selection for output
 data OutputLang = Hebrew | English deriving (Show, Eq)
@@ -20,6 +21,7 @@ data OutputLang = Hebrew | English deriving (Show, Eq)
 data Scenario
   = InitialEinSof    -- ^ initial Ein Sof state
   | Circles          -- ^ hierarchical circles
+  | IgulimYosher     -- ^ hierarchical IgulimYosher simulation
   | Contraction Integer  -- ^ contraction with depth
   | Geometry         -- ^ geometry 3D trace
   | All              -- ^ run all scenarios
@@ -44,6 +46,10 @@ scenarioParser = ScenarioConfig
      <> command "עגולים"
           ( info (pure Circles)
             ( progDesc "Run hierarchical circles simulation" )
+          )
+     <> command "עיגולים-יושר"
+          ( info (pure IgulimYosher)
+            ( progDesc "Run hierarchical IgulimYosher simulation" )
           )
      <> command "צמצום"
           ( info
@@ -85,6 +91,11 @@ runScenario (ScenarioConfig sc mOut lang) = case sc of
       Just fp -> writeFile fp (unlines $ map unpack traceLines)
       Nothing -> mapM_ TIO.putStrLn traceLines
   DynamicContraction n -> simulateContractionFlow n
+  IgulimYosher -> do
+    traceLines <- getIgulimYosherTrace
+    case mOut of
+      Just fp -> writeFile fp (unlines $ map unpack traceLines)
+      Nothing -> mapM_ TIO.putStrLn traceLines
   _ -> do
     let traceLines = case sc of
           InitialEinSof      -> case lang of { Hebrew -> EF.d_initialTraceTextHe; English -> EF.d_initialTraceTextEn }

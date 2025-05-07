@@ -7,7 +7,6 @@
 -- This file contains some core definitions which are reexported by
 -- Relation.Binary.HeterogeneousEquality.
 
-{-# OPTIONS --with-K --safe #-}
 
 module Relation.Binary.HeterogeneousEquality.Core where
 

@@ -10,7 +10,6 @@
 -- done.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra
 open import Level

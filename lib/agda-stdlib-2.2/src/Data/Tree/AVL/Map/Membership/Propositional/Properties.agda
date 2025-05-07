@@ -5,7 +5,6 @@
 -- up to propositional equality.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (StrictTotalOrder)
 

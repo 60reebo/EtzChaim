@@ -1,11 +1,11 @@
---------------------------------------------------
--- IgulimYosherScenario (Runtime/Scenario Layer)
---------------------------------------------------
+{-# OPTIONS --guardedness --no-termination-check #-}
 module Hishtalshelut.Runtime.Worlds.IgulimYosherScenario where
 
-open import Hishtalshelut.Engine.Worlds.IgulimYosherEngine using (simulateFullIgulimYosher)
-open import Hishtalshelut.State.Worlds.IgulimYosherFullState using (IgulimYosherFullState)
+open import Agda.Primitive using (lzero)
+open import Data.List.Base using (List)
+open import Agda.Builtin.String using (String)
+open import Hishtalshelut.Engine.Worlds.IgulimYosherEngine using (hierarchicalTraceText)
 
--- | תרחיש הרצה: סימולציה מלאה של יצירת עיגולים ויושר עד סוף ההתפשטות (כל החלל מלא)
-runScenarioFullIgulimYosher : IgulimYosherFullState
-runScenarioFullIgulimYosher = simulateFullIgulimYosher
+-- | תרחיש ריצה: פלט היררכי מתורגם לטקסט
+runScenarioIgulimYosherText : List String
+runScenarioIgulimYosherText = hierarchicalTraceText

@@ -4,7 +4,6 @@
 -- The Binomial Theorem for Commutative Semirings
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Bundles
   using (CommutativeSemiring)

@@ -4,7 +4,6 @@
 -- Morphisms between algebraic structures
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Algebra.Morphism where
 

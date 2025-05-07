@@ -4,7 +4,6 @@
 -- An explanation about how mathematical hierarchies are laid out.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --allow-unsolved-metas #-}
 
 module README.Design.Hierarchies where
 

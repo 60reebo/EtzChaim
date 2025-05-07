@@ -5,7 +5,6 @@
 -- satisfy a predicate.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Relation.Unary.First {a} {A : Set a} where
 

@@ -4,7 +4,6 @@
 -- All predicate transformer for fresh lists
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Fresh.Relation.Unary.All where
 

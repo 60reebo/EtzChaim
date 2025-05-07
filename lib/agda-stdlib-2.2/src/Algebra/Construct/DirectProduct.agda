@@ -11,7 +11,6 @@
 -- also the coproduct, making it a biproduct.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Algebra.Construct.DirectProduct where
 

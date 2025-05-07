@@ -4,7 +4,6 @@
 -- An inductive definition of the heterogeneous infix relation
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Relation.Binary.Infix.Heterogeneous where
 

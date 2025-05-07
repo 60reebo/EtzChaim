@@ -4,7 +4,6 @@
 -- The empty binary relation
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.Construct.Never where
 

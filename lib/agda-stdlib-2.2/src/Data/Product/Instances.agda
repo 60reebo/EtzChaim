@@ -4,7 +4,6 @@
 -- Typeclass instances for products
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Product.Instances where
 

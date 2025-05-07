@@ -4,7 +4,6 @@
 -- The min operator derived from an arbitrary total preorder.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Core
 open import Algebra.Bundles

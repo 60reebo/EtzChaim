@@ -4,7 +4,6 @@
 -- Typeclass instances for Vec
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Instances where
 

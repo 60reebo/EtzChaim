@@ -5,7 +5,6 @@
 -- lists, using the Kleene star and plus.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Kleene where
 

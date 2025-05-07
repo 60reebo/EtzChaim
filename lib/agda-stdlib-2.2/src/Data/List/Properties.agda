@@ -7,8 +7,6 @@
 -- Note that the lemmas below could be generalised to work with other
 -- equalities than _≡_.
 
-{-# OPTIONS --cubical-compatible --safe #-}
-{-# OPTIONS --warn=noUserWarning #-} -- for deprecated scans
 
 module Data.List.Properties where
 

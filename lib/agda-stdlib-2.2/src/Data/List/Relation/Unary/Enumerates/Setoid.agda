@@ -4,7 +4,6 @@
 -- Lists which contain every element of a given type
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Data.List.Base using (List)
 open import Level

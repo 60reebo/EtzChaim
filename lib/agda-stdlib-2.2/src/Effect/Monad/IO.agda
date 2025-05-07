@@ -4,7 +4,6 @@
 -- The IO monad
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --guardedness #-}
 
 module Effect.Monad.IO where
 

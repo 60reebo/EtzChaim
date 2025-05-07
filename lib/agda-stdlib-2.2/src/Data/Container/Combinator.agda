@@ -4,7 +4,6 @@
 -- Container combinators
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Container.Combinator where
 

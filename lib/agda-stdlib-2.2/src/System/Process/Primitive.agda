@@ -4,7 +4,6 @@
 -- Primitive System.Process simple bindings to Haskell functions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible #-}
 
 module System.Process.Primitive where
 

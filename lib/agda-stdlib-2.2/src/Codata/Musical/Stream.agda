@@ -4,7 +4,6 @@
 -- Streams
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --guardedness #-}
 
 module Codata.Musical.Stream where
 

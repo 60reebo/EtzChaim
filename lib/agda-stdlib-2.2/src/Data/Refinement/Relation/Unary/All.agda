@@ -4,7 +4,6 @@
 -- Predicate lifting for refinement types
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Refinement.Relation.Unary.All where
 

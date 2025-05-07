@@ -4,7 +4,6 @@
 -- An effectful view of List
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Effectful.Transformer where
 

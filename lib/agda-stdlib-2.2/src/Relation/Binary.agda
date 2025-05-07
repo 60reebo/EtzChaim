@@ -4,7 +4,6 @@
 -- Properties of homogeneous binary relations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary where
 

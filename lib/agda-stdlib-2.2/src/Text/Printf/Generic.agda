@@ -4,7 +4,6 @@
 -- Generic printf function.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Text.Printf.Generic where
 

@@ -4,7 +4,6 @@
 -- Some derivable properties
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Bundles using (CommutativeMonoid)
 open import Algebra.Definitions using (LeftInvertible; RightInvertible; Invertible)

@@ -4,7 +4,6 @@
 -- AVL trees whose elements satisfy a given property
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (StrictTotalOrder)
 

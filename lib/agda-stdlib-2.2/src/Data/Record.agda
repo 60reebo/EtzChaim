@@ -7,7 +7,6 @@
 
 -- For an example of how this module can be used, see README.Record.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Data.Bool.Base using (true; false; if_then_else_)
 open import Data.Empty using (⊥)

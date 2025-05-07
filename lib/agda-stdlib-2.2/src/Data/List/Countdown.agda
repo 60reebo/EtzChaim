@@ -5,7 +5,6 @@
 -- of elements /not/ in a given list
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Level using (0ℓ)
 open import Relation.Binary.Bundles using (DecSetoid)

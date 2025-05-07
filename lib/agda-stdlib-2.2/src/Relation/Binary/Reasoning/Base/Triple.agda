@@ -8,7 +8,6 @@
 -- See `Data.Nat.Properties` or `Relation.Binary.Reasoning.PartialOrder`
 -- for examples of how to instantiate this module.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Data.Product.Base using (proj₁; proj₂)
 open import Level using (_⊔_)

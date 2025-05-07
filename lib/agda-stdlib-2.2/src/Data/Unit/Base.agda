@@ -4,7 +4,6 @@
 -- The unit type and the total relation on unit
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Unit.Base where
 

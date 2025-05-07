@@ -4,7 +4,6 @@
 -- Example of multi-sorted algebras as indexed containers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --safe --cubical-compatible #-}
 
 module README.Data.Container.Indexed.MultiSortedAlgebraExample where
 

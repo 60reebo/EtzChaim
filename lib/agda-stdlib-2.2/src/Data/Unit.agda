@@ -4,7 +4,6 @@
 -- The unit type, Level-monomorphic version
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Unit where
 

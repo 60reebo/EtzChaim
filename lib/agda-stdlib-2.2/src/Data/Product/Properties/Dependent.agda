@@ -4,7 +4,6 @@
 -- Properties of 'very dependent' map / zipWith over products
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Product.Properties.Dependent where
 

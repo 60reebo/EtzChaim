@@ -5,7 +5,6 @@
 -- `Codata.Sized.Delay.Effectful` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Codata.Sized.Delay.Categorical where
 

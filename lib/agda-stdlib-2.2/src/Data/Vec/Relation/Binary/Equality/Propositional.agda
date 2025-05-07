@@ -4,7 +4,6 @@
 -- Vector equality over propositional equality
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Relation.Binary.Equality.Propositional {a} {A : Set a} where
 

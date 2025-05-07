@@ -4,7 +4,6 @@
 -- Notation for freely adding an infimum to any set
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Nullary.Construct.Add.Infimum where
 

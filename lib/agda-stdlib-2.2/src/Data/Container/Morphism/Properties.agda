@@ -4,7 +4,6 @@
 -- Propertiers of any for containers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Container.Morphism.Properties where
 

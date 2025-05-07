@@ -8,7 +8,6 @@
 -- define the morphism on the underlying `RawMagma`.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Level using (Level)
 

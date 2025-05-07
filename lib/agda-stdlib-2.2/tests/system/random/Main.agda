@@ -1,4 +1,3 @@
-{-# OPTIONS --guardedness #-}
 
 module Main where
 

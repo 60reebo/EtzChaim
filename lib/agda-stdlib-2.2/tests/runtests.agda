@@ -1,4 +1,3 @@
-{-# OPTIONS --guardedness #-}
 
 module runtests where
 

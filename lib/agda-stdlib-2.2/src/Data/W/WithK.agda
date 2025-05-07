@@ -4,7 +4,6 @@
 -- Some code related to the W type that relies on the K rule
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K --safe #-}
 
 module Data.W.WithK where
 

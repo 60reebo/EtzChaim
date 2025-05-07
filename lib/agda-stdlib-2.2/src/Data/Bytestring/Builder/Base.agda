@@ -4,7 +4,6 @@
 -- Bytestrings: builder type and functions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible #-}
 
 module Data.Bytestring.Builder.Base where
 

@@ -5,7 +5,6 @@
 -- makes use of heterogeneous equality
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K --safe #-}
 
 module Data.Vec.Relation.Binary.Equality.Propositional.WithK
   {a} {A : Set a} where

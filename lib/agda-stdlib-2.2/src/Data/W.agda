@@ -4,7 +4,6 @@
 -- W-types
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.W where
 

@@ -6,7 +6,6 @@
 -- propositional equality.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function.Consequences where
 

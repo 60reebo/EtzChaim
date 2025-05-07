@@ -4,7 +4,6 @@
 -- Lexicographic ordering of same-length vectors
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Relation.Binary.Lex.Core {a} {A : Set a} where
 

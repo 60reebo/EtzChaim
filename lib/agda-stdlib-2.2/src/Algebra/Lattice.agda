@@ -9,7 +9,6 @@
 -- Relation.Binary.Lattice.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Algebra.Lattice where
 

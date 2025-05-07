@@ -4,7 +4,6 @@
 -- Bisimilarity for Conats
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Codata.Sized.Conat.Bisimilarity where
 

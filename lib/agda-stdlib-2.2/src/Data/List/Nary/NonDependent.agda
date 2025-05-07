@@ -4,7 +4,6 @@
 -- Nondependent N-ary functions manipulating lists
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Nary.NonDependent where
 

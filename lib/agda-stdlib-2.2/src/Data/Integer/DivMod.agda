@@ -4,7 +4,6 @@
 -- Integer division
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Integer.DivMod where
 

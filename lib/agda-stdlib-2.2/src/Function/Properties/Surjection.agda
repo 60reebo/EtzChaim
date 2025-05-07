@@ -4,7 +4,6 @@
 -- Properties of surjections
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function.Properties.Surjection where
 

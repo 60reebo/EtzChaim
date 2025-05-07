@@ -4,7 +4,6 @@
 -- Properties for distributive lattice
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Lattice
 

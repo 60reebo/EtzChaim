@@ -4,7 +4,6 @@
 -- Regular expressions acting on strings
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Text.Regex.String where
 

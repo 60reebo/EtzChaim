@@ -4,7 +4,6 @@
 -- The max operator derived from an arbitrary total preorder.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (TotalOrder)
 

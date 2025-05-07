@@ -4,7 +4,6 @@
 -- Word64 Literals
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Word64.Literals where
 

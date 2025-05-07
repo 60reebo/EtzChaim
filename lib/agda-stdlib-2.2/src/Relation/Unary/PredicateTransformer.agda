@@ -4,7 +4,6 @@
 -- Predicate transformers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Unary.PredicateTransformer where
 

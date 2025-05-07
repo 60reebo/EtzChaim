@@ -5,7 +5,6 @@
 -- `Reflection.TCM.Effectful` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Reflection.TCM.Categorical where
 

@@ -8,7 +8,6 @@
 -- and the terminal object in the relevant category.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Level using (Level)
 

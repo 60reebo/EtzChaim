@@ -5,7 +5,6 @@
 -- `Data.List.NonEmpty.Effectful` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.NonEmpty.Categorical where
 

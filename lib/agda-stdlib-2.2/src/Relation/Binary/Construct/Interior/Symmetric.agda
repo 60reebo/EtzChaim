@@ -4,7 +4,6 @@
 -- Symmetric interior of a binary relation
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.Construct.Interior.Symmetric where
 

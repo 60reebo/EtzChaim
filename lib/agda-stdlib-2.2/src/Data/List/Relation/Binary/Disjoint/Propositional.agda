@@ -4,7 +4,6 @@
 -- Pairs of lists that share no common elements (propositional equality)
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Relation.Binary.Disjoint.Propositional
   {a} {A : Set a} where

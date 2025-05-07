@@ -4,7 +4,6 @@
 -- Examples of format strings and printf
 ------------------------------------------------------------------------
 
-{-# OPTIONS --safe --cubical-compatible #-}
 
 module README.Text.Printf where
 

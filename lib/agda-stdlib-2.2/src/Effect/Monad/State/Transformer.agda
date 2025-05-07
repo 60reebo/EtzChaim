@@ -4,7 +4,6 @@
 -- The state monad transformer
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 
 module Effect.Monad.State.Transformer where

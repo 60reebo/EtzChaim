@@ -4,7 +4,6 @@
 -- The identity function
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function.Construct.Identity where
 

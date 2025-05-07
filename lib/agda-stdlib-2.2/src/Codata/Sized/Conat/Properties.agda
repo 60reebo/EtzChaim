@@ -4,7 +4,6 @@
 -- Properties for Conats
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Codata.Sized.Conat.Properties where
 

@@ -4,7 +4,6 @@
 -- Container Morphisms
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Container.Morphism where
 

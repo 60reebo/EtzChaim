@@ -4,7 +4,6 @@
 -- Properties of left-scaling
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Core
   using (Rel; _Preserves_⟶_; _Preserves₂_⟶_⟶_)

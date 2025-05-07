@@ -6,7 +6,6 @@
 
 -- See README.Tactic.RingSolver for examples of how to use this solver
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.Tactic.RingSolver where
 

@@ -4,7 +4,6 @@
 -- Reflection utilities for Vector
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Reflection where
 

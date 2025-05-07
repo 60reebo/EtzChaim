@@ -4,7 +4,6 @@
 -- The universal binary relation
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.Construct.Always where
 

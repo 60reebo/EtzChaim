@@ -5,7 +5,6 @@
 -- surjections and bijections
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Container.Related where
 

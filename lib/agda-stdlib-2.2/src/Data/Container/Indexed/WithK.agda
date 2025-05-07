@@ -9,7 +9,6 @@
 -- by Hancock and Hyvernat in "Programming interfaces and basic
 -- topology" (2006).
 
-{-# OPTIONS --with-K --safe #-}
 
 module Data.Container.Indexed.WithK where
 

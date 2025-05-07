@@ -4,7 +4,6 @@
 -- Indexed unary relations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Unary.Indexed  where
 

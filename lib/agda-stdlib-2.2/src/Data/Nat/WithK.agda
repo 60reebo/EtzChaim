@@ -4,7 +4,6 @@
 -- Natural number types and operations requiring the axiom K.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K --safe #-}
 
 module Data.Nat.WithK where
 

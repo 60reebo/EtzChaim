@@ -6,7 +6,6 @@
 -- This module should not be imported directly! Please use
 -- `Data.Nat.Combinatorics` instead.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.Combinatorics.Specification where
 

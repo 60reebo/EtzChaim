@@ -4,7 +4,6 @@
 -- Showing vectors
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Show where
 

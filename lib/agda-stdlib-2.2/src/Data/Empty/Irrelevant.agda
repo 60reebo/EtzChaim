@@ -4,7 +4,6 @@
 -- An irrelevant version of ⊥-elim
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Empty.Irrelevant where
 

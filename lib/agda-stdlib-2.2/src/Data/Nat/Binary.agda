@@ -4,7 +4,6 @@
 -- Natural numbers represented in binary natively in Agda.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.Binary where
 

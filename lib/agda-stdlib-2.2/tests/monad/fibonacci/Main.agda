@@ -1,4 +1,3 @@
-{-# OPTIONS --guardedness --rewriting #-}
 
 module Main where
 

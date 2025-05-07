@@ -4,7 +4,6 @@
 -- Printing Strings During Evaluation
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --rewriting #-}
 
 -- see README.Debug.Trace for a use-case
 

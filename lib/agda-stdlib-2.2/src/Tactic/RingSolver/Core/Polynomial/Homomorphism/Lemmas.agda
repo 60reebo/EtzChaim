@@ -4,7 +4,6 @@
 -- Lemmas for use in proving the polynomial homomorphism.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Tactic.RingSolver.Core.Polynomial.Parameters
 

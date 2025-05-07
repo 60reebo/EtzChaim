@@ -6,7 +6,6 @@
 
 -- NOTE: the contents of this module should be accessed via `IO`.
 
-{-# OPTIONS --cubical-compatible #-}
 
 module IO.Primitive.Core where
 

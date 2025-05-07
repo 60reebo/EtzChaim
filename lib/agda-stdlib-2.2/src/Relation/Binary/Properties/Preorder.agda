@@ -4,7 +4,6 @@
 -- Properties satisfied by preorders
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (Preorder; Setoid)
 open import Relation.Binary.Structures using (IsPreorder)

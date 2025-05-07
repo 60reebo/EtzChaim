@@ -4,7 +4,6 @@
 -- Showing bounded vectors
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Bounded.Show where
 

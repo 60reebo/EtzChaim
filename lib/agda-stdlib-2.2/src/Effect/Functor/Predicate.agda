@@ -6,7 +6,6 @@
 
 -- Note that currently the functor laws are not included here.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Effect.Functor.Predicate where
 

@@ -4,7 +4,6 @@
 -- Slices in the propositional sublist category.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Relation.Binary.Sublist.Propositional.Slice
   {a} {A : Set a} where

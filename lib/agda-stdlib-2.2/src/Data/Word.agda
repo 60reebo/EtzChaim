@@ -4,7 +4,6 @@
 -- This module is DEPRECATED. Please use Data.Word64 instead
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Word where
 

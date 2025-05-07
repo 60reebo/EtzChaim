@@ -4,7 +4,6 @@
 -- Support for reflection
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Reflection where
 

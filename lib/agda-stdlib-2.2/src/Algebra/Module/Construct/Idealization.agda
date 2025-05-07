@@ -29,7 +29,6 @@
 --
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Bundles using (AbelianGroup; Ring)
 open import Algebra.Module.Bundles using (Bimodule)

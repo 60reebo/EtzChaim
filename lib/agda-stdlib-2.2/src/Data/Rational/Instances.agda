@@ -4,7 +4,6 @@
 -- Instances for rational numbers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Rational.Instances where
 

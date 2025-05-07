@@ -4,7 +4,6 @@
 -- Booleans
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Bool where
 

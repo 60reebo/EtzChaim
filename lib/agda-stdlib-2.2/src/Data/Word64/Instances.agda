@@ -4,7 +4,6 @@
 -- Instances for words
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Word64.Instances where
 

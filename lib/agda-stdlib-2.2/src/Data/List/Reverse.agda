@@ -4,7 +4,6 @@
 -- Reverse view
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Reverse where
 

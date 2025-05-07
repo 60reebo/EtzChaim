@@ -4,7 +4,6 @@
 -- Metrics with arbitrary domains and codomains
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function.Metric where
 

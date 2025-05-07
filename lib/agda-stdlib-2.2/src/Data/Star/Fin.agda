@@ -4,7 +4,6 @@
 -- Finite sets defined using the reflexive-transitive closure, Star
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K --safe #-}
 
 module Data.Star.Fin where
 

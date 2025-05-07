@@ -5,7 +5,6 @@
 -- Data.List.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Kleene.AsList where
 

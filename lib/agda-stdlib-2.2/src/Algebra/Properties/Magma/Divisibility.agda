@@ -4,7 +4,6 @@
 -- Divisibility over magmas
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra using (Magma)
 

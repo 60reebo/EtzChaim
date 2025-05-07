@@ -4,7 +4,6 @@
 -- List is Foldable
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Effectful.Foldable where
 

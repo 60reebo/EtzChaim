@@ -4,7 +4,6 @@
 -- The identity morphism for algebraic structures
 ------------------------------------------------------------------------
 
-{-# OPTIONS --safe --cubical-compatible #-}
 
 module Algebra.Morphism.Construct.Identity where
 

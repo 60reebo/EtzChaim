@@ -5,7 +5,6 @@
 -- equality and apartness
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Level using (Level; _⊔_)
 open import Function.Base using (case_of_)

@@ -4,7 +4,6 @@
 -- Some properties imply others
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.Consequences where
 

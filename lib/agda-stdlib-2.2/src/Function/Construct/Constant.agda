@@ -4,7 +4,6 @@
 -- The constant function
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function.Construct.Constant where
 

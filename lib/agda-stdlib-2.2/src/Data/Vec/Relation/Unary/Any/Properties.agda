@@ -4,7 +4,6 @@
 -- Properties of vector's Any
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Relation.Unary.Any.Properties where
 

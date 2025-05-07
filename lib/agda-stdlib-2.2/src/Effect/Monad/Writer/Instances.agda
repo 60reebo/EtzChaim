@@ -4,7 +4,6 @@
 -- Instances for the writer monad
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Effect.Monad.Writer.Instances where
 

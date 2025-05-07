@@ -4,7 +4,6 @@
 -- Core metric definitions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function.Metric.Core where
 

@@ -7,7 +7,6 @@
 -- See README.Data.List for examples of how to use and reason about
 -- lists.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Base where
 

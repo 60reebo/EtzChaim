@@ -5,7 +5,6 @@
 -- used
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module README.Data.Container.FreeMonad where
 

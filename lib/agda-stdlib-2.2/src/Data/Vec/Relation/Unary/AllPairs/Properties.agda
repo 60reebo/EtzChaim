@@ -4,7 +4,6 @@
 -- Properties related to AllPairs
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Relation.Unary.AllPairs.Properties where
 

@@ -8,7 +8,6 @@
 -- are ``equality rearrangement'' lemmas.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.PropositionalEquality.Properties where
 

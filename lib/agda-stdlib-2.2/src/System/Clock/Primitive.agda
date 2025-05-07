@@ -4,7 +4,6 @@
 -- Primitive System.Clock simple bindings to Haskell functions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible #-}
 
 module System.Clock.Primitive where
 

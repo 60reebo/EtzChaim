@@ -4,7 +4,6 @@
 -- Properties satisfied by posets
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Data.Product.Base using (_,_)
 open import Function.Base using (flip; _∘_)

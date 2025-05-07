@@ -4,7 +4,6 @@
 -- Primality
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.Primality where
 

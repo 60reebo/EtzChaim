@@ -4,7 +4,6 @@
 -- Transitive closures
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.Construct.Closure.Transitive where
 

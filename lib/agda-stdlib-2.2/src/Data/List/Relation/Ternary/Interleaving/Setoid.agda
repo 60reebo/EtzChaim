@@ -4,7 +4,6 @@
 -- Interleavings of lists using setoid equality
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (Setoid)
 

@@ -4,7 +4,6 @@
 -- Combinatorial operations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.Combinatorics where
 

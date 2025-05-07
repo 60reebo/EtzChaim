@@ -4,7 +4,6 @@
 -- Some basic properties of Loop
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Bundles using (Loop)
 

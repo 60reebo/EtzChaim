@@ -4,7 +4,6 @@
 -- Examples of regular expressions and matching
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K #-}
 
 module README.Text.Regex where
 

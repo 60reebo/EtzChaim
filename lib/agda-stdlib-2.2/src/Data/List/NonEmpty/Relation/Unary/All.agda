@@ -4,7 +4,6 @@
 -- Non-empty lists where all elements satisfy a given property
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.NonEmpty.Relation.Unary.All where
 

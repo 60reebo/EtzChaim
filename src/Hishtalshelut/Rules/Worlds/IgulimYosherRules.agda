@@ -1,30 +1,32 @@
 --------------------------------------------------
 -- IgulimYosherRules (Rules Layer)
 --------------------------------------------------
+{-# OPTIONS --without-K #-}
 open import Agda.Primitive using (Level; lzero; lsuc)
 module Hishtalshelut.Rules.Worlds.IgulimYosherRules (ℓ : Level) where
 
 open import Agda.Primitive using (Level; lzero; lsuc)
 open import Agda.Builtin.Unit
 
-open import Data.List as List hiding (any)
+open import Data.List.Base as List using (List; []; _∷_; map; concatMap; foldl; _++_)
 open import Agda.Builtin.Bool using (Bool; true; false)
 open import Data.Bool using (if_then_else_ ; _∧_ ; not)
 open import Data.Bool.ListAction using (any)
-open import Data.Nat using (ℕ; zero; suc; _≤_)
+open import Data.Nat.Base using (ℕ; zero; suc; _≤ᵇ_)
 open import Agda.Builtin.Nat using (_-_)
 open import Agda.Builtin.String using (String; primStringEquality)
--- open import Agda.Builtin.Nat using (_-) 
-open import Data.String renaming (_==_ to stringEq)
+open import Data.String as Str using (_++_)
 
 open import Agda.Builtin.Nat renaming (_==_ to natEq)
 
 open import Data.Product using (Σ ; _,_ ; proj₁ ; proj₂ ; _×_)
 open import Data.Maybe using (Maybe ; just ; nothing)
+open import Data.Sum using (inj₁; inj₂)
 
-open import Hishtalshelut.Domain.Worlds.IgulimYosher ℓ using (OlamId; PartzufId; SefirahId; allWorlds; worldToId; allPartzufs; partzufToId; allSefirot; sefirahToId; SefirahUnit; sefirahUnitById; Sefirah; CircleDesc; YosherDesc; LightCategory; LightKind; Pnimi; Makif; Nefesh; Ruach; KavState; einsofValue; World; Partzuf)
+open import Hishtalshelut.Domain.Worlds.IgulimYosher ℓ using (OlamId; PartzufId; SefirahId; allWorlds; worldToId; allPartzufs; partzufToId; allSefirot; sefirahToId; SefirahUnit; sefirahUnitById; Sefirah; CircleDesc; YosherDesc; LightCategory; LightKind; Nefesh; Ruach; Pnimi; Makif; KavState; einsofValue; World; Partzuf)
 open import Hishtalshelut.Domain.Worlds.IgulimYosherReshimu ℓ using (ReshimuSpec; toReshimuSpec; seph)
 open import Hishtalshelut.Domain.Worlds.Tzimtzum ℓ using (TzimtzumSpec; CenterPoint; Midpoint; ReshimuLevel)
+open import Hishtalshelut.Domain.Math.Ordinal using (Ordinal; zero; succ; fromNatO)
 open import Relation.Binary.PropositionalEquality using (_≡_)
 
 -- גישה לשוויון וסטרינג ומספרים
@@ -96,7 +98,7 @@ data HierarchicalStepLocal : Set (lsuc ℓ) where
   -- Contraction events
   TzimtzumCenter            : HierarchicalStepLocal
   ContractStep              : ℕ → HierarchicalStepLocal
-  RecordContractionReshimu  : ℕ → TzimtzumSpec → HierarchicalStepLocal
+  RecordContractionReshimu  : Ordinal ℓ → TzimtzumSpec → HierarchicalStepLocal
 
   -- TzelemTransformations
   ApplyTzelemTransformations : HierarchicalStepLocal
@@ -105,17 +107,18 @@ open HierarchicalStepLocal public
 
 open import Relation.Binary.PropositionalEquality using (_≡_)
 open import Hishtalshelut.Domain.LightChain ℓ using (initialLight; buildChain; StreamUnit; VesselKind; InnerVessel; OuterVessel)
-open import Hishtalshelut.Domain.CoreTypes.Keli ℓ as CoreK using (Keli; mkKeli; updateKeliContent; seph; kind; capacity; content; KeliState; Whole)
-open import Hishtalshelut.Domain.Kelim.KeliSubstance as KSub using (Zahav)
+open import Hishtalshelut.Domain.CoreTypes.Keli ℓ using (Keli; mkKeli; updateKeliContent; seph; kind; capacity; content; KeliState; Whole; KeliLayer)
+open import Hishtalshelut.Domain.Kelim.KeliSubstance using (KeliSubstance; Zahav)
 open import Hishtalshelut.Domain.CoreTypes.Light ℓ using (Light; mkLight)
 open Light public
--- מקבל פרצוף ומחזיר את זיהוי העולם שלו
+
+-- olam function
 olam : PartzufId → OlamId
 olam p = PartzufId.olam p
-open import Hishtalshelut.State.Worlds.IgulimYosherFullState ℓ using (IgulimYosherFullState; initialIgulimYosherFullState; reshimuState; kavState; contractionState; ordinalLevels; cardinalLevels; keliStates)
+
+open import Hishtalshelut.State.Worlds.IgulimYosherFullState ℓ using (IgulimYosherFullState; initialIgulimYosherFullState; reshimuState; kavState; contractionState; ordinalLevels; cardinalLevels; kelimByPartzuf)
 open import Hishtalshelut.State.Worlds.TzimtzumState ℓ using (ContractionState; afterContractionStep; PartialReshimu)
 open import Hishtalshelut.State.Worlds.IgulimYosherReshimuState ℓ using (ReshimuState; reshimuByPartzuf)
-open import Hishtalshelut.Domain.Math.Ordinal using (Ordinal; zero; succ; iterate)
 open import Hishtalshelut.Domain.Math.Cardinal using (Cardinal; _⊕_; fin; aleph; index) renaming (fromNat to fromNatCard)
 open import Hishtalshelut.Rules.Light.TzelemTransformations ℓ using (applyTzelemTransformations)
 
@@ -249,31 +252,33 @@ isMakifVessel : VesselKind → Bool
 isMakifVessel InnerVessel = false
 isMakifVessel OuterVessel = true
 
--- | Convert vessel classification into a light kind
+-- | Map VesselKind to Keli's LightKind
 vesselKindToLightKind : VesselKind → LightKind
 vesselKindToLightKind InnerVessel = Pnimi
 vesselKindToLightKind OuterVessel = Makif
 
 -- | Convert a stream unit into a Keli vessel
-streamUnitToKeli : StreamUnit → CoreK.Keli
-streamUnitToKeli su = CoreK.mkKeli (sefirahToIdLocal (StreamUnit.seph su))
-                              (vesselKindToLightKind (StreamUnit.kind su))
-                              KSub.Zahav
-                              cap
-                              initCont
-                              ""               -- label
-                              []               -- tzelem_letters
-                              CoreK.Whole      -- state
-                              nothing          -- inner_layer
-                              nothing          -- middle_layer
-                              nothing          -- outer_layer
-                              nothing          -- surrounding_makif_chozer
-                              nothing          -- surrounding_makif_yashar
+streamUnitToKeli : StreamUnit → Keli
+streamUnitToKeli su =
+  mkKeli
+    (sefirahToIdLocal (StreamUnit.seph su))           -- seph : SefirahId
+    (vesselKindToLightKind (StreamUnit.kind su))      -- kind : LightKind
+    Zahav                                             -- substance : KeliSubstance
+    cap                                               -- capacity : Cardinal ℓ
+    initCont                                          -- content : Light
+    defaultDummy                                      -- label : String (default)
+    []                                                -- tzelem_letters : List TzelemLetter
+    Whole                                             -- state : KeliState
+    nothing                                           -- inner_layer : Maybe KeliLayer
+    nothing                                           -- middle_layer : Maybe KeliLayer
+    nothing                                           -- outer_layer : Maybe KeliLayer
+    nothing                                           -- surrounding_makif_chozer : Maybe Light
+    nothing                                           -- surrounding_makif_yashar : Maybe Light
   where
     initCont = if_then_else_ (isMakifVessel (StreamUnit.kind su))
-                             (StreamUnit.outerLight su)
-                             (StreamUnit.innerLight su)
-    cap = power initCont
+                          (StreamUnit.outerLight su)
+                          (StreamUnit.innerLight su)
+    cap      = power initCont
 
 -- | Build circle (4 phases) per Sefirah
 buildCircleSteps : OlamId → PartzufId → List HierarchicalStepLocal
@@ -311,8 +316,9 @@ buildVesselSteps ol p = List._++_ (buildCircleSteps ol p) (buildYosherSteps ol p
 buildForOlam : OlamId × List PartzufId → List HierarchicalStepLocal
 buildForOlam (ol , partzufs) =
   List.concatMap (λ p →
-      let middle = buildVesselSteps ol p
-      in EnterPartzuf ol p ∷ List._++_ middle [ ExitPartzuf ol p ]) partzufs
+    let middle = buildVesselSteps ol p in
+    List._++_ (EnterPartzuf ol p ∷ middle) (ExitPartzuf ol p ∷ [])
+  ) partzufs
 
 buildHierarchicalSteps : List PartzufId → List HierarchicalStepLocal
 buildHierarchicalSteps ps =
@@ -383,18 +389,23 @@ rangeAsc (suc n) = List._++_ (rangeAsc n) (suc n ∷ [])
 -- | Build contraction steps for Tzimtzum
 buildContractionSteps : ℕ → List HierarchicalStepLocal
 buildContractionSteps maxR =
-  let radii = rangeAsc maxR
-      steps = List.map ContractStep radii
-      spec  = record { center = Midpoint ; maxRadius = natToOrdinal maxR }
-  in TzimtzumCenter ∷ (List._++_ steps (RecordContractionReshimu maxR spec ∷ []))
+  let radii  = rangeAsc maxR
+      steps  = List.map ContractStep radii
+      spec   = record { center      = Midpoint
+                       ; maxRadius   = fromNatO maxR
+                       ; lightSource = defaultDummy }
+  in TzimtzumCenter ∷
+       ( List._++_ steps
+         ( RecordContractionReshimu (fromNatO maxR) spec ∷ [] )
+       )
 
 -- | סדרת שלבי ההשתלשלות המלאה לכל הסימולציה - כולל טרנספורמציות צל"ם
 hierarchicalExpansionSteps : List HierarchicalStepLocal
-hierarchicalExpansionSteps = 
-  List._++_ 
-    (buildContractionSteps zero) 
+hierarchicalExpansionSteps =
+  List._++_
+    (buildContractionSteps 0)
     (List._++_
-      (buildHierarchicalSteps partzufimOrder) 
+      (buildHierarchicalSteps partzufimOrder)
       (ApplyTzelemTransformations ∷ []))
 
 -- | helper: שלבי עליה לפי הסדר הקבלי המלא
@@ -422,114 +433,46 @@ createAllYosher s₀ =
         s₀
         (List._++_ (List.map (λ p → p , true) partzufimOrder) (List.map (λ p → p , false) partzufimOrder))
 
--- | החל את השלב ההיררכי על מצב IgulimYosherFullState
-stepHierarchical : HierarchicalStepLocal → IgulimYosherFullState → IgulimYosherFullState
-stepHierarchical (InitMiddle _) s                        = s
-stepHierarchical (InitKav _) s                        = s
-stepHierarchical (EnterPartzuf olam p) s                  = record s { keliStates = (olam , p , List.map streamUnitToKeli (buildChain initialLight allSefirot)) ∷ keliStates s }
-stepHierarchical (ExitPartzuf olam p) s =
-  record s { keliStates =
-      List.concatMap (λ t →
-        let o   = proj₁ t
-            pr  = proj₂ t
-            p'  = proj₁ pr
-        in if_then_else_ (olamIdEq o olam ∧ partzufIdEq p' p)
-             [] (t ∷ [])) (keliStates s) }
-stepHierarchical (CircleInnerV olam p sf purityN) s =
-  let purity = fromNatCard purityN
-      purityOrd = natToOrdinal (toOrdinal purity)
-      s' = addCircle p (fromNatCard (SefirahId.index sf)) false purity s
-      updated = List.map (λ (ol' , p' , kl) →
-        if_then_else_
-          ((olamIdEq ol' olam ∧ partzufIdEq p' p))
-          (ol' , p' , List.map (λ k →
-            if_then_else_
-              ((sefirahIdEq (sefirahToIdLocal (seph k)) sf) ∧ (vesselKindEq (kind k) InnerVessel))
-              (updateKeliContent k (mkLight ((capacity k) ⊕ (power (content k))) (natToOrdinal (ordinalToNat (structure (content k)) + ordinalToNat purityOrd)) (category (content k)) (kind (content k)) (source (content k)) purityOrd))
-              k) kl)
-          (ol' , p' , kl)) (keliStates s')
-  in record s' { keliStates = updated }
-stepHierarchical (CircleOuterV olam p sf purityN) s =
-  let purity = fromNatCard purityN
-      purityOrd = natToOrdinal (toOrdinal purity)
-      s' = addCircle p (fromNatCard (SefirahId.index sf)) true purity s
-      updated = List.map (λ (ol' , p' , kl) →
-        if_then_else_
-          ((olamIdEq ol' olam ∧ partzufIdEq p' p))
-          (ol' , p' , List.map (λ k →
-            if_then_else_
-              ((sefirahIdEq (sefirahToIdLocal (seph k)) sf) ∧ (vesselKindEq (kind k) OuterVessel))
-              (updateKeliContent k (mkLight ((capacity k) ⊕ (power (content k))) (natToOrdinal (ordinalToNat (structure (content k)) + ordinalToNat purityOrd)) (category (content k)) (kind (content k)) (source (content k)) purityOrd))
-              k) kl)
-          (ol' , p' , kl)) (keliStates s')
-  in record s' { keliStates = updated }
-stepHierarchical (CircleInnerL _ _ _ _) s             = s
-stepHierarchical (CircleOuterL _ _ _ _) s             = s
-stepHierarchical (YosherInnerV olam p sf purityN) s =
-  let purity = fromNatCard purityN
-      purityOrd = natToOrdinal (toOrdinal purity)
-      s' = addYosher p true false purity s
-      updated = List.map (λ (ol' , p' , kl) →
-        if_then_else_
-          ((olamIdEq ol' olam ∧ partzufIdEq p' p))
-          (ol' , p' , List.map (λ k →
-            if_then_else_
-              ((sefirahIdEq (sefirahToIdLocal (seph k)) sf) ∧ (vesselKindEq (kind k) InnerVessel))
-              (updateKeliContent k (mkLight ((capacity k) ⊕ (power (content k))) (natToOrdinal (ordinalToNat (structure (content k)) + ordinalToNat purityOrd)) (category (content k)) (kind (content k)) (source (content k)) purityOrd))
-              k) kl)
-          (ol' , p' , kl)) (keliStates s')
-  in record s' { keliStates = updated }
-stepHierarchical (YosherOuterV olam p sf purityN) s =
-  let purity = fromNatCard purityN
-      purityOrd = natToOrdinal (toOrdinal purity)
-      s' = addYosher p false true purity s
-      updated = List.map (λ (ol' , p' , kl) →
-        if_then_else_
-          ((olamIdEq ol' olam ∧ partzufIdEq p' p))
-          (ol' , p' , List.map (λ k →
-            if_then_else_
-              ((sefirahIdEq (sefirahToIdLocal (seph k)) sf) ∧ (vesselKindEq (kind k) OuterVessel))
-              (updateKeliContent k (mkLight ((capacity k) ⊕ (power (content k))) (natToOrdinal (ordinalToNat (structure (content k)) + ordinalToNat purityOrd)) (category (content k)) (kind (content k)) (source (content k)) purityOrd))
-              k) kl)
-          (ol' , p' , kl)) (keliStates s')
-  in record s' { keliStates = updated }
-stepHierarchical (YosherInnerL _ _ _ _) s             = s
-stepHierarchical (YosherOuterL _ _ _ _) s             = s
-stepHierarchical (UpdateMakifDist _ _ _ _) s           = s
-stepHierarchical (UpdateWorldMakifDist _ _ _) s        = s
-stepHierarchical (RecordCircleReshimu ol p sf rs) s =
-  let rsS      = reshimuState s
-      triples  = reshimuByPartzuf rsS
-      updated  = List.map (λ (ol' , p' , specs) →
-                            if (olamIdEq ol' ol ∧ partzufIdEq p' p)
-                            then (ol' , p' , rs ∷ specs)
-                            else (ol' , p' , specs)) triples
-      rsS'     = record rsS { reshimuByPartzuf = updated }
-  in record s { reshimuState = rsS' }
-stepHierarchical (RecordYosherReshimu ol p sf rs) s =
-  let rsS      = reshimuState s
-      triples  = reshimuByPartzuf rsS
-      updated  = List.map (λ (ol' , p' , specs) →
-                            if (olamIdEq ol' ol ∧ partzufIdEq p' p)
-                            then (ol' , p' , rs ∷ specs)
-                            else (ol' , p' , specs)) triples
-      rsS'     = record rsS { reshimuByPartzuf = updated }
-  in record s { reshimuState = rsS' }
-stepHierarchical TzimtzumCenter s =
-  let cs  = contractionState s
-      cs' = afterContractionStep cs zero
-  in record s { contractionState = cs' }
-stepHierarchical (ContractStep r) s =
-  let cs  = contractionState s
-      cs' = record cs { radius = r }
-  in record s { contractionState = cs' }
-stepHierarchical (RecordContractionReshimu r _) s =
-  let cs  = contractionState s
-      cs' = record cs { reshimu = PartialReshimu }
-  in record s { contractionState = cs' }
+-- | הוצאת יעד ההאצלה (עולם, פרצוף, ספירה, רמת ספירה) משלבי הטרנספורמציה
+extractTarget : HierarchicalStepLocal → Maybe (OlamId × PartzufId × SefirahId × ℕ)
+extractTarget (CircleInnerV ol p sf purity) = just (ol , p , sf , purity)
+extractTarget (CircleOuterV ol p sf purity) = just (ol , p , sf , purity)
+extractTarget (YosherInnerV ol p sf purity) = just (ol , p , sf , purity)
+extractTarget (YosherOuterV ol p sf purity) = just (ol , p , sf , purity)
+extractTarget _                          = nothing
 
--- | שלב הטיפול באותיות הצל"ם - מוסיף תמיכה בטרנספורמציות צל"ם לכל הכלים
-stepHierarchical (ApplyTzelemTransformations) s = applyTzelemTransformations s
+-- | הוצאת רשימת כלי ה־Keli לפרצוף מסוים
+findKeliList : OlamId → PartzufId → List (OlamId × PartzufId × List Keli) → List Keli
+findKeliList ol p triples = List.concatMap (λ triple → let (ol' , p' , ks) = triple in if olamIdEq ol' ol ∧ partzufIdEq p' p then ks else []) triples
+
+-- | עדכון רשימת Kelim לפרצוף נתון במצב
+updateKelimByPartzuf : OlamId → PartzufId → List Keli → List (OlamId × PartzufId × List Keli) → List (OlamId × PartzufId × List Keli)
+updateKelimByPartzuf ol p newKs triples = List.map (λ triple → let (ol' , p' , ks) = triple in if olamIdEq ol' ol ∧ partzufIdEq p' p then (ol' , p' , newKs) else triple) triples
+
+-- | החלת התהליך המלא של צלם על כלי בודד ברמת מודול
+processK : Context → SefirahLevelInfo → Keli → Keli
+processK ctx lvlInfo k with applyFullTzelemProcess ctx lvlInfo k
+... | inj₁ _       = k
+... | inj₂ (k' , _) = k'
+
+-- | החל את השלב ההיררכי על מצב IgulimYosherFullState באמצעות פונקציות עזר מתקדמות
+stepHierarchical : HierarchicalStepLocal → IgulimYosherFullState → IgulimYosherFullState
+stepHierarchical st s with extractTarget st
+... | nothing = s  -- שלבים שאינם עוסקים בכלי (כגון Tzimtzum)
+... | just (ol , p , sf , purityN) =
+    let
+      -- מבני מידע על הספירה
+      idx     = purityN
+      lvlInfo = mkSefirahLevelInfo idx (fromNatCard idx) (fromNatO idx)
+      -- הקשר (Context) עם מזהי עולם, פרצוף וספירה
+      ctx     = mkContext (OlamId.name ol) (PartzufId.name p) (SefirahId.name sf) idx
+      -- רשימת הכלים הקיימים למודל
+      ks      = findKeliList ol p (kelimByPartzuf s)
+      -- החלת תהליך הצל"ם המלא על כל כלי באמצעות הפונקציה במודול
+      newKs   = List.map (processK ctx lvlInfo) ks
+      -- רשימת שלשות Kelim מעודכנת במצב
+      newTriples = updateKelimByPartzuf ol p newKs (kelimByPartzuf s)
+    in record s { kelimByPartzuf = newTriples }
 
 -- | מריץ את כל שלבי ההשתלשלות ויוצר Trace (רשימת מצבים)
 simulateHierarchicalTrace : List IgulimYosherFullState
@@ -543,4 +486,31 @@ simulateHierarchicalTrace =
 -- | סימולציה מלאה: יצירת עיגולים ויושר עד סוף ההתפשטות
 fillChallalWithIgulimYosher : IgulimYosherFullState
 fillChallalWithIgulimYosher = List.foldl (λ s st → stepHierarchical st s) initialIgulimYosherFullState hierarchicalExpansionSteps
-     
+
+------------------------------------------------------------------------
+-- Pretty print for actual state data
+------------------------------------------------------------------------
+open import Data.Nat.Show using (show)
+open import Data.Bool using (if_then_else_)
+
+prettyPrintKeli : Keli → String
+prettyPrintKeli k =
+  let prefix = Str._++_ "  Sefirah: " (SefirahId.name (seph k))
+      cap    = Str._++_ prefix (Str._++_ ", Capacity: " (show (index (capacity k))))
+      pow    = Str._++_ cap    (Str._++_ ", Power: "   (show (index (power (content k)))))
+      flag   = if index (power (content k)) ≤ᵇ index (capacity k) then "" else ", BROKEN"
+  in Str._++_ pow (Str._++_ flag "\n")
+
+prettyPrintPartzuf : OlamId → PartzufId → List Keli → String
+prettyPrintPartzuf ol p ks =
+  let header  = Str._++_ "Olam: " (OlamId.name ol)
+      header' = Str._++_ header (Str._++_ ", Partzuf: " (PartzufId.name p))
+  in List.foldl (λ acc k → Str._++_ acc (prettyPrintKeli k)) (Str._++_ header' "\n") ks
+
+prettyPrintState : IgulimYosherFullState → String
+prettyPrintState s =
+  List.foldl (λ acc (ol , p , ks) → Str._++_ acc (prettyPrintPartzuf ol p ks)) "" (kelimByPartzuf s)
+
+printSimulationStates : List IgulimYosherFullState → String
+printSimulationStates states =
+  List.foldl (λ acc st → Str._++_ acc (Str._++_ "------------------\n" (prettyPrintState st))) "" states                                                      

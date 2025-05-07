@@ -4,7 +4,6 @@
 -- Coinductive vectors
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --guardedness #-}
 
 module Codata.Musical.Covec where
 

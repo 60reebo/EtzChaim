@@ -4,7 +4,6 @@
 -- Integer Literals
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Integer.Literals where
 

@@ -4,7 +4,6 @@
 -- Properties of regular expressions and their semantics
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (DecPoset)
 

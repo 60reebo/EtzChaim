@@ -4,7 +4,6 @@
 -- Patterns for Fin
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Fin.Patterns where
 

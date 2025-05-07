@@ -4,7 +4,6 @@
 -- Primitive System.Exit simple bindings to Haskell functions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible #-}
 
 module System.Exit.Primitive where
 

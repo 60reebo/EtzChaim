@@ -4,7 +4,6 @@
 -- Definitions of 'raw' bundles for module-like algebraic structures
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Algebra.Module.Bundles.Raw where
 

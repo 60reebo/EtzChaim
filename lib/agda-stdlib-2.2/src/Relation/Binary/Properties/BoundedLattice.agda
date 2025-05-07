@@ -5,7 +5,6 @@
 -- `Relation.Binary.Lattice.Properties.BoundedLattice` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Lattice
 

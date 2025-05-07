@@ -4,7 +4,6 @@
 -- Some derivable properties
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Lattice.Bundles
 import Algebra.Lattice.Properties.Lattice as LatticeProperties

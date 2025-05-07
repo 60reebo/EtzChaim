@@ -5,7 +5,6 @@
 -- minimum and maximum.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles
   using (StrictTotalOrder; StrictPartialOrder)

@@ -5,7 +5,6 @@
 -- can be used
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module README.Nary where
 

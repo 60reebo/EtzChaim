@@ -4,7 +4,6 @@
 -- Measuring time
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --guardedness #-}
 
 module System.Clock where
 

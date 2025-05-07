@@ -4,7 +4,6 @@
 -- Costrings
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --guardedness #-}
 
 module Codata.Musical.Costring where
 

@@ -4,7 +4,6 @@
 -- Typeclasses for use with instance arguments
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.TypeClasses where
 

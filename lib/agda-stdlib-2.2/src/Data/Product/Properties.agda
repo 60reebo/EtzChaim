@@ -4,7 +4,6 @@
 -- Properties of products
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Product.Properties where
 

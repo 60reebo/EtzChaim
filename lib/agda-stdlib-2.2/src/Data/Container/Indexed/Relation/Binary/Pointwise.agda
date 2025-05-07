@@ -4,7 +4,6 @@
 -- Pointwise equality for indexed containers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Container.Indexed.Relation.Binary.Pointwise where
 

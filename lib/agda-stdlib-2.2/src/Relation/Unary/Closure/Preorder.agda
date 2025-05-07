@@ -4,7 +4,6 @@
 -- Closure of a unary relation with respect to a preorder
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (Preorder)
 

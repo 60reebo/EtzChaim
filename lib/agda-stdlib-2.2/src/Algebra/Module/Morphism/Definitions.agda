@@ -4,7 +4,6 @@
 -- Basic definitions for morphisms between module-like algebraic
 -- structures
 ------------------------------------------------------------------------
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Core
 

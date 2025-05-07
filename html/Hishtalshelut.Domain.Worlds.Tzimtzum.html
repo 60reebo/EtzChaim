@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Hishtalshelut.Domain.Worlds.Tzimtzum</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Comment">--------------------------------------------------</a>
+<a id="52" class="Comment">-- Tzimtzum (Domain Layer)</a>
+<a id="79" class="Comment">--------------------------------------------------</a>
+<a id="130" class="Keyword">module</a> <a id="137" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html" class="Module">Hishtalshelut.Domain.Worlds.Tzimtzum</a> <a id="174" class="Keyword">where</a>
+
+<a id="181" class="Keyword">open</a> <a id="186" class="Keyword">import</a> <a id="193" href="Agda.Builtin.Bool.html" class="Module">Agda.Builtin.Bool</a>
+<a id="211" class="Keyword">open</a> <a id="216" class="Keyword">import</a> <a id="223" href="Agda.Builtin.Unit.html" class="Module">Agda.Builtin.Unit</a>
+<a id="241" class="Keyword">open</a> <a id="246" class="Keyword">import</a> <a id="253" href="Data.Nat.html" class="Module">Data.Nat</a> <a id="262" class="Keyword">using</a> <a id="268" class="Symbol">(</a><a id="269" href="Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a><a id="270" class="Symbol">)</a>
+<a id="272" class="Keyword">open</a> <a id="277" class="Keyword">import</a> <a id="284" href="Hishtalshelut.Domain.Worlds.IgulimYosherReshimu.html" class="Module">Hishtalshelut.Domain.Worlds.IgulimYosherReshimu</a> <a id="332" class="Keyword">using</a> <a id="338" class="Symbol">(</a><a id="339" href="Hishtalshelut.Domain.Worlds.IgulimYosherReshimu.html#468" class="Record">ReshimuSpec</a><a id="350" class="Symbol">)</a>
+
+<a id="353" class="Comment">-- | סטטוס הצמצום</a>
+<a id="371" class="Keyword">data</a> <a id="TzimtzumStatus"></a><a id="376" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#376" class="Datatype">TzimtzumStatus</a> <a id="391" class="Symbol">:</a> <a id="393" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="397" class="Keyword">where</a>
+   <a id="TzimtzumStatus.NoTzimtzum"></a><a id="406" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#406" class="InductiveConstructor">NoTzimtzum</a>   <a id="419" class="Symbol">:</a> <a id="421" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#376" class="Datatype">TzimtzumStatus</a>
+   <a id="TzimtzumStatus.AfterTzimtzum"></a><a id="439" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#439" class="InductiveConstructor">AfterTzimtzum</a> <a id="453" class="Symbol">:</a> <a id="455" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#376" class="Datatype">TzimtzumStatus</a>
+
+<a id="471" class="Comment">-- | רצון לבריאה (פוטנציאלי)</a>
+<a id="500" class="Keyword">data</a> <a id="WillForCreation"></a><a id="505" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#505" class="Datatype">WillForCreation</a> <a id="521" class="Symbol">:</a> <a id="523" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="527" class="Keyword">where</a>
+  <a id="WillForCreation.NoWill"></a><a id="535" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#535" class="InductiveConstructor">NoWill</a> <a id="542" class="Symbol">:</a> <a id="544" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#505" class="Datatype">WillForCreation</a>
+  <a id="WillForCreation.PotentialWill"></a><a id="562" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#562" class="InductiveConstructor">PotentialWill</a> <a id="576" class="Symbol">:</a> <a id="578" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#505" class="Datatype">WillForCreation</a>
+
+<a id="595" class="Comment">-- | רשימו (רושם דק של אור)</a>
+<a id="623" class="Keyword">data</a> <a id="ReshimuLevel"></a><a id="628" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#628" class="Datatype">ReshimuLevel</a> <a id="641" class="Symbol">:</a> <a id="643" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="647" class="Keyword">where</a>
+  <a id="ReshimuLevel.NoReshimu"></a><a id="655" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#655" class="InductiveConstructor">NoReshimu</a> <a id="665" class="Symbol">:</a> <a id="667" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#628" class="Datatype">ReshimuLevel</a>
+  <a id="ReshimuLevel.WithReshimu"></a><a id="682" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#682" class="InductiveConstructor">WithReshimu</a> <a id="694" class="Symbol">:</a> <a id="696" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#628" class="Datatype">ReshimuLevel</a>
+
+<a id="710" class="Comment">-- | steps enumeration</a>
+<a id="733" class="Keyword">data</a> <a id="ContractionStep"></a><a id="738" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#738" class="Datatype">ContractionStep</a> <a id="754" class="Symbol">:</a> <a id="756" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="760" class="Keyword">where</a>
+   <a id="ContractionStep.StepStartEinSof"></a><a id="769" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#769" class="InductiveConstructor">StepStartEinSof</a>     <a id="789" class="Symbol">:</a> <a id="791" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#738" class="Datatype">ContractionStep</a>
+   <a id="ContractionStep.StepPotentialWill"></a><a id="810" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#810" class="InductiveConstructor">StepPotentialWill</a>   <a id="830" class="Symbol">:</a> <a id="832" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#738" class="Datatype">ContractionStep</a>
+   <a id="ContractionStep.StepExecuteTzimtzum"></a><a id="851" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#851" class="InductiveConstructor">StepExecuteTzimtzum</a> <a id="871" class="Symbol">:</a> <a id="873" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#738" class="Datatype">ContractionStep</a>
+   <a id="ContractionStep.StepLeaveReshimu"></a><a id="892" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#892" class="InductiveConstructor">StepLeaveReshimu</a>    <a id="912" class="Symbol">:</a> <a id="914" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#738" class="Datatype">ContractionStep</a>
+
+<a id="931" class="Comment">-- | נקודת אמצע לצמצום</a>
+<a id="954" class="Keyword">data</a> <a id="CenterPoint"></a><a id="959" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#959" class="Datatype">CenterPoint</a> <a id="971" class="Symbol">:</a> <a id="973" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="977" class="Keyword">where</a>
+  <a id="CenterPoint.Midpoint"></a><a id="985" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#985" class="InductiveConstructor">Midpoint</a> <a id="994" class="Symbol">:</a> <a id="996" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#959" class="Datatype">CenterPoint</a>
+
+<a id="1009" class="Comment">-- | מפרט הצמצום כולל מרכז ורדיוס מקסימלי</a>
+<a id="1051" class="Keyword">record</a> <a id="TzimtzumSpec"></a><a id="1058" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#1058" class="Record">TzimtzumSpec</a> <a id="1071" class="Symbol">:</a> <a id="1073" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="1077" class="Keyword">where</a>
+  <a id="1085" class="Keyword">field</a>
+    <a id="TzimtzumSpec.center"></a><a id="1095" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#1095" class="Field">center</a>    <a id="1105" class="Symbol">:</a> <a id="1107" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#959" class="Datatype">CenterPoint</a>
+    <a id="TzimtzumSpec.maxRadius"></a><a id="1123" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#1123" class="Field">maxRadius</a> <a id="1133" class="Symbol">:</a> <a id="1135" href="Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a>
+
+<a id="1138" class="Comment">-- | צורת עיגול במערכת הצמצום</a>
+<a id="1168" class="Keyword">record</a> <a id="CircleShape"></a><a id="1175" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#1175" class="Record">CircleShape</a> <a id="1187" class="Symbol">:</a> <a id="1189" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="1193" class="Keyword">where</a>
+  <a id="1201" class="Keyword">field</a>
+    <a id="CircleShape.center"></a><a id="1211" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#1211" class="Field">center</a> <a id="1218" class="Symbol">:</a> <a id="1220" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#959" class="Datatype">CenterPoint</a>
+    <a id="CircleShape.radius"></a><a id="1236" href="Hishtalshelut.Domain.Worlds.Tzimtzum.html#1236" class="Field">radius</a> <a id="1243" class="Symbol">:</a> <a id="1245" href="Agda.Builtin.Nat.html#203" class="Datatype">ℕ</a>
+</pre></body></html>

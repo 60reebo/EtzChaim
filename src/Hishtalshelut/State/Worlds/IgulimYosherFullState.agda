@@ -20,6 +20,7 @@ open import Data.List using (List; []; _∷_)
 open import Agda.Builtin.Bool
 open import Data.Product using (_×_; _,_)
 open import Hishtalshelut.Domain.CoreTypes.Keli ℓ using (Keli)
+open import Hishtalshelut.State.Light.KeliState ℓ using (KeliState; initialKeliState)
 open import Hishtalshelut.Domain.Math.Types using (Positive)
 open import Hishtalshelut.Domain.Math.Equality using (_≡_; refl)
 open import Function.Base using (_$_; id)
@@ -39,8 +40,8 @@ record IgulimYosherFullState : Set (lsuc ℓ) where
     -- רמות אורדינל וכמותיות לכל יחידת ספירה
     ordinalLevels      : List (OlamId × PartzufId × Ordinal ℓ)
     cardinalLevels     : List (OlamId × PartzufId × Cardinal ℓ)
-    -- רשימת הכלים לכל פרצוף בכל העולם
-    keliStates         : List (OlamId × PartzufId × List Keli)
+    -- מצב של הכלים לכל פרצוף
+    kelimByPartzuf     : List (OlamId × PartzufId × List Keli)
 
 open IgulimYosherFullState public
 
@@ -53,7 +54,7 @@ initialIgulimYosherFullState = record
   ; contractionState   = initialContractionState initialLight initialEinSofState
   ; ordinalLevels      = []
   ; cardinalLevels     = []
-  ; keliStates         = []
+  ; kelimByPartzuf     = []
   }
 
 -- | Stub: list of circles per Partzuf for engine
@@ -63,7 +64,3 @@ circlesByPartzuf _ = []
 -- | Stub: list of yosher per Partzuf for engine
 yosherByPartzuf : IgulimYosherFullState → List (OlamId × List YosherDesc)
 yosherByPartzuf _ = []
-
--- | Stub: list of vessels (Keli) per Partzuf for engine
-kelimByPartzuf : IgulimYosherFullState → List (OlamId × PartzufId × List Keli)
-kelimByPartzuf _ = []

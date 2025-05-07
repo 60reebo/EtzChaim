@@ -10,7 +10,6 @@
 --   e.g. we provide `lookupEnv` but not `getEnv`
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible #-}
 
 module System.Environment.Primitive where
 

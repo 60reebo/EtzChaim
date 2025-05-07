@@ -4,7 +4,6 @@
 -- Zippers for Binary Trees
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Tree.Binary.Zipper where
 

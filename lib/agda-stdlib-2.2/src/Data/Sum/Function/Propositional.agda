@@ -4,7 +4,6 @@
 -- Sum combinators for propositional equality preserving functions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Sum.Function.Propositional where
 

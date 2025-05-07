@@ -5,7 +5,6 @@
 -- DifferenceVec)
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.DifferenceNat where
 

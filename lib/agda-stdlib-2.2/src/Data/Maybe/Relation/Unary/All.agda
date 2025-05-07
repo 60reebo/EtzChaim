@@ -4,7 +4,6 @@
 -- Maybes where all the elements satisfy a given property
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Maybe.Relation.Unary.All where
 

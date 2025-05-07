@@ -4,7 +4,6 @@
 -- Properties of binary trees
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Tree.Binary.Properties where
 

@@ -6,7 +6,6 @@
 -- Adapted from Algebra.Solver.Monoid.Normal
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Bundles using (CommutativeMonoid)
 

@@ -4,7 +4,6 @@
 -- Properties of First
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Relation.Unary.First.Properties where
 

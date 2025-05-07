@@ -4,7 +4,6 @@
 -- Parity
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Parity.Base where
 

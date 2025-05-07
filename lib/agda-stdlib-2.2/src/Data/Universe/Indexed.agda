@@ -4,7 +4,6 @@
 -- Indexed universes
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Universe.Indexed where
 

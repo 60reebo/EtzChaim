@@ -5,7 +5,6 @@
 -- natural order.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Core using (Op₂)
 open import Data.Product.Base using (_,_; _×_)

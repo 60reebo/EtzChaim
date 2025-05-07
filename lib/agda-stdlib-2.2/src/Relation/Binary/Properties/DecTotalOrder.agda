@@ -4,7 +4,6 @@
 -- Properties satisfied by decidable total orders
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Structures
   using (IsDecTotalOrder; IsStrictTotalOrder)

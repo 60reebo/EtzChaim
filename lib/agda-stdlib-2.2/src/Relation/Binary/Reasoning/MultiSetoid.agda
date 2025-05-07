@@ -22,7 +22,6 @@
 -- as this introduces unsolved metas as the underlying base module
 -- `Base.Single` does not require `_≈_` be symmetric.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.Reasoning.MultiSetoid where
 

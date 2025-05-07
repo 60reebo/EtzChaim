@@ -5,7 +5,6 @@
 -- the K rule
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K --safe #-}
 
 module Data.List.Membership.Propositional.Properties.WithK where
 

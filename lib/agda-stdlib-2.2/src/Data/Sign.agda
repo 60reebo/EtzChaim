@@ -4,7 +4,6 @@
 -- Signs
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Sign where
 

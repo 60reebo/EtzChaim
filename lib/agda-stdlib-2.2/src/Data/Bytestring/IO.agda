@@ -4,7 +4,6 @@
 -- Bytestrings: IO operations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --guardedness --cubical-compatible #-}
 
 module Data.Bytestring.IO where
 

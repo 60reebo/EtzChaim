@@ -7,7 +7,6 @@
 -- Taken from Randy Pollack's paper "Dependently Typed Records in Type
 -- Theory".
 
-{-# OPTIONS --with-K #-}
 
 module README.Data.Record where
 

@@ -5,7 +5,6 @@
 -- `Codata.Sized.Colist.Effectful` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Codata.Sized.Colist.Categorical where
 

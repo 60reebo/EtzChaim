@@ -4,7 +4,6 @@
 -- Lifting of two predicates
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Product.Relation.Unary.All where
 

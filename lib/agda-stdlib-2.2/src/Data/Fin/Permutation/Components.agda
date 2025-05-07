@@ -4,7 +4,6 @@
 -- Component functions of permutations found in `Data.Fin.Permutation`
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Fin.Permutation.Components where
 

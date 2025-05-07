@@ -4,7 +4,6 @@
 -- Unary relations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Unary where
 

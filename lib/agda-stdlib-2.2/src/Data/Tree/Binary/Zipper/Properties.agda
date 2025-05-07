@@ -4,7 +4,6 @@
 -- Tree Zipper-related properties
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Tree.Binary.Zipper.Properties where
 

@@ -7,7 +7,6 @@
 -- The contents of this module should usually be accessed via
 -- `Function.Metric`.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Core using (Rel)
 open import Relation.Binary.Structures using (IsPartialOrder; IsEquivalence)

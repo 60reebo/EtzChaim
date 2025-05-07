@@ -4,7 +4,6 @@
 -- Properties of These
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.These.Properties where
 

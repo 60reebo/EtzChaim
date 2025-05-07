@@ -4,7 +4,6 @@
 -- Properties of general interleavings
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Relation.Ternary.Interleaving.Properties where
 

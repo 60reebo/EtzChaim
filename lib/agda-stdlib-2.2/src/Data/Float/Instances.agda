@@ -4,7 +4,6 @@
 -- Instances for floating point numbers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Float.Instances where
 

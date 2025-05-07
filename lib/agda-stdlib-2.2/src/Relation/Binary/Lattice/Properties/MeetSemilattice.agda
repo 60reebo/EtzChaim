@@ -4,7 +4,6 @@
 -- Properties satisfied by meet semilattices
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Lattice
 

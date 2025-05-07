@@ -6,7 +6,6 @@
 
 -- Note that currently the Foldable laws are not included here.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Effect.Foldable where
 

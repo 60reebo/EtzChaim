@@ -4,7 +4,6 @@
 -- A universe for the types involved in the reflected syntax.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Reflection.AST.Universe where
 

@@ -4,7 +4,6 @@
 -- Properties of the heterogeneous suffix relation
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Relation.Binary.Suffix.Heterogeneous.Properties where
 

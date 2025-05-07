@@ -4,7 +4,6 @@
 -- IO only involving infinite objects
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --guardedness #-}
 
 module IO.Infinite where
 

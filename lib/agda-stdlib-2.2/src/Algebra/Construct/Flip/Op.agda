@@ -5,7 +5,6 @@
 -- algebraic properties.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Algebra.Construct.Flip.Op where
 

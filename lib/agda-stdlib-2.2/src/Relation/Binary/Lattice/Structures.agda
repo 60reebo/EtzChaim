@@ -7,7 +7,6 @@
 -- The contents of this module should be accessed via
 -- `Relation.Binary.Lattice`.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Core using (Rel)
 open import Relation.Binary.Structures using (IsPartialOrder)

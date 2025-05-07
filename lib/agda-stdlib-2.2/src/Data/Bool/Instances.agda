@@ -4,7 +4,6 @@
 -- Instances for booleans
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Bool.Instances where
 

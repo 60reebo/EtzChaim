@@ -5,7 +5,6 @@
 -- be given in terms of others. Re-exported via `Algebra`.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Core
 open import Algebra.Consequences.Setoid

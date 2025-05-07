@@ -6,7 +6,6 @@
 -- element x satisfying P to 'smaller' y also satisfying P
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Induction.InfiniteDescent where
 

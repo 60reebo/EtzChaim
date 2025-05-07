@@ -4,7 +4,6 @@
 -- Properties of operations on M-types
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Codata.Sized.M.Properties where
 

@@ -4,7 +4,6 @@
 -- Notation for adding an additional point to any set
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Nullary.Construct.Add.Point where
 

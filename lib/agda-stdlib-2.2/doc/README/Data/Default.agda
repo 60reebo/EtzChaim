@@ -5,7 +5,6 @@
 -- argument that default to a specified value if none is passed.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module README.Data.Default where
 

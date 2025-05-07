@@ -4,7 +4,6 @@
 -- Heterogeneous N-ary Relations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Nary where
 

@@ -4,7 +4,6 @@
 -- Bijections on finite sets (i.e. permutations).
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Fin.Permutation where
 

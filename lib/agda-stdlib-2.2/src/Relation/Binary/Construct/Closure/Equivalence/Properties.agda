@@ -4,7 +4,6 @@
 -- Some properties of equivalence closures.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.Construct.Closure.Equivalence.Properties where
 

@@ -4,7 +4,6 @@
 -- Properties connecting left-scaling and right-scaling
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Core using (Rel)
 

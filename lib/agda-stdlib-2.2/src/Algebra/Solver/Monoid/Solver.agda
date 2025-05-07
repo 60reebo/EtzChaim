@@ -4,7 +4,6 @@
 -- A solver for equations over monoids
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Bundles using (Monoid)
 import Algebra.Solver.Monoid.Expression as Expression

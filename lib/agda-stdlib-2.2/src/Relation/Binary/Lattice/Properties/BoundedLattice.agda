@@ -4,7 +4,6 @@
 -- Properties satisfied by bounded lattice
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Lattice
 

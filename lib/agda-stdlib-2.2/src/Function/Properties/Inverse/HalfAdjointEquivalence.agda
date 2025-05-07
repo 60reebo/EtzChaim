@@ -4,7 +4,6 @@
 -- Half adjoint equivalences
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function.Properties.Inverse.HalfAdjointEquivalence where
 

@@ -4,7 +4,6 @@
 -- Non-empty AVL trees, where equality for keys is propositional equality
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Core using (Rel)
 open import Relation.Binary.Structures using (IsStrictTotalOrder)

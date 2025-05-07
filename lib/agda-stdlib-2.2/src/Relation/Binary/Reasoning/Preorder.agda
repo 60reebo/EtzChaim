@@ -21,7 +21,6 @@
 --      w  ≡⟨ x≡w ⟨
 --      x  ∎
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (Preorder)
 

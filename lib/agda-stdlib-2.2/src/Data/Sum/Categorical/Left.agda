@@ -5,7 +5,6 @@
 -- `Data.Sum.Categorical.Left` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Sum.Categorical.Left where
 

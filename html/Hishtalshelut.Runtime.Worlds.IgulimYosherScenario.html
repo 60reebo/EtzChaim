@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Hishtalshelut.Runtime.Worlds.IgulimYosherScenario</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Comment">--------------------------------------------------</a>
+<a id="52" class="Comment">-- IgulimYosherScenario (Runtime/Scenario Layer)</a>
+<a id="101" class="Comment">--------------------------------------------------</a>
+<a id="152" class="Symbol">{-#</a> <a id="156" class="Keyword">OPTIONS</a> <a id="164" class="Pragma">--guardedness</a> <a id="178" class="Pragma">--no-termination-check</a> <a id="201" class="Symbol">#-}</a>
+<a id="205" class="Keyword">module</a> <a id="212" href="Hishtalshelut.Runtime.Worlds.IgulimYosherScenario.html" class="Module">Hishtalshelut.Runtime.Worlds.IgulimYosherScenario</a> <a id="262" class="Keyword">where</a>
+
+<a id="269" class="Keyword">open</a> <a id="274" class="Keyword">import</a> <a id="281" href="Hishtalshelut.Engine.Worlds.IgulimYosherEngine.html" class="Module">Hishtalshelut.Engine.Worlds.IgulimYosherEngine</a> <a id="328" class="Keyword">using</a> <a id="334" class="Symbol">(</a><a id="335" href="Hishtalshelut.Engine.Worlds.IgulimYosherEngine.html#11590" class="Function">simulateFullIgulimYosher</a><a id="359" class="Symbol">)</a>
+<a id="361" class="Keyword">open</a> <a id="366" class="Keyword">import</a> <a id="373" href="Hishtalshelut.State.Worlds.IgulimYosherFullState.html" class="Module">Hishtalshelut.State.Worlds.IgulimYosherFullState</a> <a id="422" class="Keyword">using</a> <a id="428" class="Symbol">(</a><a id="429" href="Hishtalshelut.State.Worlds.IgulimYosherFullState.html#982" class="Record">IgulimYosherFullState</a><a id="450" class="Symbol">)</a>
+
+<a id="453" class="Comment">-- | תרחיש הרצה: סימולציה מלאה של יצירת עיגולים ויושר עד סוף ההתפשטות (כל החלל מלא)</a>
+<a id="runScenarioFullIgulimYosher"></a><a id="537" href="Hishtalshelut.Runtime.Worlds.IgulimYosherScenario.html#537" class="Function">runScenarioFullIgulimYosher</a> <a id="565" class="Symbol">:</a> <a id="567" href="Hishtalshelut.State.Worlds.IgulimYosherFullState.html#982" class="Record">IgulimYosherFullState</a>
+<a id="589" href="Hishtalshelut.Runtime.Worlds.IgulimYosherScenario.html#537" class="Function">runScenarioFullIgulimYosher</a> <a id="617" class="Symbol">=</a> <a id="619" href="Hishtalshelut.Engine.Worlds.IgulimYosherEngine.html#11590" class="Function">simulateFullIgulimYosher</a>
+</pre></body></html>

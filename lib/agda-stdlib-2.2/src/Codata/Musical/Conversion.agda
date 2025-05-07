@@ -8,7 +8,6 @@
 -- known to be unsound, so use these conversions at your own risk.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types --guardedness #-}
 
 module Codata.Musical.Conversion where
 

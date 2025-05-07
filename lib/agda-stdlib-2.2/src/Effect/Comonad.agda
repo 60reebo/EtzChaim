@@ -6,7 +6,6 @@
 
 -- Note that currently the monad laws are not included here.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Effect.Comonad where
 

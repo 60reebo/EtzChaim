@@ -4,7 +4,6 @@
 -- Well-founded induction
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Induction.WellFounded where
 

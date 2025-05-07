@@ -32,7 +32,6 @@
 -- In this way, we change the membership test from O(n²) to O(n).
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Tactic.RingSolver.Core.NatSet where
 

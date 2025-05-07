@@ -4,7 +4,6 @@
 -- Order-theoretic lattices
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.Lattice where
 

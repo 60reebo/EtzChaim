@@ -4,7 +4,6 @@
 -- The partiality monad
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe --guardedness #-}
 
 module Effect.Monad.Partiality where
 

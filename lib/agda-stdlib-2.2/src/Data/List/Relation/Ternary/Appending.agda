@@ -4,7 +4,6 @@
 -- Generalised view of appending two lists into one.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Relation.Ternary.Appending {a b c} {A : Set a} {B : Set b} {C : Set c} where
 

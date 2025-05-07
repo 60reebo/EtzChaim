@@ -4,7 +4,6 @@
 -- Finite summations over a semiring
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Bundles using (Semiring)
 

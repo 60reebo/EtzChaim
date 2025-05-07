@@ -4,7 +4,6 @@
 -- Fin Literals
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Fin.Literals where
 

@@ -4,7 +4,6 @@
 -- Instances for binary natural numbers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.Binary.Instances where
 

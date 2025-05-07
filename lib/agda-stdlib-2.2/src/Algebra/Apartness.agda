@@ -4,7 +4,6 @@
 -- Algebraic objects with an apartness relation
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Algebra.Apartness where
 

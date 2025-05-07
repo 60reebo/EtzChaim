@@ -4,7 +4,6 @@
 -- An effectful view of the identity function
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function.Identity.Effectful where
 

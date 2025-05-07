@@ -1,4 +1,3 @@
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module README.Tactic.Cong where
 

@@ -6,7 +6,6 @@
 -- Embeddings (OPE).
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Definitions using (DecidableEquality)
 

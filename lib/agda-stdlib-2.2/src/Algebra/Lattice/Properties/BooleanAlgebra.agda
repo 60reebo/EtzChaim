@@ -4,7 +4,6 @@
 -- Some derivable properties of Boolean algebras
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Lattice.Bundles
 

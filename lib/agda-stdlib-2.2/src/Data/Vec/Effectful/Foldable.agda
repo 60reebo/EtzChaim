@@ -4,7 +4,6 @@
 -- Vec is Foldable
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Effectful.Foldable where
 

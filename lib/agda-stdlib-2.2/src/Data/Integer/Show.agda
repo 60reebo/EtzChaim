@@ -4,7 +4,6 @@
 -- Showing integers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Integer.Show where
 

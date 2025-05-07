@@ -4,7 +4,6 @@
 -- Some properties about subsets
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Fin.Subset.Properties where
 

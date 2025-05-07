@@ -1,0 +1,21 @@
+# תצורת stylish-haskell לפרויקט EtzChaim
+language: Haskell2010
+
+imports:
+  sort: true      # מיין imports בסדר אלפביתי
+  align: global   # יישור imports במיקום גלובלי
+
+language_pragmas:
+  sort: true      # מיין pragmas בסדר אלפביתי
+  align: vertical # יישור pragmas בעמודות
+
+records:
+  sort: true      # מיין שדות רשומות בסדר אלפביתי
+  align: global   # יישור רשומות במיקום גלובלי
+
+declarations:
+  sort: true      # מיין הכרזות בסדר אלפביתי
+  align: global   # יישור הכרזות במיקום גלובלי
+
+arguments:
+  indent: 2       # כניסה של 2 רווחים 

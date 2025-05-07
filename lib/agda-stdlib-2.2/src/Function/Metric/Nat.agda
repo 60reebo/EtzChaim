@@ -4,7 +4,6 @@
 -- Metrics with ℕ as the codomain of the metric function
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function.Metric.Nat where
 

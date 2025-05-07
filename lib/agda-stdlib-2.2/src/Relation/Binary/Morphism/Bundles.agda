@@ -4,7 +4,6 @@
 -- Bundles for morphisms between binary relations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Level
 open import Relation.Binary.Core using (_Preserves_⟶_)

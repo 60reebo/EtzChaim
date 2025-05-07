@@ -5,7 +5,6 @@
 -- `Relation.Binary.Construct.Flip.EqAndOrd` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.Construct.Converse where
 

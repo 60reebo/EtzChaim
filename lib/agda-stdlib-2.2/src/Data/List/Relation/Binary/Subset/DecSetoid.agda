@@ -4,7 +4,6 @@
 -- Decidability of the subset relation over setoid equality.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (DecSetoid)
 

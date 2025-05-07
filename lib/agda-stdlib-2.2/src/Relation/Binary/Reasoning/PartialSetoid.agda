@@ -4,7 +4,6 @@
 -- Convenient syntax for reasoning with a partial setoid
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (PartialSetoid)
 open import Relation.Binary.Reasoning.Syntax

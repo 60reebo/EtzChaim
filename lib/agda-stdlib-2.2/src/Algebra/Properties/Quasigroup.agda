@@ -4,7 +4,6 @@
 -- Some basic properties of Quasigroup
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Bundles using (Quasigroup)
 

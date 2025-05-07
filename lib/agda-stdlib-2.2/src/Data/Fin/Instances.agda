@@ -4,7 +4,6 @@
 -- Instances for finite sets
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Fin.Instances where
 

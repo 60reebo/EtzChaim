@@ -4,7 +4,6 @@
 -- Properties related to negation
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Nullary.Negation where
 

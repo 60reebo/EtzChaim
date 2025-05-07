@@ -4,7 +4,6 @@
 -- Instances for the unit type
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Unit.Instances where
 

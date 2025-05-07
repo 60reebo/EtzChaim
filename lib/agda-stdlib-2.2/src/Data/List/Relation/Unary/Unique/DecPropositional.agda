@@ -4,7 +4,6 @@
 -- Lists made up entirely of unique elements (setoid equality)
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (DecSetoid)
 open import Relation.Binary.Definitions using (DecidableEquality)

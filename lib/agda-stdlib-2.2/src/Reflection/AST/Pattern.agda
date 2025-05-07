@@ -4,7 +4,6 @@
 -- Patterns used in the reflection machinery
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Reflection.AST.Pattern where
 

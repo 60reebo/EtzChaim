@@ -4,7 +4,6 @@
 -- Divisibility
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.Divisibility where
 

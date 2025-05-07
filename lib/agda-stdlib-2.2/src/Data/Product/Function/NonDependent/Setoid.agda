@@ -5,7 +5,6 @@
 -- functions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Product.Function.NonDependent.Setoid where
 

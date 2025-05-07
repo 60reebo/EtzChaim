@@ -4,7 +4,6 @@
 -- Usage examples of typeclasses for binary relations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module README.Relation.Binary.TypeClasses where
 

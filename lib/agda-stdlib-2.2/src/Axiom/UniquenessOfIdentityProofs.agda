@@ -4,7 +4,6 @@
 -- Results concerning uniqueness of identity proofs
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Axiom.UniquenessOfIdentityProofs where
 

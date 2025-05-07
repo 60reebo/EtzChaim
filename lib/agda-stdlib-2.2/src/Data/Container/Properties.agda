@@ -4,7 +4,6 @@
 -- Properties of operations on containers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Container.Properties where
 

@@ -4,7 +4,6 @@
 -- Properties of operations on characters
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Char.Properties where
 

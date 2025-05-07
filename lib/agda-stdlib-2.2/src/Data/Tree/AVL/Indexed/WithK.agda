@@ -4,7 +4,6 @@
 -- Some code related to indexed AVL trees that relies on the K rule
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K --safe #-}
 
 open import Relation.Binary.Core using (Rel)
 open import Relation.Binary.Structures using (IsStrictTotalOrder)

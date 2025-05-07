@@ -4,7 +4,6 @@
 -- Recomputable types and their algebra as Harrop formulas
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Nullary.Recomputable where
 

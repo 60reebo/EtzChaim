@@ -4,7 +4,6 @@
 -- Equality over container extensions parametrised by some setoid
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (Setoid)
 

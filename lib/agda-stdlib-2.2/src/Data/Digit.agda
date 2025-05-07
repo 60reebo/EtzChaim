@@ -4,7 +4,6 @@
 -- Digits and digit expansions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Digit where
 

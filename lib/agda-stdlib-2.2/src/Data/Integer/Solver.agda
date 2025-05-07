@@ -6,7 +6,6 @@
 
 -- See README.Data.Integer for examples of how to use this solver
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Integer.Solver where
 

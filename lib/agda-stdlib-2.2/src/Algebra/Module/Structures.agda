@@ -4,7 +4,6 @@
 -- Some algebraic structures defined over some other structure
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Core using (Rel)
 open import Relation.Binary.Bundles using (Setoid)

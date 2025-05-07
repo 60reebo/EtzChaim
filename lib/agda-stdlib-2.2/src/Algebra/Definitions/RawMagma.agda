@@ -8,7 +8,6 @@
 -- probably want to be importing the appropriate module from
 -- `Algebra.Properties.(Magma/Semigroup/...).Divisibility`
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Bundles.Raw using (RawMagma)
 open import Data.Product.Base using (_×_; ∃)

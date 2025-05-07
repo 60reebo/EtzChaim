@@ -4,7 +4,6 @@
 -- Properties connecting left-scaling and right-scaling over the same scalars
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary
 

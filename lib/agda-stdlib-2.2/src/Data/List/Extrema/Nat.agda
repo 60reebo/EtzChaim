@@ -4,7 +4,6 @@
 -- Finding the maximum/minimum values in a list, specialised for Nat
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 -- This specialised module is needed as `m < n` for Nat is not
 -- implemented as `m ≤ n × m ≢ n`.

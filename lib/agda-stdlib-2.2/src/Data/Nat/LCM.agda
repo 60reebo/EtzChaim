@@ -4,7 +4,6 @@
 -- Least common multiple
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.LCM where
 

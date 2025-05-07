@@ -4,7 +4,6 @@
 -- Permutation relations over Vector
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Functional.Relation.Binary.Permutation where
 

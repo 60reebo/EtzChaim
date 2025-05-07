@@ -4,7 +4,6 @@
 -- Greatest fixpoint for indexed containers - using guardedness
 ------------------------------------------------------------------------
 
-{-# OPTIONS --safe --cubical-compatible --guardedness #-}
 
 module Data.Container.Indexed.Fixpoints.Guarded where
 

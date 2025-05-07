@@ -7,7 +7,6 @@
 -- NOTE: the first component of the equality is propositional equality.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Product.Function.Dependent.Setoid where
 

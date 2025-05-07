@@ -4,7 +4,6 @@
 -- Properties satisfied by total orders
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (TotalOrder; DecTotalOrder)
 open import Relation.Binary.Definitions using (Decidable)

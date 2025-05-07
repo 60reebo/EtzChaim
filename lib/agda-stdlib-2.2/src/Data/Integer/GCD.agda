@@ -4,7 +4,6 @@
 -- Greatest Common Divisor for integers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Integer.GCD where
 

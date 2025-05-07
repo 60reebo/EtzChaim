@@ -5,7 +5,6 @@
 -- Relation.Unary
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Unary.Polymorphic.Properties where
 

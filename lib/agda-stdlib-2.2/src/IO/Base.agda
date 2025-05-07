@@ -4,7 +4,6 @@
 -- IO: basic types and functions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --guardedness #-}
 
 module IO.Base where
 

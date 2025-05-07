@@ -1,0 +1,130 @@
+cabal-version:      3.0
+name:               etz-chaim-sim
+version:            0.1.0.0
+license:            MIT
+author:             EtzChaim Team
+maintainer:         team@etzchaim.org
+build-type:         Simple
+
+common common-opts
+  default-language: Haskell2010
+  default-extensions:
+    OverloadedStrings
+  ghc-options:
+    -Wall -fno-warn-name-shadowing -Wno-unused-matches -Wno-missing-home-modules
+  build-depends:
+    base >= 4.14 && < 5,
+    text,
+    containers,
+    time,
+    uuid,
+    stm,
+    aeson,
+    bytestring
+
+library
+  import:           common-opts
+  hs-source-dirs:   src
+  exposed-modules:  
+    Engine.Simulation.AkPreparation
+    Engine.Types.BasicTypes
+    Engine.Types.SimulationState
+    Engine.Types.Scenario
+    Engine.Simulation.Core
+    Engine.Runner.RunnerState
+    Engine.Runner.BasicRunner
+    Engine.Runner.CliRunner
+    Engine.Scenarios.Library
+    Engine.Scenarios.Stage4Logs
+    Engine.Templates.NewScenario
+    Engine.FFI.AgdaEinSof
+    Engine.FFI.AgdaTzimtzum
+    Engine.FFI.AgdaIgulimYosher
+    Engine.Types.LightTypes
+    Engine.Simulation.Kav
+    Engine.Types.CoreTypes
+    Engine.Math.Ordinal
+    Engine.Math.Cardinal
+    Engine.Kabbalah.LightAlgebra
+    Engine.Simulation.Hishtalshelut
+  other-modules:
+    Paths_etz_chaim_sim
+    , MAlonzo.Code.Agda.Builtin.Bool
+    , MAlonzo.Code.Agda.Builtin.Char
+    , MAlonzo.Code.Agda.Builtin.Equality
+    , MAlonzo.Code.Agda.Builtin.IO
+    , MAlonzo.Code.Agda.Builtin.List
+    , MAlonzo.Code.Agda.Builtin.Maybe
+    , MAlonzo.Code.Agda.Builtin.Nat
+    , MAlonzo.Code.Agda.Builtin.Sigma
+    , MAlonzo.Code.Agda.Builtin.String
+    , MAlonzo.Code.Agda.Builtin.Unit
+    , MAlonzo.Code.Agda.Primitive
+    , MAlonzo.Code.Algebra.Bundles.Raw
+    , MAlonzo.Code.Algebra.Definitions.RawMagma
+    , MAlonzo.Code.Data.Bool.Base
+    , MAlonzo.Code.Data.Char.Base
+    , MAlonzo.Code.Data.Empty
+    , MAlonzo.Code.Data.Fin.Base
+    , MAlonzo.Code.Data.Irrelevant
+    , MAlonzo.Code.Data.List.Base
+    , MAlonzo.Code.Data.List.NonEmpty.Base
+    , MAlonzo.Code.Data.Maybe.Base
+    , MAlonzo.Code.Data.Nat.Base
+    , MAlonzo.Code.Data.Parity.Base
+    , MAlonzo.Code.Data.Product.Base
+    , MAlonzo.Code.Data.Sign.Base
+    , MAlonzo.Code.Data.String.Base
+    , MAlonzo.Code.Data.Sum.Base
+    , MAlonzo.Code.Data.These.Base
+    , MAlonzo.Code.Data.Unit.Polymorphic.Base
+    , MAlonzo.Code.Data.Vec.Base
+    , MAlonzo.Code.Function.Base
+    , MAlonzo.Code.Hishtalshelut.Domain.CoreTypes.Light
+    , MAlonzo.Code.Hishtalshelut.Domain.Math.Cardinal
+    , MAlonzo.Code.Hishtalshelut.Domain.Math.Cardinal.Properties
+    , MAlonzo.Code.Hishtalshelut.Domain.Math.Ordinal
+    , MAlonzo.Code.Hishtalshelut.Domain.Math.Ordinal.Properties
+    , MAlonzo.Code.Hishtalshelut.Domain.Worlds.EinSof
+    , MAlonzo.Code.Hishtalshelut.Domain.Worlds.IgulimYosher
+    , MAlonzo.Code.Hishtalshelut.Domain.Worlds.IgulimYosherReshimu
+    , MAlonzo.Code.Hishtalshelut.Domain.Worlds.Tzimtzum
+    , MAlonzo.Code.Hishtalshelut.Rules.Worlds.EinSofRules
+    , MAlonzo.Code.Hishtalshelut.Rules.Worlds.Tzimtzum
+    , MAlonzo.Code.Hishtalshelut.State.Worlds.EinSofState
+    , MAlonzo.Code.Hishtalshelut.State.Worlds.TzimtzumState
+    , MAlonzo.Code.Level
+    , MAlonzo.Code.Relation.Binary.Bundles
+    , MAlonzo.Code.Relation.Binary.Bundles.Raw
+    , MAlonzo.Code.Relation.Binary.Consequences
+    , MAlonzo.Code.Relation.Binary.Construct.Composition
+    , MAlonzo.Code.Relation.Binary.Definitions
+    , MAlonzo.Code.Relation.Binary.Properties.Setoid
+    , MAlonzo.Code.Relation.Binary.PropositionalEquality.Properties
+    , MAlonzo.Code.Relation.Binary.Structures
+    , MAlonzo.Code.Relation.Nullary.Decidable.Core
+    , MAlonzo.Code.Relation.Nullary.Negation.Core
+    , MAlonzo.Code.Relation.Nullary.Reflects
+    , MAlonzo.RTE
+    , MAlonzo.Code.Hishtalshelut.Engine.Worlds.EinSofEngine
+    , MAlonzo.Code.Hishtalshelut.Engine.Worlds.TzimtzumEngine
+    , MAlonzo.Code.Hishtalshelut.Runtime.Worlds.TzimtzumScenario
+
+  build-depends:
+      base >=4.18 && <4.21
+    , text
+    , containers
+    , stm
+    , uuid
+    , directory
+    , filepath
+    , process
+    , aeson >= 2.0
+
+executable etz-sim
+  import:           common-opts
+  ghc-options:      -Wno-missing-home-modules
+  hs-source-dirs:   src
+  main-is:          Main.hs
+  build-depends:
+    etz-chaim-sim 

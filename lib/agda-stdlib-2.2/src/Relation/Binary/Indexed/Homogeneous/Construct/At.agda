@@ -4,7 +4,6 @@
 -- Instantiating homogeneously indexed bundles at a particular index
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Level
 open import Relation.Binary.Bundles using (Setoid; DecSetoid; Preorder)

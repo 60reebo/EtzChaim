@@ -4,7 +4,6 @@
 -- Vectors where every consecutative pair of elements is related.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Relation.Unary.Linked {a} {A : Set a} where
 

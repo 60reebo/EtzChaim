@@ -5,7 +5,6 @@
 -- used
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Algebra.Solver.IdempotentCommutativeMonoid.Example where
 

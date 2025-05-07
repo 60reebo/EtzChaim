@@ -4,7 +4,6 @@
 -- Machine words: unsafe functions using the FFI
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible #-}
 
 module Data.Word64.Unsafe where
 

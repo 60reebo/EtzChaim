@@ -21,7 +21,11 @@ open import Hishtalshelut.Domain.CoreTypes.Keli using (Keli; mkKeli; capacity; c
 open import Hishtalshelut.Domain.Worlds.IgulimYosher lzero
 open import Hishtalshelut.Domain.LightChain using (VesselKind; InnerVessel)
 open import Hishtalshelut.State.Worlds.IgulimYosherFullState 
-open import Hishtalshelut.Rules.Worlds.IgulimYosherRules lzero using (stepHierarchical; CircleInnerV; addCircle)
+open import Hishtalshelut.Rules.Worlds.IgulimYosherRules lzero using (stepHierarchical; CircleInnerV; addCircle; simulateHierarchicalTrace; prettyPrintState; printSimulationStates)
+
+-- הדפסת נתוני אמת של כל שלבי הסימולציה
+printAllSimulationStates : String
+printAllSimulationStates = printSimulationStates simulateHierarchicalTrace
 
 -- Dummy values for test construction
 olamId = record { name = "TestOlam" ; level = 0 }

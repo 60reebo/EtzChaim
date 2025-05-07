@@ -5,7 +5,6 @@
 -- non-indexed structures.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.Indexed.Heterogeneous.Construct.At where
 

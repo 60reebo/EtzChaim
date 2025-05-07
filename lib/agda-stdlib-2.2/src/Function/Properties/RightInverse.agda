@@ -4,7 +4,6 @@
 -- Properties of right inverses
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function.Properties.RightInverse where
 

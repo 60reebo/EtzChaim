@@ -4,7 +4,6 @@
 -- Some properties about integers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Integer.Properties where
 

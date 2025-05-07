@@ -4,7 +4,6 @@
 -- A generalisation of the arithmetic operations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.GeneralisedArithmetic where
 

@@ -4,7 +4,6 @@
 -- Composition of two binary relations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.Construct.Composition where
 

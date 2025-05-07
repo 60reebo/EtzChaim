@@ -4,7 +4,6 @@
 -- Properties of unique vectors (setoid equality)
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Relation.Unary.Unique.Setoid.Properties where
 

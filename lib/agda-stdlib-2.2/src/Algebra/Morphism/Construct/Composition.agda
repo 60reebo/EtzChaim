@@ -4,7 +4,6 @@
 -- The composition of morphisms between algebraic structures.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --safe --cubical-compatible #-}
 
 module Algebra.Morphism.Construct.Composition where
 

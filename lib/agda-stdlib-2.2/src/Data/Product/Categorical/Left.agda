@@ -5,7 +5,6 @@
 -- `Data.Product.Categorical.Left` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Product.Categorical.Left where
 

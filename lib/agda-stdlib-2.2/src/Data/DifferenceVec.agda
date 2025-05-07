@@ -4,7 +4,6 @@
 -- Vectors with fast append
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.DifferenceVec where
 

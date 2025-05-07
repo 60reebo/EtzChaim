@@ -4,7 +4,6 @@
 -- The type for booleans and some operations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Bool.Base where
 

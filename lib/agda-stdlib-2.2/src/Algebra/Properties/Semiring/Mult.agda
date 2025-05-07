@@ -4,7 +4,6 @@
 -- Multiplication by a natural number over a semiring
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Bundles using (Semiring)
 open import Data.Nat.Base as ℕ using (zero; suc)

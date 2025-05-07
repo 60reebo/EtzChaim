@@ -4,7 +4,6 @@
 -- The universe polymorphic unit type and the total relation on unit
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Unit.Polymorphic where
 

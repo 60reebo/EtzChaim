@@ -4,7 +4,6 @@
 -- Sorted lists
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (TotalOrder)
 

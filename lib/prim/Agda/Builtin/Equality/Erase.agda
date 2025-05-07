@@ -1,4 +1,3 @@
-{-# OPTIONS --with-K --safe --no-sized-types --no-guardedness --level-universe #-}
 
 module Agda.Builtin.Equality.Erase where
 

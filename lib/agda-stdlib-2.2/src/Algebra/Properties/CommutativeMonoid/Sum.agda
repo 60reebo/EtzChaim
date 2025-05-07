@@ -4,7 +4,6 @@
 -- Finite summations over a commutative monoid
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Bundles using (CommutativeMonoid)
 open import Data.Bool.Base using (Bool; true; false)

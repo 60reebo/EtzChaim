@@ -5,7 +5,6 @@
 -- imported qualified.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function.Properties.Equivalence where
 

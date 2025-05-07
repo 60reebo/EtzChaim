@@ -5,7 +5,6 @@
 -- `Data.Vec.Effectful` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Vec.Categorical where
 

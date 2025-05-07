@@ -4,7 +4,6 @@
 -- Typeclass instances for the IO monad
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --guardedness #-}
 
 module Effect.Monad.IO.Instances where
 

@@ -4,7 +4,6 @@
 -- Primitive System.FilePath.Posix simple bindings to Haskell functions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --guardedness #-}
 
 module System.FilePath.Posix.Primitive where
 

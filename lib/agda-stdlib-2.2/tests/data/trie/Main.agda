@@ -1,6 +1,5 @@
 -- Taken from README.Data.Trie.NonDependent
 
-{-# OPTIONS --guardedness --sized-types #-}
 
 module Main where
 

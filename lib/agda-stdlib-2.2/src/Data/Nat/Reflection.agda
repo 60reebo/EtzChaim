@@ -4,7 +4,6 @@
 -- Reflection utilities for ℕ
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.Reflection where
 

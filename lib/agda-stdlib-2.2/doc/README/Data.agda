@@ -5,7 +5,6 @@
 -- library.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --sized-types --guardedness #-}
 
 module README.Data where
 

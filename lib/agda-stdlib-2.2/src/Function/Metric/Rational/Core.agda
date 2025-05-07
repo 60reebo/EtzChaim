@@ -4,7 +4,6 @@
 -- Core definitions for metrics over ℕ
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Data.Rational.Base using (ℚ)
 import Function.Metric.Core as Base

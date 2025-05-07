@@ -4,7 +4,6 @@
 -- This module is DEPRECATED.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Algebra.FunctionProperties.Consequences.Propositional
   {a} {A : Set a} where

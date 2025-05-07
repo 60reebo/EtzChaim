@@ -4,7 +4,6 @@
 -- Syntax for the building blocks of equational reasoning modules
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Level using (Level; _⊔_; suc)
 open import Relation.Nullary.Decidable.Core

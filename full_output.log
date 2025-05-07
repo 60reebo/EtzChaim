@@ -1,0 +1,798 @@
+מריץ תרחיש בזמן אמת: ak-igulim-yosher-scenario
+=== התחלת סימולציה ===
+==== מצב סימולציה: שלב SefirotStage, זמן 11 ====
+צמצום: רדיוס אורדינלי=S(S(S(S(S(S(S(S(S(S(0))))))))))
+רשימו: True
+קו: True
+תכונות: fromList [("\1497\1513_\1495\1500\1500_\1508\1504\1493\1497",True),("\1497\1513_\1512\1513\1497\1502\1493",True)]
+--- מתחיל ביצוע executeScenario ---
+# --- Stage 4: Emanation of AK and ABiYA Potential Layers (Combined Loop) ---
+LOG "Stage 4: Emanating the Hierarchical Scaffold (AK, Atzilut Partzufim, BYA Layers)."
+LOG "Define the emanation structure: OLAM_PARTZUF_STRUCTURE = DEFINE_WORLD_PARTZUF_STRUCTURE()"
+OLAM_PARTZUF_STRUCTURE = fromList [(AK,[AkOverall]),(Atzilut,[Atik,ArichAnpin,Abba,Imma,ZONMale,ZONFemale]),(Beriah,[BeriahOverall]),(Yetzirah,[YetzirahOverall]),(Asiyah,[AsiyahOverall])]
+LOG "OLAM_ORDER = [AK,Atzilut,Beriah,Yetzirah,Asiyah]"
+LOG "current_formation_space = vacated_space_with_reshimu: (radius=10, hasResh=True)"
+LOG "current_source_light = Light {power = Aleph 90, structure = ω+0, category = Yechida, kind = Pnimi, source = "EinSof-attenuated", timestamp = 1}"
+LOG "==== Starting Emanation of Outer Layer: AK ===="
+  == Starting Emanation of Partzuf: AkOverall of AK in space: vacated_space_with_reshimu: (radius=10, hasResh=True) ==
+    -- Starting Sefirah Keter --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = AK, fiPartzuf = AkOverall, fiSefirah = Keter} ***
+    -- Ending Sefirah Keter --
+    -- Starting Sefirah Hokhmah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = AK, fiPartzuf = AkOverall, fiSefirah = Hokhmah} ***
+    -- Ending Sefirah Hokhmah --
+    -- Starting Sefirah Binah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = AK, fiPartzuf = AkOverall, fiSefirah = Binah} ***
+    -- Ending Sefirah Binah --
+    -- Starting Sefirah Hesed --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = AK, fiPartzuf = AkOverall, fiSefirah = Hesed} ***
+    -- Ending Sefirah Hesed --
+    -- Starting Sefirah Gevurah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = AK, fiPartzuf = AkOverall, fiSefirah = Gevurah} ***
+    -- Ending Sefirah Gevurah --
+    -- Starting Sefirah Tiferet --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = AK, fiPartzuf = AkOverall, fiSefirah = Tiferet} ***
+    -- Ending Sefirah Tiferet --
+    -- Starting Sefirah Netzah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = AK, fiPartzuf = AkOverall, fiSefirah = Netzah} ***
+    -- Ending Sefirah Netzah --
+    -- Starting Sefirah Hod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = AK, fiPartzuf = AkOverall, fiSefirah = Hod} ***
+    -- Ending Sefirah Hod --
+    -- Starting Sefirah Yesod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = AK, fiPartzuf = AkOverall, fiSefirah = Yesod} ***
+    -- Ending Sefirah Yesod --
+    -- Starting Sefirah Malkhut --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = AK, fiPartzuf = AkOverall, fiSefirah = Malkhut} ***
+    -- Ending Sefirah Malkhut --
+      >> Checking Makif Yashar distancing for AkOverall of AK.
+        > Makif Yashar distancing. Calculated Distance: 5.
+        > New formation space: vacated_space_with_reshimu: (radius=5, hasResh=True)
+        > Updated source light: Light {power = Aleph 85, structure = ω+0, category = Yechida, kind = Pnimi, source = "EinSof-attenuated", timestamp = 2}
+  == Ending Emanation of Partzuf: AkOverall of AK ==
+LOG "==== Ending Emanation of Outer Layer: AK ===="
+LOG "==== Starting Emanation of Outer Layer: Atzilut ===="
+  == Starting Emanation of Partzuf: Atik of Atzilut in space: vacated_space_with_reshimu: (radius=5, hasResh=True) ==
+    -- Starting Sefirah Keter --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Atik, fiSefirah = Keter} ***
+    -- Ending Sefirah Keter --
+    -- Starting Sefirah Hokhmah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Atik, fiSefirah = Hokhmah} ***
+    -- Ending Sefirah Hokhmah --
+    -- Starting Sefirah Binah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Atik, fiSefirah = Binah} ***
+    -- Ending Sefirah Binah --
+    -- Starting Sefirah Hesed --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Atik, fiSefirah = Hesed} ***
+    -- Ending Sefirah Hesed --
+    -- Starting Sefirah Gevurah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Atik, fiSefirah = Gevurah} ***
+    -- Ending Sefirah Gevurah --
+    -- Starting Sefirah Tiferet --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Atik, fiSefirah = Tiferet} ***
+    -- Ending Sefirah Tiferet --
+    -- Starting Sefirah Netzah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Atik, fiSefirah = Netzah} ***
+    -- Ending Sefirah Netzah --
+    -- Starting Sefirah Hod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Atik, fiSefirah = Hod} ***
+    -- Ending Sefirah Hod --
+    -- Starting Sefirah Yesod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Atik, fiSefirah = Yesod} ***
+    -- Ending Sefirah Yesod --
+    -- Starting Sefirah Malkhut --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Atik, fiSefirah = Malkhut} ***
+    -- Ending Sefirah Malkhut --
+      >> Checking Makif Yashar distancing for Atik of Atzilut.
+        > Makif Yashar distancing. Calculated Distance: 4.
+        > New formation space: vacated_space_with_reshimu: (radius=4, hasResh=True)
+        > Updated source light: Light {power = Aleph 81, structure = ω+0, category = Yechida, kind = Pnimi, source = "EinSof-attenuated", timestamp = 3}
+  == Ending Emanation of Partzuf: Atik of Atzilut ==
+  == Starting Emanation of Partzuf: ArichAnpin of Atzilut in space: vacated_space_with_reshimu: (radius=4, hasResh=True) ==
+    -- Starting Sefirah Keter --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ArichAnpin, fiSefirah = Keter} ***
+    -- Ending Sefirah Keter --
+    -- Starting Sefirah Hokhmah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ArichAnpin, fiSefirah = Hokhmah} ***
+    -- Ending Sefirah Hokhmah --
+    -- Starting Sefirah Binah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ArichAnpin, fiSefirah = Binah} ***
+    -- Ending Sefirah Binah --
+    -- Starting Sefirah Hesed --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ArichAnpin, fiSefirah = Hesed} ***
+    -- Ending Sefirah Hesed --
+    -- Starting Sefirah Gevurah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ArichAnpin, fiSefirah = Gevurah} ***
+    -- Ending Sefirah Gevurah --
+    -- Starting Sefirah Tiferet --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ArichAnpin, fiSefirah = Tiferet} ***
+    -- Ending Sefirah Tiferet --
+    -- Starting Sefirah Netzah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ArichAnpin, fiSefirah = Netzah} ***
+    -- Ending Sefirah Netzah --
+    -- Starting Sefirah Hod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ArichAnpin, fiSefirah = Hod} ***
+    -- Ending Sefirah Hod --
+    -- Starting Sefirah Yesod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ArichAnpin, fiSefirah = Yesod} ***
+    -- Ending Sefirah Yesod --
+    -- Starting Sefirah Malkhut --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ArichAnpin, fiSefirah = Malkhut} ***
+    -- Ending Sefirah Malkhut --
+      >> Checking Makif Yashar distancing for ArichAnpin of Atzilut.
+        > Makif Yashar distancing. Calculated Distance: 3.
+        > New formation space: vacated_space_with_reshimu: (radius=3, hasResh=True)
+        > Updated source light: Light {power = Aleph 78, structure = ω+0, category = Yechida, kind = Pnimi, source = "EinSof-attenuated", timestamp = 4}
+  == Ending Emanation of Partzuf: ArichAnpin of Atzilut ==
+  == Starting Emanation of Partzuf: Abba of Atzilut in space: vacated_space_with_reshimu: (radius=3, hasResh=True) ==
+    -- Starting Sefirah Keter --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Abba, fiSefirah = Keter} ***
+    -- Ending Sefirah Keter --
+    -- Starting Sefirah Hokhmah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Abba, fiSefirah = Hokhmah} ***
+    -- Ending Sefirah Hokhmah --
+    -- Starting Sefirah Binah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Abba, fiSefirah = Binah} ***
+    -- Ending Sefirah Binah --
+    -- Starting Sefirah Hesed --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Abba, fiSefirah = Hesed} ***
+    -- Ending Sefirah Hesed --
+    -- Starting Sefirah Gevurah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Abba, fiSefirah = Gevurah} ***
+    -- Ending Sefirah Gevurah --
+    -- Starting Sefirah Tiferet --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Abba, fiSefirah = Tiferet} ***
+    -- Ending Sefirah Tiferet --
+    -- Starting Sefirah Netzah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Abba, fiSefirah = Netzah} ***
+    -- Ending Sefirah Netzah --
+    -- Starting Sefirah Hod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Abba, fiSefirah = Hod} ***
+    -- Ending Sefirah Hod --
+    -- Starting Sefirah Yesod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Abba, fiSefirah = Yesod} ***
+    -- Ending Sefirah Yesod --
+    -- Starting Sefirah Malkhut --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Abba, fiSefirah = Malkhut} ***
+    -- Ending Sefirah Malkhut --
+      >> Checking Makif Yashar distancing for Abba of Atzilut.
+        > Makif Yashar distancing. Calculated Distance: 2.
+        > New formation space: vacated_space_with_reshimu: (radius=2, hasResh=True)
+        > Updated source light: Light {power = Aleph 76, structure = ω+0, category = Yechida, kind = Pnimi, source = "EinSof-attenuated", timestamp = 5}
+  == Ending Emanation of Partzuf: Abba of Atzilut ==
+  == Starting Emanation of Partzuf: Imma of Atzilut in space: vacated_space_with_reshimu: (radius=2, hasResh=True) ==
+    -- Starting Sefirah Keter --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Imma, fiSefirah = Keter} ***
+    -- Ending Sefirah Keter --
+    -- Starting Sefirah Hokhmah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Imma, fiSefirah = Hokhmah} ***
+    -- Ending Sefirah Hokhmah --
+    -- Starting Sefirah Binah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Imma, fiSefirah = Binah} ***
+    -- Ending Sefirah Binah --
+    -- Starting Sefirah Hesed --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Imma, fiSefirah = Hesed} ***
+    -- Ending Sefirah Hesed --
+    -- Starting Sefirah Gevurah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Imma, fiSefirah = Gevurah} ***
+    -- Ending Sefirah Gevurah --
+    -- Starting Sefirah Tiferet --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Imma, fiSefirah = Tiferet} ***
+    -- Ending Sefirah Tiferet --
+    -- Starting Sefirah Netzah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Imma, fiSefirah = Netzah} ***
+    -- Ending Sefirah Netzah --
+    -- Starting Sefirah Hod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Imma, fiSefirah = Hod} ***
+    -- Ending Sefirah Hod --
+    -- Starting Sefirah Yesod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Imma, fiSefirah = Yesod} ***
+    -- Ending Sefirah Yesod --
+    -- Starting Sefirah Malkhut --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = Imma, fiSefirah = Malkhut} ***
+    -- Ending Sefirah Malkhut --
+      >> Checking Makif Yashar distancing for Imma of Atzilut.
+        > Makif Yashar distancing. Calculated Distance: 1.
+        > New formation space: vacated_space_with_reshimu: (radius=1, hasResh=True)
+        > Updated source light: Light {power = Aleph 75, structure = ω+0, category = Yechida, kind = Pnimi, source = "EinSof-attenuated", timestamp = 6}
+  == Ending Emanation of Partzuf: Imma of Atzilut ==
+  == Starting Emanation of Partzuf: ZONMale of Atzilut in space: vacated_space_with_reshimu: (radius=1, hasResh=True) ==
+    -- Starting Sefirah Keter --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONMale, fiSefirah = Keter} ***
+    -- Ending Sefirah Keter --
+    -- Starting Sefirah Hokhmah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONMale, fiSefirah = Hokhmah} ***
+    -- Ending Sefirah Hokhmah --
+    -- Starting Sefirah Binah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONMale, fiSefirah = Binah} ***
+    -- Ending Sefirah Binah --
+    -- Starting Sefirah Hesed --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONMale, fiSefirah = Hesed} ***
+    -- Ending Sefirah Hesed --
+    -- Starting Sefirah Gevurah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONMale, fiSefirah = Gevurah} ***
+    -- Ending Sefirah Gevurah --
+    -- Starting Sefirah Tiferet --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONMale, fiSefirah = Tiferet} ***
+    -- Ending Sefirah Tiferet --
+    -- Starting Sefirah Netzah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONMale, fiSefirah = Netzah} ***
+    -- Ending Sefirah Netzah --
+    -- Starting Sefirah Hod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONMale, fiSefirah = Hod} ***
+    -- Ending Sefirah Hod --
+    -- Starting Sefirah Yesod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONMale, fiSefirah = Yesod} ***
+    -- Ending Sefirah Yesod --
+    -- Starting Sefirah Malkhut --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONMale, fiSefirah = Malkhut} ***
+    -- Ending Sefirah Malkhut --
+      >> Checking Makif Yashar distancing for ZONMale of Atzilut.
+        > Makif Yashar distancing. Calculated Distance: 0.
+        > New formation space: vacated_space_with_reshimu: (radius=0, hasResh=True)
+        > Updated source light: Light {power = Aleph 75, structure = ω+0, category = Yechida, kind = Pnimi, source = "EinSof-attenuated", timestamp = 7}
+  == Ending Emanation of Partzuf: ZONMale of Atzilut ==
+  == Starting Emanation of Partzuf: ZONFemale of Atzilut in space: vacated_space_with_reshimu: (radius=0, hasResh=True) ==
+    -- Starting Sefirah Keter --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONFemale, fiSefirah = Keter} ***
+    -- Ending Sefirah Keter --
+    -- Starting Sefirah Hokhmah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONFemale, fiSefirah = Hokhmah} ***
+    -- Ending Sefirah Hokhmah --
+    -- Starting Sefirah Binah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONFemale, fiSefirah = Binah} ***
+    -- Ending Sefirah Binah --
+    -- Starting Sefirah Hesed --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONFemale, fiSefirah = Hesed} ***
+    -- Ending Sefirah Hesed --
+    -- Starting Sefirah Gevurah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONFemale, fiSefirah = Gevurah} ***
+    -- Ending Sefirah Gevurah --
+    -- Starting Sefirah Tiferet --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONFemale, fiSefirah = Tiferet} ***
+    -- Ending Sefirah Tiferet --
+    -- Starting Sefirah Netzah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONFemale, fiSefirah = Netzah} ***
+    -- Ending Sefirah Netzah --
+    -- Starting Sefirah Hod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONFemale, fiSefirah = Hod} ***
+    -- Ending Sefirah Hod --
+    -- Starting Sefirah Yesod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONFemale, fiSefirah = Yesod} ***
+    -- Ending Sefirah Yesod --
+    -- Starting Sefirah Malkhut --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Atzilut, fiPartzuf = ZONFemale, fiSefirah = Malkhut} ***
+    -- Ending Sefirah Malkhut --
+      >> Checking Makif Yashar distancing for ZONFemale of Atzilut.
+        > Makif Yashar distancing. Calculated Distance: 0.
+        > New formation space: vacated_space_with_reshimu: (radius=0, hasResh=True)
+        > Updated source light: Light {power = Aleph 75, structure = ω+0, category = Yechida, kind = Pnimi, source = "EinSof-attenuated", timestamp = 8}
+  == Ending Emanation of Partzuf: ZONFemale of Atzilut ==
+    >> Applied Atzilut height limits.
+LOG "==== Ending Emanation of Outer Layer: Atzilut ===="
+LOG "==== Starting Emanation of Outer Layer: Beriah ===="
+  == Starting Emanation of Partzuf: BeriahOverall of Beriah in space: vacated_space_with_reshimu: (radius=0, hasResh=True) ==
+    -- Starting Sefirah Keter --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Beriah, fiPartzuf = BeriahOverall, fiSefirah = Keter} ***
+    -- Ending Sefirah Keter --
+    -- Starting Sefirah Hokhmah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Beriah, fiPartzuf = BeriahOverall, fiSefirah = Hokhmah} ***
+    -- Ending Sefirah Hokhmah --
+    -- Starting Sefirah Binah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Beriah, fiPartzuf = BeriahOverall, fiSefirah = Binah} ***
+    -- Ending Sefirah Binah --
+    -- Starting Sefirah Hesed --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Beriah, fiPartzuf = BeriahOverall, fiSefirah = Hesed} ***
+    -- Ending Sefirah Hesed --
+    -- Starting Sefirah Gevurah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Beriah, fiPartzuf = BeriahOverall, fiSefirah = Gevurah} ***
+    -- Ending Sefirah Gevurah --
+    -- Starting Sefirah Tiferet --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Beriah, fiPartzuf = BeriahOverall, fiSefirah = Tiferet} ***
+    -- Ending Sefirah Tiferet --
+    -- Starting Sefirah Netzah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Beriah, fiPartzuf = BeriahOverall, fiSefirah = Netzah} ***
+    -- Ending Sefirah Netzah --
+    -- Starting Sefirah Hod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Beriah, fiPartzuf = BeriahOverall, fiSefirah = Hod} ***
+    -- Ending Sefirah Hod --
+    -- Starting Sefirah Yesod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Beriah, fiPartzuf = BeriahOverall, fiSefirah = Yesod} ***
+    -- Ending Sefirah Yesod --
+    -- Starting Sefirah Malkhut --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Beriah, fiPartzuf = BeriahOverall, fiSefirah = Malkhut} ***
+    -- Ending Sefirah Malkhut --
+      >> Checking Makif Yashar distancing for BeriahOverall of Beriah.
+        > Makif Yashar distancing. Calculated Distance: 3.
+        > New formation space: vacated_space_with_reshimu: (radius=3, hasResh=True)
+        > Updated source light: Light {power = Aleph 72, structure = ω+0, category = Yechida, kind = Pnimi, source = "EinSof-attenuated", timestamp = 9}
+  == Ending Emanation of Partzuf: BeriahOverall of Beriah ==
+LOG "==== Ending Emanation of Outer Layer: Beriah ===="
+LOG "==== Starting Emanation of Outer Layer: Yetzirah ===="
+  == Starting Emanation of Partzuf: YetzirahOverall of Yetzirah in space: vacated_space_with_reshimu: (radius=3, hasResh=True) ==
+    -- Starting Sefirah Keter --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Yetzirah, fiPartzuf = YetzirahOverall, fiSefirah = Keter} ***
+    -- Ending Sefirah Keter --
+    -- Starting Sefirah Hokhmah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Yetzirah, fiPartzuf = YetzirahOverall, fiSefirah = Hokhmah} ***
+    -- Ending Sefirah Hokhmah --
+    -- Starting Sefirah Binah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Yetzirah, fiPartzuf = YetzirahOverall, fiSefirah = Binah} ***
+    -- Ending Sefirah Binah --
+    -- Starting Sefirah Hesed --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Yetzirah, fiPartzuf = YetzirahOverall, fiSefirah = Hesed} ***
+    -- Ending Sefirah Hesed --
+    -- Starting Sefirah Gevurah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Yetzirah, fiPartzuf = YetzirahOverall, fiSefirah = Gevurah} ***
+    -- Ending Sefirah Gevurah --
+    -- Starting Sefirah Tiferet --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Yetzirah, fiPartzuf = YetzirahOverall, fiSefirah = Tiferet} ***
+    -- Ending Sefirah Tiferet --
+    -- Starting Sefirah Netzah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Yetzirah, fiPartzuf = YetzirahOverall, fiSefirah = Netzah} ***
+    -- Ending Sefirah Netzah --
+    -- Starting Sefirah Hod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Yetzirah, fiPartzuf = YetzirahOverall, fiSefirah = Hod} ***
+    -- Ending Sefirah Hod --
+    -- Starting Sefirah Yesod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Yetzirah, fiPartzuf = YetzirahOverall, fiSefirah = Yesod} ***
+    -- Ending Sefirah Yesod --
+    -- Starting Sefirah Malkhut --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Yetzirah, fiPartzuf = YetzirahOverall, fiSefirah = Malkhut} ***
+    -- Ending Sefirah Malkhut --
+      >> Checking Makif Yashar distancing for YetzirahOverall of Yetzirah.
+        > Makif Yashar distancing. Calculated Distance: 2.
+        > New formation space: vacated_space_with_reshimu: (radius=2, hasResh=True)
+        > Updated source light: Light {power = Aleph 70, structure = ω+0, category = Yechida, kind = Pnimi, source = "EinSof-attenuated", timestamp = 10}
+  == Ending Emanation of Partzuf: YetzirahOverall of Yetzirah ==
+LOG "==== Ending Emanation of Outer Layer: Yetzirah ===="
+LOG "==== Starting Emanation of Outer Layer: Asiyah ===="
+  == Starting Emanation of Partzuf: AsiyahOverall of Asiyah in space: vacated_space_with_reshimu: (radius=2, hasResh=True) ==
+    -- Starting Sefirah Keter --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Asiyah, fiPartzuf = AsiyahOverall, fiSefirah = Keter} ***
+    -- Ending Sefirah Keter --
+    -- Starting Sefirah Hokhmah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Asiyah, fiPartzuf = AsiyahOverall, fiSefirah = Hokhmah} ***
+    -- Ending Sefirah Hokhmah --
+    -- Starting Sefirah Binah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Asiyah, fiPartzuf = AsiyahOverall, fiSefirah = Binah} ***
+    -- Ending Sefirah Binah --
+    -- Starting Sefirah Hesed --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Asiyah, fiPartzuf = AsiyahOverall, fiSefirah = Hesed} ***
+    -- Ending Sefirah Hesed --
+    -- Starting Sefirah Gevurah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Asiyah, fiPartzuf = AsiyahOverall, fiSefirah = Gevurah} ***
+    -- Ending Sefirah Gevurah --
+    -- Starting Sefirah Tiferet --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Asiyah, fiPartzuf = AsiyahOverall, fiSefirah = Tiferet} ***
+    -- Ending Sefirah Tiferet --
+    -- Starting Sefirah Netzah --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Asiyah, fiPartzuf = AsiyahOverall, fiSefirah = Netzah} ***
+    -- Ending Sefirah Netzah --
+    -- Starting Sefirah Hod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Asiyah, fiPartzuf = AsiyahOverall, fiSefirah = Hod} ***
+    -- Ending Sefirah Hod --
+    -- Starting Sefirah Yesod --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Asiyah, fiPartzuf = AsiyahOverall, fiSefirah = Yesod} ***
+    -- Ending Sefirah Yesod --
+    -- Starting Sefirah Malkhut --
+    -> Creating Igul (Nefesh).
+    -> Igul completed.
+    -> Creating Yosher (Naranchay in Tzelem).
+    -> Yosher completed.
+      *** Attire succeeded for: FullIdentity {fiOlam = Asiyah, fiPartzuf = AsiyahOverall, fiSefirah = Malkhut} ***
+    -- Ending Sefirah Malkhut --
+      >> Checking Makif Yashar distancing for AsiyahOverall of Asiyah.
+        > End of process in Asiyah. Makif Yashar remains attached.
+  == Ending Emanation of Partzuf: AsiyahOverall of Asiyah ==
+LOG "==== Ending Emanation of Outer Layer: Asiyah ===="
+LOG "==== Breaking out of Olam loop after Asiyah ===="
+--- סיים ביצוע executeScenario ---
+=== אירועי סימולציה ===
+המצב הסופי לאחר ביצוע התרחיש:
+==== מצב סימולציה: שלב PartzufimStage, זמן 12 ====
+מספר עולמות: 5
+מספר פרצופים (סה"כ): 10
+מספר יחידות ספירה (סה"כ): 100
+==== מצב סימולציה: שלב PartzufimStage, זמן 13 ====
+מספר עולמות: 5
+מספר פרצופים (סה"כ): 10
+מספר יחידות ספירה (סה"כ): 100
+=== סימולציה הסתיימה ===
+סיום ריצה.

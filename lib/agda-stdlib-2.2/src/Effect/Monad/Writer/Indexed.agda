@@ -4,7 +4,6 @@
 -- The indexed writer monad
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Level
 

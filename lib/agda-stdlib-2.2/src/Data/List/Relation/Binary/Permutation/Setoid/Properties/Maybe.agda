@@ -4,7 +4,6 @@
 -- Properties of permutations using setoid equality (on Maybe elements)
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Relation.Binary.Permutation.Setoid.Properties.Maybe where
 

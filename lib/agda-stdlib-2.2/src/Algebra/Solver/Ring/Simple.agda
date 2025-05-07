@@ -5,7 +5,6 @@
 -- decidable equality
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Solver.Ring.AlmostCommutativeRing
 open import Relation.Binary.Definitions using (Decidable)

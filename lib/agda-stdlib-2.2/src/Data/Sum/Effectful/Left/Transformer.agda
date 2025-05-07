@@ -4,7 +4,6 @@
 -- An effectful view of the Sum type (Left-biased)
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Level
 

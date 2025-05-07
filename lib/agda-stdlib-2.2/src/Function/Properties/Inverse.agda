@@ -4,7 +4,6 @@
 -- Properties of inverses.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function.Properties.Inverse where
 

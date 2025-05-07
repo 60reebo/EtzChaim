@@ -5,7 +5,6 @@
 -- `Relation.Binary.Lattice.Properties.HeytingAlgebra` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Lattice using (HeytingAlgebra)
 

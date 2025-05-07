@@ -4,7 +4,6 @@
 -- Propositional (intensional) equality - Algebraic structures
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.PropositionalEquality.Algebra where
 

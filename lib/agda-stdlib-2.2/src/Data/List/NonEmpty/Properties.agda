@@ -4,7 +4,6 @@
 -- Properties of non-empty lists
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.NonEmpty.Properties where
 

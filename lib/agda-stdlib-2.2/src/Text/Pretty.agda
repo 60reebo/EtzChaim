@@ -6,7 +6,6 @@
 -- "A Pretty But Not Greedy Printer"
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K #-}
 
 open import Data.Nat.Base using (ℕ)
 

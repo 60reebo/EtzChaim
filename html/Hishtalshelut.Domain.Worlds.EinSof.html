@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html><head><meta charset="utf-8"><title>Hishtalshelut.Domain.Worlds.EinSof</title><link rel="stylesheet" href="Agda.css"></head><body><pre class="Agda"><a id="1" class="Comment">--------------------------------------------------</a>
+<a id="52" class="Comment">-- EinSof (Domain Layer)</a>
+<a id="77" class="Comment">--------------------------------------------------</a>
+<a id="128" class="Comment">--------------------------------------------------</a>
+<a id="179" class="Comment">-- Hishtalshelut.Domain.Worlds.EinSof</a>
+<a id="217" class="Comment">--</a>
+<a id="220" class="Comment">-- DOMAIN LAYER: Defines the conceptual structure and types for Ein Sof (the Infinite) in the system.</a>
+<a id="322" class="Comment">-- This file should only contain static types, enums, and pure functions related to Ein Sof.</a>
+<a id="415" class="Comment">-- No state or dynamic logic should appear here!</a>
+<a id="464" class="Comment">--------------------------------------------------</a>
+<a id="515" class="Keyword">module</a> <a id="522" href="Hishtalshelut.Domain.Worlds.EinSof.html" class="Module">Hishtalshelut.Domain.Worlds.EinSof</a> <a id="557" class="Keyword">where</a>
+
+<a id="564" class="Keyword">open</a> <a id="569" class="Keyword">import</a> <a id="576" href="Agda.Builtin.Unit.html" class="Module">Agda.Builtin.Unit</a>
+<a id="594" class="Keyword">open</a> <a id="599" class="Keyword">import</a> <a id="606" href="Agda.Builtin.Bool.html" class="Module">Agda.Builtin.Bool</a>
+<a id="624" class="Keyword">open</a> <a id="629" class="Keyword">import</a> <a id="636" href="Agda.Builtin.String.html" class="Module">Agda.Builtin.String</a>
+
+<a id="657" class="Comment">{- |
+  EinSof (אין-סוף):
+  הגדרה מתמטית של אור אין-סוף בקבלה – אור פשוט, אחיד, בלתי נתפס, ללא גבול, הבחנה או תכונה פנימית.
+  בחרנו לייצג את EinSof כ-unit type (טיפוס יחידה) באגדה, כי מבחינה קבלית ומתמטית:
+  - אין שום הבחנה פנימית בין מופעים שונים של אין-סוף.
+  - כל תכונה, מידה או תיאור תפר את עקרון הפשטות והאחדות המוחלטת של אין-סוף.
+  - זהו ייצוג נאמן לרעיון של אור פשוט שאין בו שום מאפיין או מידע נוסף.
+  אם נרצה להוסיף תכונות מתמטיות או תיעוד, נשתמש בטיפוס עוטף (wrapper) ולא נשנה את המהות.
+-}</a>
+
+<a id="1156" class="Keyword">record</a> <a id="EinSof"></a><a id="1163" href="Hishtalshelut.Domain.Worlds.EinSof.html#1163" class="Record">EinSof</a> <a id="1170" class="Symbol">:</a> <a id="1172" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="1176" class="Keyword">where</a>
+  <a id="1184" class="Keyword">constructor</a> <a id="einsOf"></a><a id="1196" href="Hishtalshelut.Domain.Worlds.EinSof.html#1196" class="InductiveConstructor">einsOf</a>
+
+<a id="1204" class="Comment">{- |
+  Mathematical properties of EinSof (אור אין-סוף):
+  מבוסס על הציטוטים והמאפיינים המרכזיים בטקסט שער א ענף ב:
+
+  * &quot;הכל היה אור א&#39; פשוט שוה בהשוואה א&#39;... לא יצדק בו מעלה ומטה פנים ואחור כי כל הכינונים האלו מורים הם היות קצבה וגבול ותחום ומדה באור א&quot;ס העליון ח&quot;ו&quot;
+  * &quot;לא היה לו בחי&#39; ראש ולא בחי&#39; סוף... לא קצבה וגבול ותחום ומדה&quot;
+  * &quot;אין לו בחי&#39; ראש ולא בחי&#39; סוף אלא הכל היה אור א&#39; פשוט שוה בהשוואה א&#39; והוא הנק&#39; אור א&quot;ס&quot;
+  * &quot;אור א&quot;ס נוקב ועובר בעובי כל ספי&#39; וספי&#39; ומלגאו כל ספי&#39; וספי&#39; ואסחר לון מלבר לכל ספי&#39; וספי&#39; כנזכר בספר הזוהר...&quot;
+
+  המעטפת מאפשרת להוסיף מאפיינים מתמטיים פורמליים, תיעוד, וכלים להוכיח את תכונת האחידות, חוסר גבול, אי-הבחנה פנימית ועוד.
+-}</a>
+<a id="1871" class="Keyword">record</a> <a id="EinSofProperties"></a><a id="1878" href="Hishtalshelut.Domain.Worlds.EinSof.html#1878" class="Record">EinSofProperties</a> <a id="1895" class="Symbol">:</a> <a id="1897" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="1901" class="Keyword">where</a>
+  <a id="1909" class="Keyword">field</a>
+    <a id="1919" class="Comment">-- אין הבחנה פנימית: indistinguishable</a>
+    <a id="EinSofProperties.indistinguishable"></a><a id="1962" href="Hishtalshelut.Domain.Worlds.EinSof.html#1962" class="Field">indistinguishable</a> <a id="1980" class="Symbol">:</a> <a id="1982" href="Hishtalshelut.Domain.Worlds.EinSof.html#1163" class="Record">EinSof</a> <a id="1989" class="Symbol">→</a> <a id="1991" href="Hishtalshelut.Domain.Worlds.EinSof.html#1163" class="Record">EinSof</a> <a id="1998" class="Symbol">→</a> <a id="2000" href="Agda.Builtin.Bool.html#173" class="Datatype">Bool</a>
+    <a id="2009" class="Comment">-- חוסר גבול/מידה</a>
+    <a id="EinSofProperties.hasBoundary"></a><a id="2031" href="Hishtalshelut.Domain.Worlds.EinSof.html#2031" class="Field">hasBoundary</a> <a id="2043" class="Symbol">:</a> <a id="2045" href="Agda.Builtin.Bool.html#173" class="Datatype">Bool</a>
+    <a id="2054" class="Comment">-- אחידות מוחלטת</a>
+    <a id="EinSofProperties.isUniform"></a><a id="2075" href="Hishtalshelut.Domain.Worlds.EinSof.html#2075" class="Field">isUniform</a> <a id="2085" class="Symbol">:</a> <a id="2087" href="Agda.Builtin.Bool.html#173" class="Datatype">Bool</a>
+    <a id="2096" class="Comment">-- כל פעולה עליו מחזירה אותו דבר</a>
+    <a id="EinSofProperties.mapInvariant"></a><a id="2133" href="Hishtalshelut.Domain.Worlds.EinSof.html#2133" class="Field">mapInvariant</a> <a id="2146" class="Symbol">:</a> <a id="2148" class="Symbol">(</a><a id="2149" href="Hishtalshelut.Domain.Worlds.EinSof.html#1163" class="Record">EinSof</a> <a id="2156" class="Symbol">→</a> <a id="2158" href="Hishtalshelut.Domain.Worlds.EinSof.html#1163" class="Record">EinSof</a><a id="2164" class="Symbol">)</a> <a id="2166" class="Symbol">→</a> <a id="2168" href="Hishtalshelut.Domain.Worlds.EinSof.html#1163" class="Record">EinSof</a> <a id="2175" class="Symbol">→</a> <a id="2177" href="Agda.Builtin.Bool.html#173" class="Datatype">Bool</a>
+    <a id="2186" class="Comment">-- אין משמעות למיקום/כיוון</a>
+    <a id="EinSofProperties.location"></a><a id="2217" href="Hishtalshelut.Domain.Worlds.EinSof.html#2217" class="Field">location</a>    <a id="2229" class="Symbol">:</a> <a id="2231" href="Agda.Builtin.Unit.html#175" class="Record">⊤</a>
+    <a id="EinSofProperties.direction"></a><a id="2237" href="Hishtalshelut.Domain.Worlds.EinSof.html#2237" class="Field">direction</a>   <a id="2249" class="Symbol">:</a> <a id="2251" href="Agda.Builtin.Unit.html#175" class="Record">⊤</a>
+    <a id="2257" class="Comment">-- כל ספירה מקבלת ממנו אור באותה מידה</a>
+    <a id="EinSofProperties.receiveFromEinSof"></a><a id="2299" href="Hishtalshelut.Domain.Worlds.EinSof.html#2299" class="Field">receiveFromEinSof</a> <a id="2317" class="Symbol">:</a> <a id="2319" href="Hishtalshelut.Domain.Worlds.EinSof.html#1163" class="Record">EinSof</a> <a id="2326" class="Symbol">→</a> <a id="2328" href="Agda.Builtin.Unit.html#175" class="Record">⊤</a>
+    <a id="2334" class="Comment">-- תיעוד מפורט</a>
+    <a id="EinSofProperties.description"></a><a id="2353" href="Hishtalshelut.Domain.Worlds.EinSof.html#2353" class="Field">description</a> <a id="2365" class="Symbol">:</a> <a id="2367" href="Agda.Builtin.String.html#335" class="Postulate">String</a>
+
+<a id="2375" class="Comment">{- |
+  מופע קונקרטי של מאפייני אין-סוף על פי ההגדרות הקבליות והמתמטיות.
+  כל שדה ממומש בהתאם לרעיון של אחידות, חוסר גבול, אי-הבחנה וכו&#39;.
+-}</a>
+
+<a id="2516" class="Comment">-- Wrappers for EinSof in circles (Igulim) and kav (Yosher) contexts:</a>
+<a id="2586" class="Keyword">record</a> <a id="CircleEinSof"></a><a id="2593" href="Hishtalshelut.Domain.Worlds.EinSof.html#2593" class="Record">CircleEinSof</a> <a id="2606" class="Symbol">:</a> <a id="2608" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="2612" class="Keyword">where</a>
+  <a id="2620" class="Keyword">constructor</a> <a id="circleOf"></a><a id="2632" href="Hishtalshelut.Domain.Worlds.EinSof.html#2632" class="InductiveConstructor">circleOf</a>
+  <a id="2643" class="Keyword">field</a>
+    <a id="CircleEinSof.underlying"></a><a id="2653" href="Hishtalshelut.Domain.Worlds.EinSof.html#2653" class="Field">underlying</a> <a id="2664" class="Symbol">:</a> <a id="2666" href="Hishtalshelut.Domain.Worlds.EinSof.html#1163" class="Record">EinSof</a>
+
+<a id="2674" class="Keyword">record</a> <a id="KavEinSof"></a><a id="2681" href="Hishtalshelut.Domain.Worlds.EinSof.html#2681" class="Record">KavEinSof</a> <a id="2691" class="Symbol">:</a> <a id="2693" href="Agda.Primitive.html#388" class="Primitive">Set</a> <a id="2697" class="Keyword">where</a>
+  <a id="2705" class="Keyword">constructor</a> <a id="kavOf"></a><a id="2717" href="Hishtalshelut.Domain.Worlds.EinSof.html#2717" class="InductiveConstructor">kavOf</a>
+  <a id="2725" class="Keyword">field</a>
+    <a id="KavEinSof.underlying"></a><a id="2735" href="Hishtalshelut.Domain.Worlds.EinSof.html#2735" class="Field">underlying</a> <a id="2746" class="Symbol">:</a> <a id="2748" href="Hishtalshelut.Domain.Worlds.EinSof.html#1163" class="Record">EinSof</a>
+</pre></body></html>

@@ -5,7 +5,6 @@
 -- `Data.List.Effectful.Transformer` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Categorical.Transformer where
 

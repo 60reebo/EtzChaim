@@ -4,7 +4,6 @@
 -- Properties of pointwise lifting of relations to lists
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Relation.Binary.Pointwise.Properties where
 

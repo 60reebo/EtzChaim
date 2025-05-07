@@ -4,7 +4,6 @@
 -- Some properties of Magma homomorphisms
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Algebra.Morphism.Consequences where
 

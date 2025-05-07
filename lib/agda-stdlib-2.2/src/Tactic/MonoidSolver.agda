@@ -68,7 +68,6 @@
 -- same as the one the user is looking at, and in order to do that we
 -- quote it at the call site.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Tactic.MonoidSolver where
 

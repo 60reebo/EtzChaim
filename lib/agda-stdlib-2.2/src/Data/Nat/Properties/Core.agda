@@ -6,7 +6,6 @@
 --
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.Properties.Core where
 

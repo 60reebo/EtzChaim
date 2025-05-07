@@ -4,7 +4,6 @@
 -- Properties, related to products, that rely on the K rule
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K --safe #-}
 
 module Data.Product.Properties.WithK where
 

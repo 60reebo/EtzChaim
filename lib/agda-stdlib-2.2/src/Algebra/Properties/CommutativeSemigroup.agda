@@ -4,7 +4,6 @@
 -- Some theory for commutative semigroup
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra using (CommutativeSemigroup)
 

@@ -4,7 +4,6 @@
 -- Non empty trie, basic type and operations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 open import Relation.Binary.Bundles using (StrictTotalOrder)
 

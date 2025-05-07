@@ -4,7 +4,6 @@
 -- Properties of operations on the Covec type
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Codata.Sized.Covec.Properties where
 

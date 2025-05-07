@@ -4,7 +4,6 @@
 -- Argument quantities used in the reflection machinery
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Reflection.AST.Argument.Quantity where
 

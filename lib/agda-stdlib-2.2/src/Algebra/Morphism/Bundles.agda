@@ -6,7 +6,6 @@
 -- NB indexed by Raw bundles, just as IsXHomomorphism is
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Algebra.Morphism.Bundles where
 

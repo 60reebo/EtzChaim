@@ -4,7 +4,6 @@
 -- Showing natural numbers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.Show where
 

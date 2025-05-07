@@ -4,7 +4,6 @@
 -- Level polymorphic Empty type
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Empty.Polymorphic where
 

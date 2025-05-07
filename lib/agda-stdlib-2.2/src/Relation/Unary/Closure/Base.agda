@@ -4,7 +4,6 @@
 -- Closures of a unary relation with respect to a binary one.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Core using (Rel)
 open import Relation.Binary.Definitions using (Transitive; Reflexive)

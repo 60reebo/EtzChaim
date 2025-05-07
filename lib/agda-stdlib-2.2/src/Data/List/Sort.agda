@@ -7,7 +7,6 @@
 -- See `Data.List.Relation.Unary.Sorted` for the property of a list
 -- being sorted.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Data.List.Base using (List)
 open import Relation.Binary.Bundles using (DecTotalOrder)

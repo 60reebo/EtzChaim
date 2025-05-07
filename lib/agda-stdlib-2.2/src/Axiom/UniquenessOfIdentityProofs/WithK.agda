@@ -4,7 +4,6 @@
 -- Results concerning uniqueness of identity proofs, with axiom K
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K --safe #-}
 
 module Axiom.UniquenessOfIdentityProofs.WithK where
 

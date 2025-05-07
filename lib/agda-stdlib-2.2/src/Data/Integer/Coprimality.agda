@@ -4,7 +4,6 @@
 -- Coprimality
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Integer.Coprimality where
 

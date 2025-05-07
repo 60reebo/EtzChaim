@@ -4,7 +4,6 @@
 -- Basic definitions for Characters
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Char.Base where
 

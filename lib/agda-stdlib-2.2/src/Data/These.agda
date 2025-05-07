@@ -4,7 +4,6 @@
 -- An either-or-both data type
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.These where
 

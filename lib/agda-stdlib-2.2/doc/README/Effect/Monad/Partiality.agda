@@ -4,7 +4,6 @@
 -- Example showing the use of the partiality Monad
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe --guardedness #-}
 
 module README.Effect.Monad.Partiality where
 

@@ -4,7 +4,6 @@
 -- List Zippers, basic types and operations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Zipper where
 

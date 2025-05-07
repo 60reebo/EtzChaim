@@ -4,7 +4,6 @@
 -- Semi-heterogeneous vector equality over setoids
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (Setoid)
 

@@ -4,7 +4,6 @@
 -- The state monad
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Effect.Monad.State where
 

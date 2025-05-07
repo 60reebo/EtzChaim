@@ -1,0 +1,25 @@
+{
+  "identifier": { "namespace": "etzchaim", "key": "hishtalshelut-root" },
+  "name": "השתלשלות",
+  "type": "folder",
+  "location": "ROOT",
+  "children": [
+    {
+      "identifier": { "namespace": "etzchaim", "key": "atzilut" },
+      "name": "אצילות",
+      "type": "world",
+      "children": [
+        {
+          "identifier": { "namespace": "etzchaim", "key": "keter" },
+          "name": "כתר",
+          "type": "sefirah"
+        }
+      ]
+    },
+    {
+      "identifier": { "namespace": "etzchaim", "key": "beriah" },
+      "name": "בריאה",
+      "type": "world"
+    }
+  ]
+}

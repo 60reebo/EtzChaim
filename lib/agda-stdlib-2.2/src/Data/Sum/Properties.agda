@@ -4,7 +4,6 @@
 -- Properties of sums (disjoint unions)
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Sum.Properties where
 

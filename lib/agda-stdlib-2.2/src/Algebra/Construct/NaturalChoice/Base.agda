@@ -5,7 +5,6 @@
 -- with respect to a total preorder.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Core
 open import Level as L hiding (_⊔_)

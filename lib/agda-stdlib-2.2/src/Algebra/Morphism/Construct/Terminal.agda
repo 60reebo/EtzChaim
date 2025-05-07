@@ -9,7 +9,6 @@
 -- define the morphism on the underlying `RawMonoid`
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Level using (Level)
 

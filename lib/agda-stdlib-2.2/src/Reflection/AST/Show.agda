@@ -7,7 +7,6 @@
 -- Note that Reflection.termErr can also be used directly in tactic
 -- error messages.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Reflection.AST.Show where
 

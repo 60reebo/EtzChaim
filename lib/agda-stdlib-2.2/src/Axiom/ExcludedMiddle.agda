@@ -4,7 +4,6 @@
 -- Results concerning the excluded middle axiom.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Axiom.ExcludedMiddle where
 

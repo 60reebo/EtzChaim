@@ -6,7 +6,6 @@
 -- in: https://stackoverflow.com/q/22676703/3168666
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K #-}
 
 module README.Function.Reasoning where
 

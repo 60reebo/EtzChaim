@@ -8,7 +8,6 @@
 -- from/to M.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Level
 

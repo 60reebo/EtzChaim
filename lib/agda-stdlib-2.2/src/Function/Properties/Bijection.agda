@@ -4,7 +4,6 @@
 -- Some basic properties of bijections.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function.Properties.Bijection where
 

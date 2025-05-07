@@ -4,7 +4,6 @@
 -- Logarithm base 2 and respective properties
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.Logarithm where
 

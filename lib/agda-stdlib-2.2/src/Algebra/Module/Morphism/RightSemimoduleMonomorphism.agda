@@ -4,7 +4,6 @@
 -- Consequences of a monomomorphism between right semimodules
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Algebra.Module.Bundles.Raw
 open import Algebra.Module.Morphism.Structures

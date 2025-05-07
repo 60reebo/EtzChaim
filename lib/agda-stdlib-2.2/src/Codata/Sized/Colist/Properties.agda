@@ -4,7 +4,6 @@
 -- Properties of operations on the Colist type
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Codata.Sized.Colist.Properties where
 

@@ -4,7 +4,6 @@
 -- Sizes for Agda's sized types
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Size where
 

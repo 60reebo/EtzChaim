@@ -4,7 +4,6 @@
 -- Universes
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Universe where
 

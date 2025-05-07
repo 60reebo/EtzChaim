@@ -4,7 +4,6 @@
 -- Posix filepaths
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --guardedness #-}
 
 module System.FilePath.Posix where
 

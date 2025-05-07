@@ -4,7 +4,6 @@
 -- The writer monad
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Effect.Monad.Writer where
 

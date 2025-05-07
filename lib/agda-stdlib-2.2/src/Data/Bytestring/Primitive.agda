@@ -4,7 +4,6 @@
 -- Primitive bytestrings: simple bindings to Haskell types and functions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible #-}
 
 module Data.Bytestring.Primitive where
 

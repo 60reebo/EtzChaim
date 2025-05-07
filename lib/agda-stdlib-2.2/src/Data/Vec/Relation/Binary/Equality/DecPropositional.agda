@@ -4,7 +4,6 @@
 -- Decidable vector equality over propositional equality
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Definitions using (DecidableEquality)
 

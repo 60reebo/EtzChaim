@@ -4,7 +4,6 @@
 -- This module is DEPRECATED.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K --safe #-}
 
 open import Relation.Binary.Core using (Rel)
 open import Relation.Binary.Structures using (IsStrictTotalOrder)

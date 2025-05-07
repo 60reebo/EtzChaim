@@ -5,7 +5,6 @@
 -- `Relation.Binary.Lattice.Properties.BoundedMeetSemilattice` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Lattice
 

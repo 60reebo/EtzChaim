@@ -4,7 +4,6 @@
 -- Showing finite numbers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Fin.Show where
 

@@ -4,7 +4,6 @@
 -- An example showing how the Debug.Trace module can be used
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --rewriting --guardedness #-}
 
 module README.Debug.Trace where
 

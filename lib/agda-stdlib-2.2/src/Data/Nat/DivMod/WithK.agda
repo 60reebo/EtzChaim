@@ -4,7 +4,6 @@
 -- More efficient mod and divMod operations (require the K axiom)
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K --safe #-}
 
 module Data.Nat.DivMod.WithK where
 

@@ -4,7 +4,6 @@
 -- Some examples showing how the Rose tree module can be used
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module README.Data.Tree.Rose where
 

@@ -6,7 +6,6 @@
 
 -- The contents of this module should be accessed via `Relation.Binary`.
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.Bundles where
 

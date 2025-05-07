@@ -4,7 +4,6 @@
 -- Calling external processes
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --guardedness #-}
 
 module System.Process where
 

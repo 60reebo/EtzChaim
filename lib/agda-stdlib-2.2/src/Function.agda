@@ -4,7 +4,6 @@
 -- Functions
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Function where
 

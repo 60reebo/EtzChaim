@@ -4,7 +4,6 @@
 -- Characters
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Char where
 

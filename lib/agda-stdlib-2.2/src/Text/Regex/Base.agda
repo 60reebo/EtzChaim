@@ -4,7 +4,6 @@
 -- Regular expressions: basic types and semantics
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 open import Relation.Binary.Bundles using (Preorder)
 

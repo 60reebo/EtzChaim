@@ -4,7 +4,6 @@
 -- Unsafe String operations and proofs
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K #-}
 
 module Data.String.Unsafe where
 

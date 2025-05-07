@@ -4,7 +4,6 @@
 -- Relations between properties of scaling and other operations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Algebra.Module.Consequences where
 

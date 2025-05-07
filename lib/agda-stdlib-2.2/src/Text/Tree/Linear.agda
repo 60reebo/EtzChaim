@@ -5,7 +5,6 @@
 -- directly
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --sized-types #-}
 
 module Text.Tree.Linear where
 

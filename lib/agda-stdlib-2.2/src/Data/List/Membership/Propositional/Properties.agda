@@ -4,7 +4,6 @@
 -- Properties related to propositional list membership
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.List.Membership.Propositional.Properties where
 

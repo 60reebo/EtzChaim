@@ -4,7 +4,6 @@
 -- Symmetric transitive closures of binary relations
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Relation.Binary.Construct.Closure.SymmetricTransitive where
 

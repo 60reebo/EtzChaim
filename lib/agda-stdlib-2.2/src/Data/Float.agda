@@ -4,7 +4,6 @@
 -- Floating point numbers
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Float where
 

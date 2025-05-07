@@ -4,7 +4,6 @@
 -- Boring lemmas used in Data.Nat.GCD and Data.Nat.Coprimality
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Nat.GCD.Lemmas where
 

@@ -4,7 +4,6 @@
 -- Environments (heterogeneous collections)
 ------------------------------------------------------------------------
 
-{-# OPTIONS --with-K --safe #-}
 
 module Data.Star.Environment {ℓ} (Ty : Set ℓ) where
 

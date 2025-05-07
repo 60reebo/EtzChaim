@@ -5,7 +5,6 @@
 -- `Data.Sum.Categorical.Examples` instead.
 ------------------------------------------------------------------------
 
-{-# OPTIONS --cubical-compatible --safe #-}
 
 module Data.Sum.Categorical.Examples where
 
