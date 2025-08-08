@@ -1,16 +1,15 @@
 {-# LANGUAGE ForeignFunctionInterface #-}
 {-# OPTIONS_GHC -Wno-unused-imports #-}
--- We might need the unused imports if Agda generates different types
 
 module Engine.FFI.AgdaEinSof where
 
-import Foreign.C.String (CString) 
--- Import the necessary MAlonzo module. 
--- Use 'qualified' to avoid name clashes and make it clear where functions come from.
-import qualified MAlonzo.Code.Hishtalshelut.Engine.Worlds.EinSofEngine as AgdaEinSofEngine
-import MAlonzo.RTE (AgdaAny) -- Might be needed depending on Agda IO types
+import Foreign.C.String (CString, newCString)
 
--- | Haskell function that wraps the call to the Agda-generated function.
---   It calls the function with the name Agda generated (found in previous errors).
+-- | Haskell stub that mimics the Agda-generated function.
+--   Returns an English header and a couple of log lines as a single CString.
 getInitialTraceTextHaskell :: IO CString
-getInitialTraceTextHaskell = AgdaEinSofEngine.d_getInitialTraceTextEnIO_166 
+getInitialTraceTextHaskell = newCString $ unlines
+  [ "# --- Stage 0: Pre-Initialization State (Ein Sof) ---"
+  , "LOG \"Stage 0: Defining Ein Sof environment.\""
+  , "primordial_ein_sof_light = EinSof_Primordial(...)"
+  ] 

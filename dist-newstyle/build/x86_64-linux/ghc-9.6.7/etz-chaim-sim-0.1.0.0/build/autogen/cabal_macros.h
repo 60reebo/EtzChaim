@@ -121,25 +121,15 @@
   (major1) == 1 && (major2) == 3 && (minor) <= 16)
 #endif /* MIN_VERSION_uuid */
 
-/* tool alex-3.5.2.0 */
-#ifndef TOOL_VERSION_alex
-#define TOOL_VERSION_alex "3.5.2.0"
-#endif /* TOOL_VERSION_alex */
-#ifndef MIN_TOOL_VERSION_alex
-#define MIN_TOOL_VERSION_alex(major1,major2,minor) (\
-  (major1) <  3 || \
-  (major1) == 3 && (major2) <  5 || \
-  (major1) == 3 && (major2) == 5 && (minor) <= 2)
-#endif /* MIN_TOOL_VERSION_alex */
-/* tool gcc-13 */
+/* tool gcc-14 */
 #ifndef TOOL_VERSION_gcc
-#define TOOL_VERSION_gcc "13"
+#define TOOL_VERSION_gcc "14"
 #endif /* TOOL_VERSION_gcc */
 #ifndef MIN_TOOL_VERSION_gcc
 #define MIN_TOOL_VERSION_gcc(major1,major2,minor) (\
-  (major1) <  13 || \
-  (major1) == 13 && (major2) <  0 || \
-  (major1) == 13 && (major2) == 0 && (minor) <= 0)
+  (major1) <  14 || \
+  (major1) == 14 && (major2) <  0 || \
+  (major1) == 14 && (major2) == 0 && (minor) <= 0)
 #endif /* MIN_TOOL_VERSION_gcc */
 /* tool ghc-9.6.7 */
 #ifndef TOOL_VERSION_ghc
@@ -171,16 +161,6 @@
   (major1) == 2 && (major2) <  29 || \
   (major1) == 2 && (major2) == 29 && (minor) <= 2)
 #endif /* MIN_TOOL_VERSION_haddock */
-/* tool happy-2.1.5 */
-#ifndef TOOL_VERSION_happy
-#define TOOL_VERSION_happy "2.1.5"
-#endif /* TOOL_VERSION_happy */
-#ifndef MIN_TOOL_VERSION_happy
-#define MIN_TOOL_VERSION_happy(major1,major2,minor) (\
-  (major1) <  2 || \
-  (major1) == 2 && (major2) <  1 || \
-  (major1) == 2 && (major2) == 1 && (minor) <= 5)
-#endif /* MIN_TOOL_VERSION_happy */
 /* tool hpc-0.68 */
 #ifndef TOOL_VERSION_hpc
 #define TOOL_VERSION_hpc "0.68"
@@ -221,15 +201,15 @@
   (major1) == 9 && (major2) <  6 || \
   (major1) == 9 && (major2) == 6 && (minor) <= 7)
 #endif /* MIN_TOOL_VERSION_runghc */
-/* tool strip-2.42 */
+/* tool strip-2.44 */
 #ifndef TOOL_VERSION_strip
-#define TOOL_VERSION_strip "2.42"
+#define TOOL_VERSION_strip "2.44"
 #endif /* TOOL_VERSION_strip */
 #ifndef MIN_TOOL_VERSION_strip
 #define MIN_TOOL_VERSION_strip(major1,major2,minor) (\
   (major1) <  2 || \
-  (major1) == 2 && (major2) <  42 || \
-  (major1) == 2 && (major2) == 42 && (minor) <= 0)
+  (major1) == 2 && (major2) <  44 || \
+  (major1) == 2 && (major2) == 44 && (minor) <= 0)
 #endif /* MIN_TOOL_VERSION_strip */
 
 #ifndef CURRENT_PACKAGE_KEY

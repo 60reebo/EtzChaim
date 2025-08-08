@@ -9,8 +9,7 @@ import Control.Concurrent (threadDelay)
 import Control.Monad (forM_)
 import Data.Maybe (listToMaybe)
 import Debug.Trace (trace)
-import Foreign.C.String (peekCString) -- Need for peekCString
-import qualified MAlonzo.Code.Hishtalshelut.Domain.Math.Ordinal as AgdaOrdinal
+import Foreign.C.String (peekCString)
 import qualified Data.Map as Map
 
 import Engine.Types.BasicTypes
@@ -22,17 +21,12 @@ import Engine.Simulation.Core (stepSimulation)
 import Engine.Simulation.Kav (describeLight)
 import Engine.Types.CoreTypes (HierarchicalStructure)
 
--- | Remove the FFI Import for the Agda function
--- foreign import ccall "hs_getInitialTraceTextEn_FFI" hs_initialTraceTextEn 
---  :: IO CString 
-
--- | Helper function to get the Ein Sof trace from Agda using the Haskell wrapper
+-- | Helper: get Ein Sof trace from Haskell stub
 getEinSofTraceFromAgda :: IO Text
 getEinSofTraceFromAgda = do
-  -- Call the Haskell wrapper function instead of the direct FFI call
-  cStringResult <- getInitialTraceTextHaskell 
-  haskellString <- peekCString cStringResult -- Convert to Haskell String
-  return $ pack haskellString -- Pack into Text
+  cStringResult <- getInitialTraceTextHaskell
+  haskellString <- peekCString cStringResult
+  return $ pack haskellString
 
 -- | הפיכת מצב לטקסט מפורמט
 formatState :: EngineState -> Text
@@ -44,28 +38,21 @@ formatState state =
 -- | פירוט מצב סימולציה לפי הטיפוס
 formatStateDetails :: SimulationState -> Text
 formatStateDetails (EinSofState _ _ _) =
-  -- במקום הפלט הפשוט, נקרא ללוגיקה מ-Agda
-  -- התוצאה תהיה Text המכיל את הפלט המלא והמפורט
-  -- הערה: זה יחזיר פלט IO, נצטרך לטפל בזה במקום שקורא לפונקציה הזו.
-  -- *** שינוי זמני: נחזיר טקסט שמציין שצריך לקרוא ל-Agda ***
-  -- *** מכיוון ש-formatStateDetails היא פונקציה טהורה וקריאת FFI היא IO ***
-  "*** צריך לקרוא ל-Agda's initialTraceTextEn כדי לקבל פלט מלא ***"
-formatStateDetails (TzimtzumState radius hasReshimu hasKav einL kavL props) =
+  "*** Ein Sof state (see realtime logs for details) ***"
+formatStateDetails (TzimtzumState radius hasReshimu hasKav _ _ props) =
   let base =
-        "צמצום: רדיוס אורדינלי=" <> AgdaOrdinal.du_showOrdinal_154 (AgdaOrdinal.du_fromNatO_124 (fromIntegral radius)) <> "\n" <>
+        "צמצום: רדיוס=" <> pack (show radius) <> "\n" <>
         "רשימו: " <> pack (show hasReshimu) <> "\n" <>
         "קו קיים: " <> pack (show hasKav) <> "\n" <>
         "תכונות: " <> pack (show props)
-      kavInfo = case kavL of
-        Just kavLight -> "\nקווי אור ראשוני: " <> describeLight kavLight
-        Nothing       -> ""
+      kavInfo = case props of
+        _ -> ""
   in base <> kavInfo
 formatStateDetails (SefirotState entities connections) =
   let base = "ספירות קיימות: " <> pack (show $ Map.keys entities) <> "\n" <>
              "קשרים: " <> pack (show connections)
   in base
 formatStateDetails (WorldsState hierarchy) =
-  -- הדפסת סיכום למבנה ההיררכי כדי למנוע פלט כבד מדי
   let numOlamim       = Map.size hierarchy
       numPartzufim    = sum (map Map.size (Map.elems hierarchy))
       numSefirahUnits = sum
@@ -85,12 +72,11 @@ formatStateIO state =
                ", זמן " <> pack (show $ simulationTime state) <> " ====\n"
   in case simulationState state of
       EinSofState _ _ _ -> do
-        -- קריאה לפונקציה שמביאה את הטקסט מ-Agda
         einSofText <- getEinSofTraceFromAgda
         return $ header <> einSofText
       TzimtzumState radius hasReshimu hasKav _ _ props -> 
-        return $ header <> 
-                 "צמצום: רדיוס אורדינלי=" <> AgdaOrdinal.du_showOrdinal_154 (AgdaOrdinal.du_fromNatO_124 (fromIntegral radius)) <> "\n" <>
+        return $ header <>
+                 "צמצום: רדיוס=" <> pack (show radius) <> "\n" <>
                  "רשימו: " <> pack (show hasReshimu) <> "\n" <>
                  "קו: " <> pack (show hasKav) <> "\n" <>
                  "תכונות: " <> pack (show props)
@@ -99,7 +85,6 @@ formatStateIO state =
                  "ספירות קיימות: " <> pack (show $ Map.keys entities) <> "\n" <>
                  "קשרים: " <> pack (show connections)
       WorldsState hierarchy ->
-        -- הדפסת סיכום למבנה ההיררכי כדי למנוע פלט כבד מדי
         let numOlamim       = Map.size hierarchy
             numPartzufim    = sum (map Map.size (Map.elems hierarchy))
             numSefirahUnits = sum
@@ -133,26 +118,21 @@ runWithRealtimeOutput scenarioId = do
       TIO.putStrLn "=== התחלת סימולציה ==="
       initialFormattedState <- formatStateIO initialState
       TIO.putStrLn initialFormattedState
-      
-      -- הרצת התרחיש המותאם כדי לעדכן את ־EngineState בהתאם ל־Agda/Haskell logic
       TIO.putStrLn "--- מתחיל ביצוע executeScenario ---"
       execResult <- executeScenario scenario initialState
       case execResult of
         Left err -> TIO.putStrLn $ "*** שגיאה בביצוע התרחיש: " <> err
         Right execState -> do
           TIO.putStrLn "--- סיים ביצוע executeScenario ---"
-          -- הדפסת כל האירועים שהצטברו במהלך executeScenario
           TIO.putStrLn "=== אירועי סימולציה ==="
           forM_ (simulationEvents execState) TIO.putStrLn
-          -- המרת המצב הסופי לטקסט והדפסתו כדי לוודא העדכון
           execFormattedState <- formatStateIO execState
           TIO.putStrLn "המצב הסופי לאחר ביצוע התרחיש:"
           TIO.putStrLn execFormattedState
-          -- הגנה מפני לולאה אינסופית לאחר הרצת התרחיש
           let runStep currState iteration
                 | iteration >= 20 = TIO.putStrLn "=== הגעה למספר הצעדים המקסימלי ==="
                 | otherwise = do
-                    threadDelay 500000  -- השהיה של חצי שנייה
+                    threadDelay 500000
                     case stepSimulation currState of
                       Left err2 -> TIO.putStrLn $ "שגיאה: " <> err2
                       Right nextState -> do

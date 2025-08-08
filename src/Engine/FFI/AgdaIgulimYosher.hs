@@ -3,10 +3,12 @@
 
 module Engine.FFI.AgdaIgulimYosher where
 
-import MAlonzo.RTE (AgdaAny)
 import qualified Data.Text as T
-import qualified MAlonzo.Code.Hishtalshelut.Runtime.Worlds.IgulimYosherScenario as AgdaIgulimYosherScenario
 
--- | פונקציה ב–Haskell לקבלת פלט ה–trace ההיררכי מטקסט מ–Agda
+-- | Haskell stub to return a short trace representing hierarchical emanation
 getIgulimYosherTrace :: IO [T.Text]
-getIgulimYosherTrace = return AgdaIgulimYosherScenario.d_runScenarioIgulimYosherText_8 
+getIgulimYosherTrace = pure
+  [ "# --- Stage 4: Emanation of AK and ABiYA Potential Layers (Combined Loop) ---"
+  , "LOG \"Define the emanation structure\""
+  , "LOG \"AK -> Atzilut -> BYA\""
+  ] 

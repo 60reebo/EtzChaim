@@ -1,3 +1,3 @@
 name: EtzChaim
 include: src
-depend: standard-library hott-core cubical-0.7
+depend: standard-library-2.2 cubical-0.7

@@ -46,12 +46,12 @@ getBinDir, getLibDir, getDynLibDir, getDataDir, getLibexecDir, getSysconfDir :: 
 
 
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
-bindir     = "/home/michaelmeresse/.cabal/bin"
-libdir     = "/home/michaelmeresse/.cabal/lib/x86_64-linux-ghc-9.6.7/etz-chaim-sim-0.1.0.0-inplace-etz-sim"
-dynlibdir  = "/home/michaelmeresse/.cabal/lib/x86_64-linux-ghc-9.6.7"
-datadir    = "/home/michaelmeresse/.cabal/share/x86_64-linux-ghc-9.6.7/etz-chaim-sim-0.1.0.0"
-libexecdir = "/home/michaelmeresse/.cabal/libexec/x86_64-linux-ghc-9.6.7/etz-chaim-sim-0.1.0.0"
-sysconfdir = "/home/michaelmeresse/.cabal/etc"
+bindir     = "/home/ubuntu/.cabal/bin"
+libdir     = "/home/ubuntu/.cabal/lib/x86_64-linux-ghc-9.6.7/etz-chaim-sim-0.1.0.0-inplace-etz-sim"
+dynlibdir  = "/home/ubuntu/.cabal/lib/x86_64-linux-ghc-9.6.7"
+datadir    = "/home/ubuntu/.cabal/share/x86_64-linux-ghc-9.6.7/etz-chaim-sim-0.1.0.0"
+libexecdir = "/home/ubuntu/.cabal/libexec/x86_64-linux-ghc-9.6.7/etz-chaim-sim-0.1.0.0"
+sysconfdir = "/home/ubuntu/.cabal/etc"
 
 getBinDir     = catchIO (getEnv "etz_chaim_sim_bindir")     (\_ -> return bindir)
 getLibDir     = catchIO (getEnv "etz_chaim_sim_libdir")     (\_ -> return libdir)
