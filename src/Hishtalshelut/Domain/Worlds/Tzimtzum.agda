@@ -7,13 +7,14 @@ module Hishtalshelut.Domain.Worlds.Tzimtzum (ℓ : Level) where
 
 open import Agda.Builtin.Bool
 open import Agda.Builtin.Unit
-open import Data.Nat using (ℕ)
+open import Agda.Builtin.Nat using (Nat)
+open import Agda.Builtin.List using (List; []; _∷_)
+open import Agda.Builtin.Maybe using (Maybe; just; nothing)
+open import Agda.Builtin.String using (String)
+
 open import Hishtalshelut.Domain.Worlds.IgulimYosherReshimu ℓ using (ReshimuSpec)
 open import Hishtalshelut.Domain.Math.Cardinal using (Cardinal; fin; aleph)
 open import Hishtalshelut.Domain.Math.Ordinal using (Ordinal; zero; succ; limit; omega)
-open import Data.List using (List; []; _∷_)
-open import Data.Maybe using (Maybe; just; nothing)
-open import Agda.Builtin.String using (String)
 
 -- | סטטוס הצמצום
 data TzimtzumStatus : Set where

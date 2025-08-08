@@ -23,15 +23,10 @@ open import Agda.Primitive using (Level)
 open import Agda.Builtin.Nat using (Nat; zero; suc; _+_; _*_)
 open import Agda.Builtin.Equality using (_≡_; refl)
 open import Agda.Builtin.String using (String)
-open import Relation.Binary using (Setoid)
-open import Relation.Nullary using (Dec)
-open import Data.String.Base as Str using (_++_)
+
+postulate _++_ : String → String → String
 open import Hishtalshelut.Domain.Math.Ordinal as Ordinal hiding (_+_; _*_; _^_; zero)
 import Hishtalshelut.Domain.Math.Ordinal as Ordinal
-
--- Minimal Setoid over propositional equality
-setoidC : ∀ {ℓ} → Setoid _ _
-setoidC {ℓ} = Relation.Binary.PropositionalEquality.setoid (Cardinal ℓ)
 
 -- | Cardinal type: finite naturals and aleph-indexed infinities
 data Cardinal (ℓ : Level) : Set ℓ where

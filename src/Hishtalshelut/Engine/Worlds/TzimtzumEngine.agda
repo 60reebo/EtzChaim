@@ -7,8 +7,15 @@ module Hishtalshelut.Engine.Worlds.TzimtzumEngine where
 open import Agda.Primitive using (Level; lzero; lsuc)
 open import Agda.Builtin.Unit public using (⊤; tt)
 open import Agda.Builtin.String public using (String)
-import Data.String.Base as Str using (_++_)
-open import Data.Bool using (Bool; true; false; if_then_else_)
+{-# FOREIGN GHC import qualified Data.Text as T #-}
+postulate strAppend : String → String → String
+{-# COMPILE GHC strAppend = \x y -> T.append x y #-}
+module Str where
+  infixl 6 _++_
+  _++_ = strAppend
+open import Agda.Builtin.Bool using (Bool; true; false)
+postulate if_then_else_ : {A : Set} → Bool → A → A → A
+{-# INLINE if_then_else_ #-}
 open import Hishtalshelut.Domain.Worlds.Tzimtzum lzero public using (
   TzimtzumStatus; WillForCreation; ReshimuLevel;
   ContractionStep; StepStartEinSof; StepPotentialWill; StepExecuteTzimtzum; StepLeaveReshimu;

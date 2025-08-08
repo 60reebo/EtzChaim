@@ -5,20 +5,15 @@
 open import Agda.Primitive using (Level; lsuc)
 module Hishtalshelut.Domain.Worlds.IgulimYosherReshimu (ℓ : Level) where
 
-open import Data.Nat using (ℕ; suc)
-import Data.Nat as Nat using (zero)
+open import Agda.Builtin.Nat using (Nat; suc)
 open import Hishtalshelut.Domain.Worlds.IgulimYosher ℓ using (Sefirah; VesselKind; SefirahUnit; CircleSpec)
 open import Hishtalshelut.Domain.Math.Cardinal using (Cardinal; fin)
 open import Hishtalshelut.Domain.Math.Ordinal using (Ordinal; zero; succ; limit; omega; predO; fromNatO; showOrdinal; iterate; isLimit)
 open import Hishtalshelut.Domain.CoreTypes.Light ℓ
 open import Agda.Builtin.String using (String)
-open import Data.Maybe using (Maybe; just; nothing)
+open import Agda.Builtin.Maybe using (Maybe; just; nothing)
 open SefirahUnit public
 open CircleSpec public
-open import Data.Nat.Show using (show)
-open import Relation.Binary.PropositionalEquality using (_≡_; refl)
-open import Data.String.Base as Str using (_++_)
-open import Data.Bool using (if_then_else_)
 
 -- | קטגוריות איכות הרשימו
 data ReshimuQuality : Set ℓ where
@@ -48,10 +43,10 @@ toReshimuSpec su = record
   ; vesselInner        = vesselInner (circle su)
   ; vesselOuter        = vesselOuter (circle su)
   ; potential_power    = fin {ℓ} 0
-  ; inherited_structure = fromNatO Nat.zero
+  ; inherited_structure = fromNatO 0
   ; quality            = Kelim_Root_Potential
   ; original_light_ref = nothing
-  ; layer_index        = fromNatO Nat.zero
+  ; layer_index        = fromNatO 0
   ; source             = "base-reshimu"
   }
 
@@ -62,10 +57,10 @@ minusOrdinal x (succ n)  = predO (minusOrdinal x n)
 minusOrdinal x (limit f) = limit (λ n → minusOrdinal x (f n))
 
 -- | פונקציה עזר להמרה מאורדינל סופי ל-Nat
-ordinalToNat : ∀ {ℓ} → Ordinal ℓ → ℕ
-ordinalToNat zero = Nat.zero
+ordinalToNat : ∀ {ℓ} → Ordinal ℓ → Nat
+ordinalToNat zero = 0
 ordinalToNat (succ o) = suc (ordinalToNat o)
-ordinalToNat (limit f) = Nat.zero -- מניחים שאין לנו limit במקרה הזה
+ordinalToNat (limit f) = 0 -- מניחים שאין לנו limit במקרה הזה
 
 -- | חישוב מבנה רשימו לפי שכבה אורדינלית
 computeReshimuStructure : Light → Ordinal ℓ → Ordinal ℓ → Ordinal ℓ
@@ -87,10 +82,12 @@ createReshimuFromLight light layerOrd maxOrd = record
   }
 
 -- | תצוגה קריאה של מבנה רשימו: ω+N (דינמי)
+postulate _++_ : String → String → String
 showReshimuStructure : Ordinal ℓ → String
 showReshimuStructure o =
-  if_then_else_ (isLimit o)
-    (showOrdinal o)
-    ("ω+" Str.++ show (ordinalToNat o))
+  if isLimit o then
+    showOrdinal o
+  else
+    "ω+" _++_ primShowNat (ordinalToNat o)
 
   

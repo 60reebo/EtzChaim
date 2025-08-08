@@ -25,10 +25,10 @@ module Hishtalshelut.Domain.Math.Ordinal where
 open import Agda.Primitive using (Level)
 
 open import Agda.Builtin.String using (String)
-import Data.String.Base as Str using (_++_)
-open import Data.Nat using (ℕ; zero; suc)
-open import Data.Bool using (Bool; true; false)
-open import Data.Unit using (⊤ ; tt)
+postulate _++_ : String → String → String
+open import Agda.Builtin.Nat using (Nat; zero; suc) ; open import Agda.Builtin.Nat renaming (Nat to ℕ)
+open import Agda.Builtin.Bool using (Bool; true; false)
+open import Agda.Builtin.Unit using (⊤ ; tt)
 open import Relation.Binary.PropositionalEquality using (_≡_; refl; cong; trans; sym)
 open Relation.Binary.PropositionalEquality.≡-Reasoning
 open import Data.Product using (Σ; _,_)
@@ -171,14 +171,14 @@ predO (limit f) = limit (λ n → predO (f n))
 -}
 showOrdinal : ∀ {ℓ} → Ordinal ℓ → String
 showOrdinal zero = "0"
-showOrdinal (succ o) = Str._++_ "S(" (Str._++_ (showOrdinal o) ")")
+showOrdinal (succ o) = "S(" _++_ (showOrdinal o) _++_ ")"
 showOrdinal (limit f) with f zero -- Attempt to show the first element for limits
-... | o = Str._++_ "lim(" (Str._++_ (showOrdinal o) ",...)") -- Basic representation for limits
+... | o = "lim(" _++_ (showOrdinal o) _++_ ",...)" -- Basic representation for limits
 
 -- | Helper function to show Nat (if not already available)
 showNat : ℕ → String
 showNat zero = "0"
-showNat (suc n) = Str._++_ "S(" (Str._++_ (showNat n) ")") -- Simple S-based representation
+showNat (suc n) = "S(" _++_ (showNat n) _++_ ")" -- Simple S-based representation
 
 -- | האם אורדינל הוא limit (לא אפס ולא יורש)
 isLimit : ∀ {ℓ} → Ordinal ℓ → Bool
