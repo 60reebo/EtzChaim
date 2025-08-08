@@ -1,22 +1,13 @@
-{-# LANGUAGE ForeignFunctionInterface #-}
-{-# OPTIONS_GHC -Wno-unused-imports #-}
-
+{-# LANGUAGE OverloadedStrings #-}
 module Engine.FFI.AgdaTzimtzum where
 
 import qualified Data.Text as T
+import qualified MAlonzo.Code.Hishtalshelut.Runtime.Worlds.TzimtzumScenario as TzimtzumScn
 
--- | Haskell stub to return Hebrew trace lines
 getTzimtzumTraceHebrew :: IO [T.Text]
-getTzimtzumTraceHebrew = pure
-  [ "שלב 1: הפעלת רצון אלוהי וביצוע צמצום דינמי."
-  , ">>> פלט: עלה ברצונו הפשוט לברוא העולמות."
-  , "אתחול צמצום דינמי. רדיוס מקסימלי (אורדינלי): 10."
-  ]
+getTzimtzumTraceHebrew =
+  pure TzimtzumScn.d_runScenarioTzimtzumTextHebrew_46
 
--- | Haskell stub to return English trace lines
 getTzimtzumTraceEnglish :: IO [T.Text]
-getTzimtzumTraceEnglish = pure
-  [ "Stage 1: Triggering Divine Will and executing dynamic Tzimtzum."
-  , ">>> Output: The Simple Will arose to create the worlds."
-  , "Dynamic Tzimtzum initialized. Max radius (Ordinal): 10."
-  ] 
+getTzimtzumTraceEnglish =
+  pure TzimtzumScn.d_runScenarioTzimtzumTextEnglish_48 
