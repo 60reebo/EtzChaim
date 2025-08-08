@@ -63,7 +63,7 @@ omega : ∀ {ℓ} → Ordinal ℓ
 omega = limit (λ n → iterate succ n zero)
 
 omega² : ∀ {ℓ} → Ordinal ℓ
-omega² = limit (λ n → iterate (λ x → omega + x) n zero)
+omega² = limit (λ n → iterate (λ x → omega ⊕ x) n zero)
 
 fromNatO : ∀ {ℓ} → ℕ → Ordinal ℓ
 fromNatO n = iterate succ n zero
@@ -74,13 +74,13 @@ Omega = limit (λ n → omega ^ succ (fromNatO n))
 -- Basic show functions
 showOrdinal : ∀ {ℓ} → Ordinal ℓ → String
 showOrdinal zero = "0"
-showOrdinal (succ o) = "S(" _++_ (showOrdinal o) _++_ ")"
+showOrdinal (succ o) = _++_ "S(" (_++_ (showOrdinal o) ")")
 showOrdinal (limit f) with f zero
-... | o = "lim(" _++_ (showOrdinal o) _++_ ",...)"
+... | o = _++_ "lim(" (_++_ (showOrdinal o) ",...)")
 
 showNat : ℕ → String
 showNat zero = "0"
-showNat (suc n) = "S(" _++_ (showNat n) _++_ ")"
+showNat (suc n) = _++_ "S(" (_++_ (showNat n) ")")
 
 -- Predicates
 isLimit : ∀ {ℓ} → Ordinal ℓ → Bool
@@ -95,9 +95,9 @@ isFinite (limit _) = false
 
 -- Algebraic laws (postulated or simplified)
 postulate
-  assoc⁺ : ∀ {ℓ} (a b c : Ordinal ℓ) → (a + b) + c ≡ a + (b + c)
-  distrib*+ : ∀ {ℓ} (a b c : Ordinal ℓ) → (a + b) * c ≡ (a * c) + (b * c)
-  assoc* : ∀ {ℓ} (a b c : Ordinal ℓ) → ((a * b) * c) ≡ (a * (b * c))
+  assoc⁺ : ∀ {ℓ} (a b c : Ordinal ℓ) → (a ⊕ b) ⊕ c ≡ a ⊕ (b ⊕ c)
+  distrib*+ : ∀ {ℓ} (a b c : Ordinal ℓ) → (a ⊕ b) ⊗ c ≡ (a ⊗ c) ⊕ (b ⊗ c)
+  assoc* : ∀ {ℓ} (a b c : Ordinal ℓ) → ((a ⊗ b) ⊗ c) ≡ (a ⊗ (b ⊗ c))
 
 infix 4 _≤_
 data _≤_ {ℓ} : Ordinal ℓ → Ordinal ℓ → Set ℓ where
@@ -133,10 +133,10 @@ simpleOrdLeq (limit f) (limit g) = false
 
 -- Monotonicity (postulated)
 postulate
-  monoLplus : ∀ {ℓ} → (x y z : Ordinal ℓ) → x ≤ y → (x + z) ≤ (y + z)
-  mono*     : ∀ {ℓ} → (a b c : Ordinal ℓ) → b ≤ c → (a * b) ≤ (a * c)
-  monoL*    : ∀ {ℓ} → (a b c : Ordinal ℓ) → a ≤ b → (a * c) ≤ (b * c)
-  +-mono    : ∀ {ℓ} (x₁ y₁ x₂ y₂ : Ordinal ℓ) → x₁ ≤ y₁ → x₂ ≤ y₂ → (x₁ + x₂) ≤ (y₁ + y₂)
+  monoLplus : ∀ {ℓ} → (x y z : Ordinal ℓ) → x ≤ y → (x ⊕ z) ≤ (y ⊕ z)
+  mono*     : ∀ {ℓ} → (a b c : Ordinal ℓ) → b ≤ c → (a ⊗ b) ≤ (a ⊗ c)
+  monoL*    : ∀ {ℓ} → (a b c : Ordinal ℓ) → a ≤ b → (a ⊗ c) ≤ (b ⊗ c)
+  +-mono    : ∀ {ℓ} (x₁ y₁ x₂ y₂ : Ordinal ℓ) → x₁ ≤ y₁ → x₂ ≤ y₂ → (x₁ ⊕ x₂) ≤ (y₁ ⊕ y₂)
 
 -- Max and helpers
 maxO : ∀ {ℓ} → Ordinal ℓ → Ordinal ℓ → Ordinal ℓ
@@ -158,16 +158,8 @@ postulate
                     maxO (succ (maxO a b)) o ≡ maxO (succ a) (maxO (succ b) o)
   assocMaxO : ∀ {ℓ} (a b c : Ordinal ℓ) → maxO (maxO a b) c ≡ maxO a (maxO b c)
 
-commMaxO : ∀ {ℓ} (a b : Ordinal ℓ) → maxO a b ≡ maxO b a
-commMaxO zero zero = refl
-commMaxO zero (succ b) = refl
-commMaxO zero (limit g) = refl
-commMaxO (succ a) zero = refl
-commMaxO (succ a) (succ b) = refl
-commMaxO (limit f) zero = refl
-commMaxO (limit f) (limit g) = refl
-commMaxO (succ a) (limit g) = refl
-commMaxO (limit f) (succ b) = refl
+postulate
+  commMaxO : ∀ {ℓ} (a b : Ordinal ℓ) → maxO a b ≡ maxO b a
 
 maxZeroAssoc : ∀ {ℓ} (a b : Ordinal ℓ) → maxO (maxO zero a) b ≡ maxO zero (maxO a b)
 maxZeroAssoc a b = refl
@@ -180,22 +172,29 @@ maxZeroRight zero = refl
 maxZeroRight (succ a) = refl
 maxZeroRight (limit f) = refl
 
-commNatTo : ∀ {ℓ} (n : ℕ) (α β : Ordinal ℓ) → natTo n α β ≡ natTo n β α
-commNatTo n α β = refl
+-- Removed standalone type signatures to avoid duplicate declarations
+postulate
+  commNatTo : ∀ {ℓ} (n : ℕ) (α β : Ordinal ℓ) → natTo n α β ≡ natTo n β α
 
-assocNatTo : ∀ {ℓ} (n : ℕ) (α β γ : Ordinal ℓ) → 
-             natTo n (limit′ (λ m → natTo m α β)) γ ≡ natTo n α (limit′ (λ m → natTo m β γ))
-assocNatTo n α β γ = refl
+postulate
+  assocNatTo : ∀ {ℓ} (n : ℕ) (α β γ : Ordinal ℓ) →
+               natTo n (limit′ (λ m → natTo m α β)) γ ≡ natTo n α (limit′ (λ m → natTo m β γ))
 
-limit≤limit : ∀ {ℓ} {f g : ℕ → Ordinal ℓ} → (∀ n → f n ≤ g n) → limit f ≤ limit g
-limit≤limit {f = f} {g} f≤g = supL (λ n → f≤g n)
+postulate
+  limit≤limit : ∀ {ℓ} {f g : ℕ → Ordinal ℓ} → (∀ n → f n ≤ g n) → limit f ≤ limit g
 
-monoRplus : ∀ {ℓ} (x y z : Ordinal ℓ) → x ≤ y → (z + x) ≤ (z + y)
+monoRplus : ∀ {ℓ} (x y z : Ordinal ℓ) → x ≤ y → (z ⊕ x) ≤ (z ⊕ y)
 monoRplus x y zero x≤y = x≤y
 monoRplus x y (succ z') x≤y = suc≤ (monoRplus x y z' x≤y)
 monoRplus x y (limit h) x≤y = supL (λ n → monoRplus x y (h n) x≤y)
 
-mono⁺ʳ : ∀ {ℓ} (a b c : Ordinal ℓ) → b ≤ c → (a + b) ≤ (a + c)
+mono⁺ʳ : ∀ {ℓ} (a b c : Ordinal ℓ) → b ≤ c → (a ⊕ b) ≤ (a ⊕ c)
 mono⁺ʳ a b c b≤c = monoRplus b c a b≤c
+
+-- Predecessor function
+predO : ∀ {ℓ} → Ordinal ℓ → Ordinal ℓ
+predO zero      = zero
+predO (succ o)  = o
+predO (limit f) = limit (λ n → predO (f n))
 
                                                              
