@@ -4,8 +4,40 @@ module Hishtalshelut.Rules.Worlds.Tzimtzum (ℓ : Agda.Primitive.Level) where
 -- חוקים לצמצום טרנספיניטי - שימוש באורדינלים וקרדינלים
 
 open import Agda.Primitive using (Level; lzero; lsuc)
+open import Agda.Builtin.Nat using (Nat; zero; suc) ; open import Agda.Builtin.Nat renaming (Nat to ℕ)
 open import Agda.Builtin.Unit public using (⊤; tt)
-open import Data.List public using (List; _∷_; []; _++_; map; length; reverse)
+open import Agda.Builtin.List public using (List; _∷_; [])
+open import Agda.Builtin.Maybe using (Maybe; just; nothing)
+open import Agda.Builtin.Bool using (Bool; true; false)
+open import Agda.Builtin.String using (String)
+open import Agda.Builtin.Sigma using (Σ; _,_)
+
+postulate if_then_else_ : ∀ {ℓ} {A : Set ℓ} → Bool → A → A → A
+
+infixr 3 _∧_
+_∧_ : Bool → Bool → Bool
+true ∧ b = b
+false ∧ _ = false
+
+_++_ : ∀ {A : Set} → List A → List A → List A
+[] ++ ys = ys
+(x ∷ xs) ++ ys = x ∷ (xs ++ ys)
+
+map : ∀ {A B : Set} → (A → B) → List A → List B
+map f [] = []
+map f (x ∷ xs) = f x ∷ map f xs
+
+length : ∀ {A : Set} → List A → ℕ
+length [] = 0
+length (_ ∷ xs) = suc (length xs)
+
+reverse : ∀ {A : Set} → List A → List A
+reverse xs = revAcc xs []
+  where
+    revAcc : ∀ {A : Set} → List A → List A → List A
+    revAcc [] acc = acc
+    revAcc (x ∷ xs) acc = revAcc xs (x ∷ acc)
+
 open import Hishtalshelut.Domain.Worlds.Tzimtzum public using (
     TzimtzumStatus; NoTzimtzum; InProgress; AfterTzimtzum;
     WillForCreation; NoWill; PotentialWill;
@@ -17,16 +49,11 @@ open import Hishtalshelut.State.Worlds.TzimtzumState ℓ public using (
     OrdinalLayerState; maxRadius; originalLight; reshimuByLayer)
 open import Hishtalshelut.State.Worlds.EinSofState public using (EinSofState; initialEinSofState)
 open import Hishtalshelut.Domain.Math.Cardinal using (Cardinal; fin; aleph)
-open import Hishtalshelut.Domain.Math.Ordinal using (Ordinal; zero; succ; limit; omega; Omega; ordinalEq; ordLeq; simpleOrdLeq)
+open import Hishtalshelut.Domain.Math.Ordinal using (Ordinal; zero; succ; limit; omega; Omega; ordLeq; simpleOrdLeq)
 open import Hishtalshelut.Domain.CoreTypes.Light ℓ using (Light; mkLight; power; structure; category; kind; source; timestamp; tzelem_letter)
 open import Hishtalshelut.Domain.Worlds.IgulimYosher ℓ using (LightCategory; LightKind)
 open import Hishtalshelut.Domain.Worlds.IgulimYosherReshimu ℓ using (
     ReshimuSpec; ReshimuQuality; toReshimuSpec; createReshimuFromLight; computeReshimuStructure; Kelim_Root_Potential; minusOrdinal)
-open import Data.Maybe using (Maybe; just; nothing)
-open import Data.Bool using (Bool; true; false; if_then_else_)
-open import Data.Nat using (ℕ)
-open import Data.Product using (_×_; _,_; proj₁; proj₂)
-open import Agda.Builtin.String using (String)
 
 -- | יצירת אור אין-סוף מקורי עם ערכים גבוהים
 createOriginalEinSofLight : Light
@@ -43,12 +70,15 @@ startWithFullEinSof _ =
 potentialWillForCreation : ContractionState → ContractionState
 potentialWillForCreation c = record c { will = PotentialWill }
 
+ordEq : ∀ {ℓ′} → Ordinal ℓ′ → Ordinal ℓ′ → Bool
+ordEq a b = _∧_ (ordLeq a b) (ordLeq b a)
+
 -- | ביצוע שלב צמצום עם אינדקס אורדינלי
 executeOrdinalContractionStep : ContractionState → Ordinal ℓ → ContractionState
 executeOrdinalContractionStep c ordIndex =
-  if ordinalEq ordIndex (maxRadius c)
-  then completeContraction c
-  else afterContractionStep c ordIndex
+  if_then_else_ (ordEq ordIndex (maxRadius c))
+    (completeContraction c)
+    (afterContractionStep c ordIndex)
 
 -- | ביצוע צמצום כללי - עדכון הסטטוס בלבד
 executeTzimtzum : ContractionState → ContractionState
@@ -97,8 +127,7 @@ dynamicContractionLoop initialState currentOrd maxOrd =
       nextOrd = succ currentOrd
     in
       dynamicContractionLoop afterReshimu nextOrd maxOrd)
-    (-- סיום הלולאה - החזרת המצב המעודכן
-     completeContraction initialState)
+    (completeContraction initialState)
 
 -- | פונקציה המבצעת צמצום דינמי עד למגבלה אורדינלית
 runDynamicContraction : ⊤ → Ordinal ℓ → ContractionState
@@ -122,7 +151,7 @@ generateSteps ord maxOrd state = generateStepsHelper ord state
     -- Recursive helper that now has access to step
     generateStepsHelper : Ordinal ℓ → ContractionState → List ContractionState
     generateStepsHelper currentOrd currentState =
-      if_then_else_ (simpleOrdLeq currentOrd maxOrd) -- Use simpleOrdLeq
+      if_then_else_ (simpleOrdLeq currentOrd maxOrd)
         (currentState ∷ generateStepsHelper (succ currentOrd) (step currentOrd))
         []
 
@@ -133,7 +162,7 @@ generateSteps ord maxOrd state = generateStepsHelper ord state
 {-# NON_TERMINATING #-}
 runContractionLoop : Ordinal ℓ → Ordinal ℓ → ContractionState → ContractionState
 runContractionLoop currentOrd maxOrd state =
-  if_then_else_ (simpleOrdLeq currentOrd maxOrd) -- Use simpleOrdLeq
+  if_then_else_ (simpleOrdLeq currentOrd maxOrd)
     ( let afterStep = executeOrdinalContractionStep state currentOrd
           afterReshimu = leaveReshimuAtLayer afterStep currentOrd
         in runContractionLoop (succ currentOrd) maxOrd afterReshimu

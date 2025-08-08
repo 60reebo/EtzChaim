@@ -5,8 +5,8 @@
 module Hishtalshelut.Domain.Math.Ordinal.Properties where
 
 open import Agda.Primitive using (Level)
-open import Data.Bool using (Bool; true; false; if_then_else_)
-open import Relation.Binary.PropositionalEquality using (_≡_; refl)
+open import Agda.Builtin.Bool using (Bool; true; false)
+open import Agda.Builtin.Equality using (_≡_; refl)
 
 open import Hishtalshelut.Domain.Math.Ordinal
 

@@ -82,12 +82,11 @@ createReshimuFromLight light layerOrd maxOrd = record
   }
 
 -- | תצוגה קריאה של מבנה רשימו: ω+N (דינמי)
-postulate _++_ : String → String → String
 showReshimuStructure : Ordinal ℓ → String
 showReshimuStructure o =
   if isLimit o then
     showOrdinal o
   else
-    "ω+" _++_ primShowNat (ordinalToNat o)
+    showOrdinal o
 
   

@@ -4,20 +4,28 @@
 {-# OPTIONS --without-K #-}
 module Hishtalshelut.Domain.Worlds.IgulimYosher (ℓ : Agda.Primitive.Level) where
 
-open import Agda.Primitive using (Level ; lsuc ; lzero)
+open import Agda.Primitive using (Level ; lsuc ; lzero ; _⊔_)
 
 open import Hishtalshelut.Domain.Math.Cardinal using (Cardinal; fromNat; _⊖_; _⊗_)
 import Hishtalshelut.Domain.Math.Cardinal as C
-open import Data.Nat using (ℕ)
+open import Agda.Builtin.Nat using (Nat; zero; suc; _-_) ; open import Agda.Builtin.Nat renaming (Nat to ℕ)
 open import Agda.Builtin.String
-open import Agda.Builtin.Bool
-open import Data.List
-open import Data.Bool using (_∧_)
-open import Data.Sum using (_⊎_; inj₁; inj₂)
+open import Agda.Builtin.Bool using (Bool; true; false)
+open import Agda.Builtin.List using (List; []; _∷_)
+postulate _∧_ : Bool → Bool → Bool
+open import Agda.Builtin.Sigma using (Σ; _,_)
+-- Replace postulated sum with an actual data type so we can pattern match
+data _⊎_ {a b : Level} (A : Set a) (B : Set b) : Set (a ⊔ b) where
+  inj₁ : A → A ⊎ B
+  inj₂ : B → A ⊎ B
 open import Hishtalshelut.Domain.Worlds.EinSof using (EinSof; einsOf; CircleEinSof; circleOf; KavEinSof; kavOf)
-open import Agda.Builtin.Nat using (_-_)
-open import Data.Maybe using (Maybe; just; nothing)
+-- open import Agda.Builtin.Nat using (_-_) -- already imported above
+open import Agda.Builtin.Maybe using (Maybe; just; nothing)
 open import Hishtalshelut.Domain.Math.Ordinal using (Ordinal; zero; succ; limit; fromNatO)
+
+length : ∀ {A : Set} → List A → ℕ
+length [] = 0
+length (_ ∷ xs) = suc (length xs)
 
 -- ENUMERATIONS FOR WORLDS
 data World : Set where

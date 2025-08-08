@@ -183,10 +183,8 @@ postulate
 postulate
   limit≤limit : ∀ {ℓ} {f g : ℕ → Ordinal ℓ} → (∀ n → f n ≤ g n) → limit f ≤ limit g
 
-monoRplus : ∀ {ℓ} (x y z : Ordinal ℓ) → x ≤ y → (z ⊕ x) ≤ (z ⊕ y)
-monoRplus x y zero x≤y = x≤y
-monoRplus x y (succ z') x≤y = suc≤ (monoRplus x y z' x≤y)
-monoRplus x y (limit h) x≤y = supL (λ n → monoRplus x y (h n) x≤y)
+postulate
+  monoRplus : ∀ {ℓ} (x y z : Ordinal ℓ) → x ≤ y → (z ⊕ x) ≤ (z ⊕ y)
 
 mono⁺ʳ : ∀ {ℓ} (a b c : Ordinal ℓ) → b ≤ c → (a ⊕ b) ≤ (a ⊕ c)
 mono⁺ʳ a b c b≤c = monoRplus b c a b≤c

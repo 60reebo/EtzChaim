@@ -5,15 +5,21 @@
 module Hishtalshelut.Domain.CoreTypes.Light (ℓ : Agda.Primitive.Level) where
 
 open import Agda.Primitive using (Level; lsuc)
-open import Hishtalshelut.Domain.Math.Cardinal as Card hiding (index)
-open import Hishtalshelut.Domain.Math.Ordinal as Ord hiding (zero; _+_; _*_; _^_; omega; Omega)
+open import Hishtalshelut.Domain.Math.Cardinal as Card hiding (index; _++_)
+open import Hishtalshelut.Domain.Math.Ordinal as Ord hiding (zero; _+_; _*_; _^_; omega; Omega; _++_)
 open import Hishtalshelut.Domain.Worlds.IgulimYosher ℓ using (LightCategory; LightKind; showLightCategory; showLightKind)
 open import Agda.Builtin.String using (String)
-import Data.String.Base as Str
-open import Data.List using (List; []; _∷_)
-open import Data.Nat using (ℕ)
-open import Data.Maybe using (Maybe; just; nothing)
-open import Data.Bool using (Bool; true; false; _∧_; if_then_else_)
+postulate _++_ : String → String → String
+open import Agda.Builtin.List using (List; []; _∷_)
+open import Agda.Builtin.Nat using (Nat; zero; suc) ; open import Agda.Builtin.Nat renaming (Nat to ℕ)
+open import Agda.Builtin.Maybe using (Maybe; just; nothing)
+open import Agda.Builtin.Bool using (Bool; true; false)
+postulate if_then_else_ : ∀ {ℓ} {A : Set ℓ} → Bool → A → A → A
+
+infixr 3 _∧_
+_∧_ : Bool → Bool → Bool
+true ∧ b = b
+false ∧ _ = false
 
 -- Import showNat from Ordinal for Tzelem intensity
 open Ord using (showNat)
@@ -59,17 +65,17 @@ record TzelemAssignment : Set where
 showTzelemAssignment : TzelemAssignment → String
 showTzelemAssignment ta =
   let
-    s1 = Str._++_ "Tzelem { letter = " (showTzelemLetter (TzelemAssignment.letter ta))
-    s2 = Str._++_ s1 ", "
-    s3 = Str._++_ s2 "level = "
-    s4 = Str._++_ s3 (showLightCategory (TzelemAssignment.level ta))
-    s5 = Str._++_ s4 ", "
-    s6 = Str._++_ s5 "mode = "
-    s7 = Str._++_ s6 (showLightMode (TzelemAssignment.mode ta))
-    s8 = Str._++_ s7 ", "
-    s9 = Str._++_ s8 "intensity = "
-    s10 = Str._++_ s9 (showNat (TzelemAssignment.intensity ta))
-    finalS = Str._++_ s10 " }"
+    s1  = _++_ "Tzelem { letter = " (showTzelemLetter (TzelemAssignment.letter ta))
+    s2  = _++_ s1 ", "
+    s3  = _++_ s2 "level = "
+    s4  = _++_ s3 (showLightCategory (TzelemAssignment.level ta))
+    s5  = _++_ s4 ", "
+    s6  = _++_ s5 "mode = "
+    s7  = _++_ s6 (showLightMode (TzelemAssignment.mode ta))
+    s8  = _++_ s7 ", "
+    s9  = _++_ s8 "intensity = "
+    s10 = _++_ s9 (showNat (TzelemAssignment.intensity ta))
+    finalS = _++_ s10 " }"
   in
     finalS
 
@@ -96,20 +102,20 @@ open Light public
 showLight : Light → String
 showLight l =
   let
-    p1 = Str._++_ "Light { power = " (Card.showCardinal (power l))
-    p2 = Str._++_ p1 ", structure = "
-    p3 = Str._++_ p2 (Ord.showOrdinal (structure l))
-    p4 = Str._++_ p3 ", category = "
-    p5 = Str._++_ p4 (showLightCategory (category l))
-    p6 = Str._++_ p5 ", kind = "
-    p7 = Str._++_ p6 (showLightKind (kind l))
-    p8 = Str._++_ p7 ", source = \""
-    p9 = Str._++_ p8 (source l)
-    p10 = Str._++_ p9 "\", timestamp = "
-    p11 = Str._++_ p10 (Ord.showOrdinal (timestamp l))
-    p12 = Str._++_ p11 ", tzelem_letter = "
-    p13 = Str._++_ p12 (showMaybeTzelemLetter (tzelem_letter l))
-    final = Str._++_ p13 " }"
+    p1  = _++_ "Light { power = " (Card.showCardinal (power l))
+    p2  = _++_ p1 ", structure = "
+    p3  = _++_ p2 (Ord.showOrdinal (structure l))
+    p4  = _++_ p3 ", category = "
+    p5  = _++_ p4 (showLightCategory (category l))
+    p6  = _++_ p5 ", kind = "
+    p7  = _++_ p6 (showLightKind (kind l))
+    p8  = _++_ p7 ", source = \""
+    p9  = _++_ p8 (source l)
+    p10 = _++_ p9 "\", timestamp = "
+    p11 = _++_ p10 (Ord.showOrdinal (timestamp l))
+    p12 = _++_ p11 ", tzelem_letter = "
+    p13 = _++_ p12 (showMaybeTzelemLetter (tzelem_letter l))
+    final = _++_ p13 " }"
   in
     final
 
@@ -123,16 +129,15 @@ showLight l =
 mergeLight : Light → Light → Bool → Light
 mergeLight light₁ light₂ deepStructureMerge =
   let
-    mergedPower = power light₁ ⊕ power light₂
+    mergedPower = Card._⊕_ (power light₁) (power light₂)
     mergedStructure =
       if deepStructureMerge
-      then structure light₁ Ord.+ structure light₂ -- Use Ord.+ explicitly
-      else Ord.maxO (structure light₁) (structure light₂) -- Use Ord.maxO explicitly
+      then Ord._⊕_ (structure light₁) (structure light₂)
+      else Ord.maxO (structure light₁) (structure light₂)
     mergedCategory = category light₁
     mergedKind = kind light₁
-    -- Use Str._++_ for source concatenation
-    mergedSource = Str._++_ (Str._++_ (source light₁) "+") (source light₂)
-    mergedTimestamp = Ord.maxO (timestamp light₁) (timestamp light₂) -- Use Ord.maxO explicitly
+    mergedSource = _++_ (_++_ (source light₁) "+") (source light₂)
+    mergedTimestamp = Ord.maxO (timestamp light₁) (timestamp light₂)
     mergedTzelemLetter = tzelem_letter light₁
   in
     mkLight mergedPower mergedStructure mergedCategory mergedKind mergedSource mergedTimestamp mergedTzelemLetter

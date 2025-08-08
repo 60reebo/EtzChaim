@@ -14,26 +14,29 @@ module Str where
   infixl 6 _++_
   _++_ = strAppend
 open import Agda.Builtin.Bool using (Bool; true; false)
-postulate if_then_else_ : {A : Set} → Bool → A → A → A
-{-# INLINE if_then_else_ #-}
+postulate if_then_else_ : ∀ {ℓ} {A : Set ℓ} → Bool → A → A → A
 open import Hishtalshelut.Domain.Worlds.Tzimtzum lzero public using (
   TzimtzumStatus; WillForCreation; ReshimuLevel;
   ContractionStep; StepStartEinSof; StepPotentialWill; StepExecuteTzimtzum; StepLeaveReshimu;
   OrdinalLayer)
-open import Hishtalshelut.Rules.Worlds.Tzimtzum public using (
+open import Hishtalshelut.Rules.Worlds.Tzimtzum lzero public using (
   startWithFullEinSof; potentialWillForCreation; executeTzimtzum; leaveReshimu; 
-  buildContractionSteps; runDynamicContraction; dynamicContractionLoop; createOriginalEinSofLight)
+  buildContractionSteps; runDynamicContraction; dynamicContractionLoop; createOriginalEinSofLight;
+  afterContractionStep; leaveReshimuAtLayer; executeOrdinalContractionStep)
 open import Hishtalshelut.State.Worlds.TzimtzumState lzero using (ContractionState)
 open import Hishtalshelut.Domain.Math.Cardinal using (Cardinal; fin; aleph; showCardinal)
 open import Hishtalshelut.Domain.Math.Ordinal using (Ordinal; zero; succ; limit; omega; showOrdinal; ordLeq; simpleOrdLeq; predO)
-open import Data.Nat using (ℕ)
-open import Data.Maybe using (Maybe; just; nothing)
-open import Data.Product using (_×_; _,_; proj₁; proj₂)
+open import Agda.Builtin.Nat using (Nat; zero; suc) ; open import Agda.Builtin.Nat renaming (Nat to ℕ)
+open import Agda.Builtin.Maybe using (Maybe; just; nothing)
+open import Agda.Builtin.Sigma using (Σ; _,_)
 open import Hishtalshelut.Domain.Worlds.IgulimYosherReshimu lzero public using (
   ReshimuSpec; ReshimuQuality; toReshimuSpec; createReshimuFromLight; computeReshimuStructure; minusOrdinal; Kelim_Root_Potential; Original_Light_Trace; Structure_Imprint; Empty; showReshimuStructure)
 open ReshimuSpec public
-import Data.List.Base as L using (List; _∷_; []; map; length; filter; _++_)
-import Data.Nat as Nat using (zero)
+open import Agda.Builtin.List as L using (List; _∷_; [])
+
+_++_L : ∀ {A : Set} → L.List A → L.List A → L.List A
+_++_L L.[] ys = ys
+_++_L (x L.∷ xs) ys = x L.∷ (_++_L xs ys)
 
 -- | Supported languages for trace
 data Language : Set where
@@ -142,12 +145,20 @@ generateDetailedStepsHebrew current maxOrd origMax =
 -- | תרחיש טקסטואלי מפורט של תהליך הצמצום (אנגלית)
 detailedContractionTraceTextEnglish : Ordinal lzero → L.List String
 detailedContractionTraceTextEnglish maxOrd =
-  ((contractionHeaderEnglish maxOrd) L.++ (generateDetailedStepsEnglish zero maxOrd maxOrd)) L.++ (contractionFooterEnglish maxOrd)
+  (_++_L (contractionHeaderEnglish maxOrd) (generateDetailedStepsEnglish zero maxOrd maxOrd))
+    |> _++_L (contractionFooterEnglish maxOrd)
+  where
+    _|>_ : ∀ {A B : Set} → A → (A → B) → B
+    _|>_ x f = f x
 
 -- | תרחיש טקסטואלי מפורט של תהליך הצמצום (עברית)
 detailedContractionTraceTextHebrew : Ordinal lzero → L.List String
 detailedContractionTraceTextHebrew maxOrd =
-  ((contractionHeaderHebrew maxOrd) L.++ (generateDetailedStepsHebrew zero maxOrd maxOrd)) L.++ (contractionFooterHebrew maxOrd)
+  (_++_L (contractionHeaderHebrew maxOrd) (generateDetailedStepsHebrew zero maxOrd maxOrd))
+    |> _++_L (contractionFooterHebrew maxOrd)
+  where
+    _|>_ : ∀ {A B : Set} → A → (A → B) → B
+    _|>_ x f = f x
 
 -- | דווח טקסטואלי של תוצאות סימולציית הצמצום בשפה נבחרת עם הפורמט המפורט
 contractionTraceText : Language → Ordinal lzero → L.List String
@@ -162,8 +173,8 @@ simulateTzimtzumTrace _ =
     s1 = potentialWillForCreation s0
     s2 = executeTzimtzum s1
     -- דוגמה ל-3 צעדים ראשונים, ניתן להרחיב בהמשך
-    s3 = Hishtalshelut.Rules.Worlds.Tzimtzum.afterContractionStep s2 zero
-    s4 = Hishtalshelut.Rules.Worlds.Tzimtzum.leaveReshimuAtLayer s3 zero
+    s3 = afterContractionStep s2 zero
+    s4 = leaveReshimuAtLayer s3 zero
     -- למלא שכבות נוספות לפי צורך
   in 
     s0 L.∷ s1 L.∷ s2 L.∷ s3 L.∷ s4 L.∷ L.[]
@@ -194,8 +205,8 @@ simulateDynamicTzimtzumTrace maxOrd =
     generateOrdinalTrace : ContractionState → Ordinal lzero → Ordinal lzero → L.List ContractionState
     generateOrdinalTrace state current max =
       if_then_else_ (simpleOrdLeq current (predO max))
-        (let afterStep = Hishtalshelut.Rules.Worlds.Tzimtzum.executeOrdinalContractionStep state current
-             afterReshimu = Hishtalshelut.Rules.Worlds.Tzimtzum.leaveReshimuAtLayer afterStep current
+        (let afterStep = executeOrdinalContractionStep state current
+             afterReshimu = leaveReshimuAtLayer afterStep current
              next = succ current
          in afterStep L.∷ afterReshimu L.∷ generateOrdinalTrace afterReshimu next max)
         L.[]

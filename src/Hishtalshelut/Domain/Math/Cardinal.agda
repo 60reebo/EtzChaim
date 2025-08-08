@@ -25,7 +25,7 @@ open import Agda.Builtin.Equality using (_≡_; refl)
 open import Agda.Builtin.String using (String)
 
 postulate _++_ : String → String → String
-open import Hishtalshelut.Domain.Math.Ordinal as Ordinal hiding (_⊕_; _⊗_; _^_; zero)
+open import Hishtalshelut.Domain.Math.Ordinal as Ordinal hiding (_⊕_; _⊗_; _^_; zero; _++_)
 import Hishtalshelut.Domain.Math.Ordinal as Ordinal
 
 -- | Cardinal type: finite naturals and aleph-indexed infinities
@@ -89,6 +89,6 @@ postulate _^_ : ∀ {ℓ} → Cardinal ℓ → Ordinal ℓ → Cardinal ℓ
 
 -- | Convert Cardinal to String representation
 showCardinal : ∀ {ℓ} → Cardinal ℓ → String
-showCardinal (fin n) = "fin(" ++ Ordinal.showNat n ++ ")"
-showCardinal (aleph o) = "aleph(" ++ Ordinal.showOrdinal o ++ ")"
+showCardinal (fin n) = _++_ "fin(" (_++_ (Ordinal.showNat n) ")")
+showCardinal (aleph o) = _++_ "aleph(" (_++_ (Ordinal.showOrdinal o) ")")
     

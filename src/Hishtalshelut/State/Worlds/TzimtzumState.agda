@@ -2,7 +2,7 @@
 --------------------------------------------------
 -- TzimtzumState (State Layer)
 --------------------------------------------------
-open import Agda.Primitive using (Level; lzero; lsuc)
+open import Agda.Primitive using (Level; lzero; lsuc; _⊔_)
 module Hishtalshelut.State.Worlds.TzimtzumState (ℓ : Level) where
 
 open import Hishtalshelut.Domain.Worlds.Tzimtzum ℓ public using (
@@ -14,12 +14,27 @@ open import Hishtalshelut.State.Worlds.EinSofState public using (EinSofState; in
 open import Hishtalshelut.Domain.Math.Cardinal using (Cardinal; fin; aleph)
 open import Hishtalshelut.Domain.Math.Ordinal using (Ordinal; zero; succ; limit; omega)
 open import Hishtalshelut.Domain.CoreTypes.Light ℓ using (Light)
-open import Data.List using (List; []; _∷_; map; filter)
-open import Data.Maybe using (Maybe; just; nothing)
+open import Agda.Builtin.List using (List; []; _∷_)
+open import Agda.Builtin.Maybe using (Maybe; just; nothing)
 open import Agda.Builtin.Bool public using (Bool; true; false)
-open import Data.Nat using (ℕ; zero; suc)
-open import Data.Product using (_×_; _,_)
+open import Agda.Builtin.Nat using (Nat; zero; suc) ; open import Agda.Builtin.Nat renaming (Nat to ℕ)
+open import Agda.Builtin.Sigma using (Σ; _,_)
 open import Agda.Builtin.String using (String)
+
+infixr 2 _×_
+_×_ : ∀ {a b} → Set a → Set b → Set (a ⊔ b)
+_×_ A B = Σ A (λ _ → B)
+
+-- Optional helpers
+map : ∀ {A B : Set} → (A → B) → List A → List B
+map f [] = []
+map f (x ∷ xs) = f x ∷ map f xs
+
+filter : ∀ {A : Set} → (A → Bool) → List A → List A
+filter p [] = []
+filter p (x ∷ xs) with p x
+... | true = x ∷ filter p xs
+... | false = filter p xs
 
 -- | סוג מפתח עבור שכבות אורדינליות
 OrdinalLayerKey = Ordinal ℓ
